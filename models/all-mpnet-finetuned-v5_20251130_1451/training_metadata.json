@@ -1,0 +1,22 @@
+{
+  "base_model": "sentence-transformers/all-mpnet-base-v2",
+  "source_data": "/Users/don/Documents/University/Current_Classes/Capstone/nexustism/data/dummy_data_promax.csv",
+  "training_date": "2025-11-30T14:51:04.759024",
+  "epochs": 20,
+  "batch_size": 64,
+  "learning_rate": 2e-05,
+  "weight_decay": 0.01,
+  "warmup_ratio": 0.1,
+  "max_seq_length": 384,
+  "eval_split": 0.15,
+  "num_train_examples": 45860,
+  "num_eval_examples": 8094,
+  "num_positive_pairs": 20000,
+  "num_negative_pairs": 30000,
+  "target_pairs": 50000,
+  "positive_ratio": 0.4,
+  "augmentation_ratio": 0.2,
+  "quality_threshold": 0.3,
+  "hard_negative_min": 0.15,
+  "hard_negative_max": 0.45
+}

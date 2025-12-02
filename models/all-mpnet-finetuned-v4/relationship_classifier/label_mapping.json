@@ -1,0 +1,12 @@
+{
+  "label2id": {
+    "duplicate": 0,
+    "related": 1,
+    "none": 3
+  },
+  "id2label": {
+    "0": "duplicate",
+    "1": "related",
+    "3": "none"
+  }
+}
