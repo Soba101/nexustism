@@ -1,0 +1,19 @@
+{
+  "base_model": "sentence-transformers/all-mpnet-base-v2",
+  "source_data": "data/dummy_data_promax.csv",
+  "training_date": "2025-11-30T06:03:27.719631",
+  "epochs": 8,
+  "batch_size": 16,
+  "learning_rate": 1e-05,
+  "warmup_steps": 200,
+  "eval_split": 0.15,
+  "num_train_examples": 8568,
+  "num_eval_examples": 9912,
+  "num_positive_pairs": 10080,
+  "num_negative_pairs": 8400,
+  "seed": 42,
+  "torch_version": "2.9.1",
+  "transformers_version": "4.57.3",
+  "sentence_transformers_version": "5.1.2",
+  "numpy_version": "2.3.5"
+}
