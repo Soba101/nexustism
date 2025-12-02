@@ -1,0 +1,2 @@
+epoch,steps,spearman,pearson,roc_auc,pr_auc
+final,final,0.8632589183885301,0.9623190844887382,0.9984,0.9985420242542197
