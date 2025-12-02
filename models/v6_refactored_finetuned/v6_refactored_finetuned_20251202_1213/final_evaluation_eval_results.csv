@@ -1,2 +1,3 @@
-epoch,steps,spearman,pearson,roc_auc,pr_auc
-final,final,0.8632589183885301,0.9623190844887382,0.9984,0.9985420242542197
+version https://git-lfs.github.com/spec/v1
+oid sha256:99b9b23c22a93ed58f1522b43c0a7cd7d9d5c4b1ae8e9ca28ea5df441e4abaff
+size 120
