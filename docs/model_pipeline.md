@@ -166,6 +166,7 @@ nltk.download('punkt')        # Sentence tokenizer
 | `Assignment group` | string | Support team | "L2 Email Support" |
 
 **⚠️ CRITICAL: Never include these columns to prevent data leakage:**
+
 - `Resolution notes`
 - `Resolution code`  
 - `Closed by`
@@ -220,6 +221,7 @@ stopped syncing emails since yesterday morning. Other apps work fine.
 ```
 
 **Why context at end?**
+
 - Reduces shortcut exploitation (model can't just match category prefixes)
 - Forces model to read full content before seeing metadata
 - Improves generalization to mislabeled tickets
@@ -267,6 +269,7 @@ train_df, eval_df = train_test_split(
 ```
 
 **Final split proportions:**
+
 - Train: ~76.5% of original data
 - Eval: ~13.5% of original data
 - Holdout: ~10% of original data (never seen during training)
@@ -356,11 +359,13 @@ def generate_robust_pairs(df, target_count, config):
 ### 4.5 Why Hard Negatives Are Critical
 
 **Without hard negatives:**
+
 - Model learns: "same category = similar"
 - Fails on mislabeled tickets
 - High standard metrics, low adversarial metrics
 
 **With hard negatives:**
+
 - Model learns: "similar content = similar"
 - Generalizes to edge cases
 - Robust to category noise
@@ -478,6 +483,7 @@ train_dataloader = DataLoader(
 ```
 
 **Why `num_workers=0`?**
+
 - `InputExample` objects can't be pickled for multiprocessing
 - Setting workers > 0 causes serialization errors
 - Single-threaded loading is sufficient for our data size
@@ -643,6 +649,7 @@ def run_eval(examples, model, name="eval"):
 **Detect if the model is exploiting category shortcuts rather than learning true semantic similarity.**
 
 High standard metrics (Spearman 0.85, ROC-AUC 0.99) can be misleading if the model simply learned:
+
 - "Same category → similar"
 - "Different category → dissimilar"
 
@@ -728,11 +735,13 @@ for attempt in range(50000):
 **Required fixes:**
 
 1. **Remove category from text entirely:**
+
    ```python
    df['text'] = df['Short Description'] + ". " + df['Description']
    ```
 
 2. **Or move context to very end:**
+
    ```python
    df['text'] = df['text_core'] + " (Category: " + df['Category'] + ")"
    ```
@@ -1004,14 +1013,18 @@ if __name__ == '__main__':
 **Symptoms:** Kernel crash during training or encoding
 
 **Solutions:**
+
 1. Reduce `batch_size` to 4
 2. Clear cache before operations:
+
    ```python
    torch.mps.empty_cache()  # or torch.cuda.empty_cache()
    gc.collect()
    ```
+
 3. Restart kernel to fully release memory
 4. Use CPU for large encoding jobs:
+
    ```python
    model.encode(texts, device='cpu')
    ```
@@ -1023,6 +1036,7 @@ if __name__ == '__main__':
 **Cause:** Model exploiting category shortcuts
 
 **Fix:**
+
 1. Remove category prefix from text completely
 2. Move context to very end of text
 3. Increase hard negative ratio to 50%
@@ -1034,6 +1048,7 @@ if __name__ == '__main__':
 **Symptoms:** `LookupError: Resource 'wordnet' not found`
 
 **Fix:**
+
 ```python
 import nltk
 nltk.download('wordnet')
@@ -1047,6 +1062,7 @@ nltk.download('punkt')
 **Symptoms:** `Can't pickle InputExample` when using DataLoader
 
 **Fix:** Set `num_workers=0`:
+
 ```python
 DataLoader(examples, num_workers=0, ...)
 ```
@@ -1056,6 +1072,7 @@ DataLoader(examples, num_workers=0, ...)
 **Symptoms:** Spearman stays at ~0.5, no improvement across epochs
 
 **Possible causes:**
+
 1. Learning rate too low → try `lr=5e-5`
 2. Batch size too small → try `batch_size=16`
 3. Not enough training pairs → increase to 5000+
