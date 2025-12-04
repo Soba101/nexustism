@@ -170,3 +170,5 @@ cython_debug/
 .pytest_cache
 claude.md
 GEMINI.md
+
+data_new
