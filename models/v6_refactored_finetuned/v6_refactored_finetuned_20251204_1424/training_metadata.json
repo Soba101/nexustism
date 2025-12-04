@@ -1,0 +1,36 @@
+{
+  "training_date": "2025-12-04T15:00:33.869165",
+  "model_name": "sentence-transformers/all-mpnet-base-v2",
+  "config": {
+    "model_name": "sentence-transformers/all-mpnet-base-v2",
+    "output_dir": "models/v6_refactored_finetuned",
+    "source_data": "data/dummy_data_promax.csv",
+    "relationship_data": "data/relationship_pairs.json",
+    "epochs": 5,
+    "batch_size": 8,
+    "lr": 2e-05,
+    "max_seq_length": 384,
+    "num_pairs": 2000,
+    "pos_ratio": 0.4,
+    "eval_split": 0.15,
+    "seed": 42
+  },
+  "device": "mps",
+  "final_spearman": 0.8458615443832301,
+  "data_splits": {
+    "train_incidents": 7650,
+    "eval_incidents": 1350,
+    "holdout_incidents": 1000,
+    "train_pairs": 1700,
+    "eval_pairs": 300,
+    "holdout_pairs": 200
+  },
+  "pair_generation_strategy": {
+    "type": "hybrid_robust",
+    "positives_ratio": 0.4,
+    "hard_negatives_ratio": 0.3,
+    "easy_negatives_ratio": 0.3,
+    "positive_threshold": "TF-IDF > 0.5",
+    "negative_threshold": "TF-IDF < 0.3"
+  }
+}
