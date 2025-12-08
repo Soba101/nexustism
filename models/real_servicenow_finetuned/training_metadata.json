@@ -1,0 +1,72 @@
+{
+  "training_timestamp": "2025-12-07T01:02:13.571619",
+  "model_name": "sentence-transformers/all-mpnet-base-v2",
+  "base_model": "sentence-transformers/all-mpnet-base-v2",
+  "hyperparameters": {
+    "epochs": 4,
+    "batch_size": 16,
+    "learning_rate": 2e-05,
+    "max_seq_length": 384,
+    "warmup_ratio": 0.1,
+    "loss_function": "MultipleNegativesRankingLoss"
+  },
+  "data_config": {
+    "source_data": "data_new/incident ticket volume from 18th Mar'24 till date 4th Sep'25 @5PM SGT.csv",
+    "num_pairs": 50000,
+    "min_text_length": 25,
+    "eval_split": 0.15,
+    "holdout_split": 0.1,
+    "pos_tfidf_threshold": 0.35,
+    "neg_tfidf_threshold": 0.2,
+    "pair_ratios": {
+      "positives": 0.35,
+      "hard_negatives": 0.35,
+      "easy_negatives": 0.3
+    }
+  },
+  "data_statistics": {
+    "total_records": 10486,
+    "train_size": 8021,
+    "eval_size": 1416,
+    "holdout_size": 1049,
+    "unique_categories": 6,
+    "unique_subcategories": 23,
+    "unique_assignment_groups": 26,
+    "avg_text_length": 561.0210757200076,
+    "tfidf_vocabulary_size": null
+  },
+  "tfidf_config": {
+    "max_features": 15000,
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "max_df": 0.95
+  },
+  "evaluation_metrics": {
+    "eval_roc_auc": 0.9969341733821734,
+    "eval_pr_auc": 0.9943329773271403,
+    "eval_spearman": 0.8210765677618543,
+    "eval_pearson": 0.8621237702983491,
+    "eval_f1": 0.9693205345379259,
+    "holdout_roc_auc": 0.9979980659340659,
+    "holdout_pr_auc": 0.99645051116525,
+    "holdout_spearman": 0.8228327416255627,
+    "holdout_pearson": 0.8652908304446303,
+    "holdout_f1": 0.9731865650578606
+  },
+  "adversarial_diagnostic": {
+    "roc_auc": 0.9936777777777779,
+    "f1_score": 0.9733333333333334,
+    "pass_status": true
+  },
+  "environment": {
+    "device": "cuda",
+    "random_seed": 42,
+    "python_version": "3.11.14 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 18:30:03) [MSC v.1929 64 bit (AMD64)]",
+    "torch_version": "2.5.1+cu121",
+    "transformers_version": "4.57.3",
+    "sentence_transformers_version": "5.1.2"
+  }
+}
