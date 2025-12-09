@@ -7,6 +7,7 @@ numpy
 openai
 pandas
 protobuf<=3.20.1
+psycopg2-binary
 python-dotenv
 pytorch-lightning
 requests
@@ -15,6 +16,7 @@ scikit-learn
 scipy
 seaborn
 sentence-transformers
+sqlalchemy
 torch
 tqdm
 transformers
