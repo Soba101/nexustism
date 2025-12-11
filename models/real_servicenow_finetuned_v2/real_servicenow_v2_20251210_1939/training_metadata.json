@@ -1,0 +1,104 @@
+{
+  "training_timestamp": "2025-12-11T05:58:37.937798",
+  "model_version": "V2",
+  "model_name": "sentence-transformers/all-mpnet-base-v2",
+  "base_model": "sentence-transformers/all-mpnet-base-v2",
+  "hyperparameters": {
+    "epochs": 4,
+    "batch_size": 16,
+    "learning_rate": 2e-05,
+    "max_seq_length": 384,
+    "warmup_ratio": 0.1,
+    "loss_function": "MultipleNegativesRankingLoss"
+  },
+  "curriculum_learning": {
+    "enabled": true,
+    "phases": [
+      {
+        "epochs": 2,
+        "hard_neg_ratio": 0.25,
+        "neg_threshold": 0.15
+      },
+      {
+        "epochs": 2,
+        "hard_neg_ratio": 0.55,
+        "neg_threshold": 0.1
+      }
+    ]
+  },
+  "data_config": {
+    "source_data": "data_new\\SNow_incident_ticket_data.csv",
+    "num_pairs": 50000,
+    "min_text_length": 25,
+    "eval_split": 0.15,
+    "holdout_split": 0.1,
+    "pos_tfidf_threshold": 0.35,
+    "neg_tfidf_threshold": 0.12,
+    "pair_ratios": {
+      "positives": 0.3,
+      "hard_negatives": 0.45,
+      "easy_negatives": 0.25
+    }
+  },
+  "data_statistics": {
+    "total_records": 10486,
+    "train_size": 8021,
+    "eval_size": 1416,
+    "holdout_size": 1049,
+    "unique_categories": 5,
+    "unique_subcategories": 22,
+    "unique_assignment_groups": 26,
+    "avg_text_length": 561.0219340072478,
+    "tfidf_vocabulary_size": null
+  },
+  "tfidf_config": {
+    "max_features": 15000,
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "max_df": 0.95
+  },
+  "evaluation_metrics": {
+    "eval_roc_auc": 0.9987054452274184,
+    "eval_pr_auc": 0.9976942511366196,
+    "eval_spearman": 0.7902800842600531,
+    "eval_pearson": 0.8744717812707548,
+    "eval_f1": 0.9848349687778769,
+    "holdout_roc_auc": 0.9992508571428571,
+    "holdout_pr_auc": 0.9981966573783886,
+    "holdout_spearman": 0.792559415015526,
+    "holdout_pearson": 0.8948273940222777,
+    "holdout_f1": 0.9803791153974061,
+    "borderline_roc_auc": 0.5053201352086276,
+    "borderline_pr_auc": 0.2938766395833009,
+    "borderline_f1": 0.4514126047811239
+  },
+  "cv_threshold": {
+    "value": null,
+    "std": null,
+    "n_folds": 5
+  },
+  "adversarial_diagnostic": {
+    "roc_auc": 0.9918999999999999,
+    "f1_score": 0.9728813559322034,
+    "pass_status": true
+  },
+  "error_analysis": {
+    "eval_fp_count": 46,
+    "eval_fn_count": 22,
+    "holdout_fp_count": 33,
+    "holdout_fn_count": 26,
+    "borderline_fp_count": 1767,
+    "borderline_fn_count": 0
+  },
+  "environment": {
+    "device": "cuda",
+    "random_seed": 42,
+    "python_version": "3.11.14 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 18:30:03) [MSC v.1929 64 bit (AMD64)]",
+    "torch_version": "2.5.1+cu121",
+    "transformers_version": "4.57.3",
+    "sentence_transformers_version": "5.1.2"
+  }
+}
