@@ -1,0 +1,11 @@
+{
+  "phase": 2,
+  "total_phases": 2,
+  "phase_config": {
+    "epochs": 2,
+    "hard_neg_ratio": 0.55,
+    "neg_threshold": 0.1
+  },
+  "checkpoint_timestamp": "2025-12-12T12:55:51.448446",
+  "model_path": "models\\real_servicenow_finetuned_nomic\\real_servicenow_v2_20251212_1145\\phase_2_checkpoint"
+}
