@@ -22,3 +22,5 @@ tqdm
 transformers
 pytest
 pytorch-lightning
+fastapi
+uvicorn
