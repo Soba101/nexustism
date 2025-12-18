@@ -1,0 +1,9 @@
+                      precision    recall  f1-score   support
+
+Application/Software     0.9484    1.0000    0.9735      1306
+             Network     0.0000    0.0000    0.0000        55
+              Server     0.0000    0.0000    0.0000        16
+
+            accuracy                         0.9484      1377
+           macro avg     0.3161    0.3333    0.3245      1377
+        weighted avg     0.8995    0.9484    0.9233      1377

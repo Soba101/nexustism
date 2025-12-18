@@ -1,0 +1,211 @@
+{
+  "timestamp": "2025-12-18T08:36:28.903015Z",
+  "dataset_path": "/Users/don/DocumentsMac/Codes/nexustism/data_new/fixed_test_pairs.json",
+  "num_pairs": 1000,
+  "positives_evaluated": 500,
+  "negatives_evaluated": 500,
+  "skipped_pairs": 0,
+  "K_values": [
+    5,
+    10,
+    20
+  ],
+  "hybrid": {
+    "pos_recall_at_k": {
+      "5": 0.008,
+      "10": 0.008,
+      "20": 0.042
+    },
+    "neg_hit_rate_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0
+    },
+    "mrr": 0.005087301587301586
+  },
+  "vector_only": {
+    "pos_recall_at_k": {
+      "5": 0.008,
+      "10": 0.008,
+      "20": 0.042
+    },
+    "neg_hit_rate_at_k": {
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0
+    },
+    "mrr": 0.005087301587301586
+  },
+  "examples": {
+    "positive_hits": [
+      {
+        "i": 6,
+        "query_inc": "INC0046692",
+        "target_inc": "INC0013719",
+        "rank": 18,
+        "vec_rank": 18,
+        "top": [
+          "INC0046692",
+          "INC0035107",
+          "INC0035210",
+          "INC0010584",
+          "INC0010660"
+        ]
+      },
+      {
+        "i": 33,
+        "query_inc": "INC0013719",
+        "target_inc": "INC0046692",
+        "rank": 3,
+        "vec_rank": 3,
+        "top": [
+          "INC0013719",
+          "INC0010584",
+          "INC0046692",
+          "INC0028268",
+          "INC0035107"
+        ]
+      },
+      {
+        "i": 45,
+        "query_inc": "INC0013719",
+        "target_inc": "INC0032084",
+        "rank": 12,
+        "vec_rank": 12,
+        "top": [
+          "INC0013719",
+          "INC0010584",
+          "INC0046692",
+          "INC0028268",
+          "INC0035107"
+        ]
+      },
+      {
+        "i": 80,
+        "query_inc": "INC0013719",
+        "target_inc": "INC0032084",
+        "rank": 12,
+        "vec_rank": 12,
+        "top": [
+          "INC0013719",
+          "INC0010584",
+          "INC0046692",
+          "INC0028268",
+          "INC0035107"
+        ]
+      },
+      {
+        "i": 100,
+        "query_inc": "INC0013719",
+        "target_inc": "INC0046692",
+        "rank": 3,
+        "vec_rank": 3,
+        "top": [
+          "INC0013719",
+          "INC0010584",
+          "INC0046692",
+          "INC0028268",
+          "INC0035107"
+        ]
+      }
+    ],
+    "positive_misses": [
+      {
+        "i": 0,
+        "query_inc": "INC0020661",
+        "target_inc": "INC0038333",
+        "top": [
+          "INC0020661",
+          "INC0011384",
+          "INC0017149",
+          "INC0059670",
+          "INC0011346"
+        ],
+        "vec_top": [
+          "INC0020661",
+          "INC0011384",
+          "INC0017149",
+          "INC0059670",
+          "INC0011346"
+        ]
+      },
+      {
+        "i": 1,
+        "query_inc": "INC0035424",
+        "target_inc": "INC0011516",
+        "top": [
+          "INC0035424",
+          "INC0055810",
+          "INC0068244",
+          "INC0045192",
+          "INC0018781"
+        ],
+        "vec_top": [
+          "INC0035424",
+          "INC0055810",
+          "INC0068244",
+          "INC0045192",
+          "INC0018781"
+        ]
+      },
+      {
+        "i": 2,
+        "query_inc": "INC0055060",
+        "target_inc": "INC0062441",
+        "top": [
+          "INC0055060",
+          "INC0068046",
+          "INC0021519",
+          "INC0018795",
+          "INC0053475"
+        ],
+        "vec_top": [
+          "INC0055060",
+          "INC0068046",
+          "INC0021519",
+          "INC0018795",
+          "INC0053475"
+        ]
+      },
+      {
+        "i": 3,
+        "query_inc": "INC0048617",
+        "target_inc": "INC0046692",
+        "top": [
+          "INC0048617",
+          "INC0041282",
+          "INC0064750",
+          "INC0041542",
+          "INC0026854"
+        ],
+        "vec_top": [
+          "INC0048617",
+          "INC0041282",
+          "INC0064750",
+          "INC0041542",
+          "INC0026854"
+        ]
+      },
+      {
+        "i": 4,
+        "query_inc": "INC0054820",
+        "target_inc": "INC0041236",
+        "top": [
+          "INC0054820",
+          "INC0057655",
+          "INC0052811",
+          "INC0015303",
+          "INC0051850"
+        ],
+        "vec_top": [
+          "INC0054820",
+          "INC0057655",
+          "INC0052811",
+          "INC0015303",
+          "INC0051850"
+        ]
+      }
+    ],
+    "negative_hits": []
+  }
+}

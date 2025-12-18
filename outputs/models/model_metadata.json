@@ -1,0 +1,11 @@
+{
+  "model_name": "sentence-transformers/all-mpnet-base-v2",
+  "num_classes": 4,
+  "embedding_dim": 768,
+  "test_accuracy": 0.9484386347131445,
+  "macro_f1": 0.32451236178407256,
+  "training_epochs": 10,
+  "best_epoch": 9,
+  "random_seed": 42,
+  "training_date": "2025-12-10T01:58:56.899303"
+}
