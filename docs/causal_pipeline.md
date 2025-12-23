@@ -98,6 +98,7 @@ Causal Score: 0.87 → ✅ CAUSAL (A likely caused B)
 | Pre-training | MS MARCO passage ranking |
 
 **Why this model?**
+
 - Fast inference (~3x faster than BERT-base)
 - Good balance of speed and accuracy
 - Pre-trained on semantic similarity tasks
@@ -107,7 +108,7 @@ Causal Score: 0.87 → ✅ CAUSAL (A likely caused B)
 
 ## 3. When to Use This
 
-### ✅ Use the Causal Classifier When:
+### ✅ Use the Causal Classifier When
 
 1. **Root Cause Analysis**: Identify which tickets triggered cascading failures
 2. **Incident Clustering**: Group related incidents by causal chains
@@ -115,7 +116,7 @@ Causal Score: 0.87 → ✅ CAUSAL (A likely caused B)
 4. **SLA Attribution**: Determine which incident is the "parent" for SLA tracking
 5. **Knowledge Base**: Link resolution articles to upstream causes
 
-### ❌ Don't Use When:
+### ❌ Don't Use When
 
 1. **Simple similarity search**: Use the bi-encoder similarity model instead
 2. **Real-time bulk processing**: Too slow for >100 pairs/second
@@ -208,6 +209,7 @@ random.shuffle(balanced_data)
 ```
 
 **Why 1:3 ratio?**
+
 - 1:1 would lose too much data
 - Higher ratios (1:5+) make learning difficult
 - 1:3 is empirically good for this task
@@ -768,11 +770,13 @@ if __name__ == "__main__":
 #### Low ROC-AUC (<0.65)
 
 **Possible causes:**
+
 - Insufficient causal examples in training data
 - Labels are noisy/incorrect
 - Model too small
 
 **Solutions:**
+
 - Add more labeled causal pairs
 - Review and clean labels manually
 - Try larger model: `cross-encoder/ms-marco-MiniLM-L-12-v2`
@@ -782,6 +786,7 @@ if __name__ == "__main__":
 **Symptoms:** High accuracy but low recall on causal class
 
 **Solutions:**
+
 - Increase causal ratio to 1:2 instead of 1:3
 - Use class weights in loss function
 - Oversample causal pairs (with augmentation)
@@ -791,6 +796,7 @@ if __name__ == "__main__":
 **Symptoms:** Kernel crash during training
 
 **Solutions:**
+
 ```python
 # Reduce batch size
 CONFIG['batch_size'] = 8
@@ -809,6 +815,7 @@ CONFIG['max_pairs'] = 5000
 **Symptoms:** Loss doesn't decrease, metrics stay at random baseline
 
 **Solutions:**
+
 - Check data loading (ensure labels are correct)
 - Increase learning rate: try default warmup
 - Verify text preprocessing matches inference
