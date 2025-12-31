@@ -1,0 +1,118 @@
+================================================================================
+HUGGINGFACE AUTHENTICATION GUIDE FOR EMBEDDINGGEMMA
+================================================================================
+
+PROBLEM:
+You tried to load EmbeddingGemma-300M but got an error:
+"You are trying to access a gated repo."
+
+This model requires HuggingFace authentication.
+
+================================================================================
+SOLUTION: 3-STEP PROCESS
+================================================================================
+
+STEP 1: REQUEST ACCESS (1 minute)
+----------------------------------
+1. Open your browser and go to:
+   https://huggingface.co/google/embeddinggemma-300m
+
+2. Click the button "Agree and access repository"
+   (You may need to create a HuggingFace account first)
+
+3. Access is usually granted instantly
+
+
+STEP 2: GET YOUR TOKEN (1 minute)
+----------------------------------
+1. Go to: https://huggingface.co/settings/tokens
+
+2. Click "Create new token"
+   - Name: "notebook-access" (or any name)
+   - Type: "Read" (default)
+
+3. Click "Create token"
+
+4. COPY the token (starts with "hf_")
+   Important: You won't see it again!
+
+
+STEP 3: AUTHENTICATE IN NOTEBOOK (30 seconds)
+----------------------------------------------
+1. Open evaluate_model.ipynb
+
+2. Find the NEW section "6a. HuggingFace Authentication"
+
+3. In that cell, uncomment ONE of these options:
+
+   Option A (RECOMMENDED - Interactive):
+   ```python
+   login()
+   ```
+
+   Option B (Direct token):
+   ```python
+   login(token="hf_xxxxxxxxxxxxx")  # Paste your token here
+   ```
+
+4. Run the cell and paste your token when prompted
+
+5. Re-run cell 6b to evaluate all models including EmbeddingGemma
+
+
+================================================================================
+ALTERNATIVE: SKIP EMBEDDINGGEMMA FOR NOW
+================================================================================
+
+If you don't want to authenticate right now, you can still test the other 8
+models:
+
+1. Open cell 6b in evaluate_model.ipynb
+
+2. Remove or comment out the EmbeddingGemma entry:
+   ```python
+   # {
+   #     'name': 'EmbeddingGemma-300M',
+   #     'model_id': 'google/embeddinggemma-300m',
+   #     ...
+   # },
+   ```
+
+3. Run cell 6b to test the remaining 8 models
+
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+Q: I authenticated but still getting the error
+A: Restart the Jupyter kernel and re-run the authentication cell
+
+Q: I lost my token
+A: Create a new one at https://huggingface.co/settings/tokens
+
+Q: Do I need to authenticate every time?
+A: No, only once. The token is cached locally.
+
+
+================================================================================
+WHAT HAPPENS NEXT
+================================================================================
+
+After authentication, when you run cell 6b:
+- All 9 models will be evaluated (including EmbeddingGemma)
+- Results will show which model beats MPNet baseline (0.5038)
+- Top 3 performers will be highlighted
+
+Current models being tested:
+1. Nomic-Embed-v1.5 (batch=8)
+2. BGE-base-en-v1.5 (batch=32)
+3. GTE-base-en-v1.5 (batch=32)
+4. E5-base-v2 (batch=32)
+5. MiniLM-L12-v2 (batch=32)
+6. JinaBERT-v2-base (batch=8)
+7. UAE-Large-v1 (batch=32)
+8. EmbeddingGemma-300M (batch=32) <- NEEDS AUTH
+9. Qwen3-Embed-0.6B-768d (batch=32)
+
+================================================================================
