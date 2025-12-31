@@ -1,0 +1,28 @@
+{
+  "model": "sentence-transformers/all-mpnet-base-v2",
+  "source": "database_embeddings",
+  "timestamp": "20251228_020742",
+  "test_pairs_file": "data_new/fixed_test_pairs.json",
+  "total_pairs": 1000,
+  "evaluated_pairs": 1000,
+  "coverage": 1.0,
+  "metrics": {
+    "spearman_correlation": 0.4169252083445463,
+    "roc_auc": 0.7407079999999999,
+    "best_f1": 0.686175580221998,
+    "best_threshold": 0.35000000000000003,
+    "precision": 0.6924643584521385,
+    "recall": 0.68,
+    "accuracy": 0.689,
+    "confusion_matrix": [
+      [
+        349,
+        151
+      ],
+      [
+        160,
+        340
+      ]
+    ]
+  }
+}
