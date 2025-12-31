@@ -1,0 +1,174 @@
+# =============================================================================
+# CURRICULUM TRAINING (Pre-generated pairs only)
+# =============================================================================
+
+
+# --- Training Execution (V2: with Curriculum Learning) ---
+timestamp = datetime.now().strftime("%Y%m%d_%H%M")
+save_path = Path(CONFIG['output_dir']) / f"real_servicenow_v2_{timestamp}"
+save_path.mkdir(parents=True, exist_ok=True)
+
+log(f"\n🚀 Starting Training (V2)...")
+log(f"   Output: {save_path}")
+log(f"   Epochs: {CONFIG['epochs']}")
+log(f"   Device: {DEVICE}")
+
+# Calculate warmup steps
+# Calculate warmup steps (use phase1 size as reference)
+sample_phase_size = len(list(CURRICULUM_PHASES.values())[0])
+batches_per_phase = (sample_phase_size + CONFIG['batch_size'] - 1) // CONFIG['batch_size']
+total_steps = batches_per_phase * CONFIG['epochs_per_phase'] * 3  # 3 phases
+warmup_steps = int(total_steps * CONFIG['warmup_ratio'])
+eval_steps = max(100, len(train_dataloader) // 2)  # Evaluate twice per epoch
+use_amp = DEVICE != 'cuda'  # Flip: CUDA stays fp32, CPU/MPS use fp16 autocast when available
+
+try:
+
+    if CONFIG['use_curriculum']:
+# V2: Curriculum Learning - train in phases
+        log("\n[CURRICULUM] Training in 3 phases (easy -> medium -> hard)")
+
+        for phase_idx, (phase_name, phase_examples) in enumerate(sorted(CURRICULUM_PHASES.items())):
+            log(f"\n{'='*60}")
+            log(f"[PHASE {phase_idx + 1}] {phase_name.upper()}: {CONFIG['epochs_per_phase']} epochs")
+            log(f"   Training examples: {len(phase_examples):,}")
+            log(f"{'='*60}")
+
+            # Create DataLoader for this phase
+            phase_dataloader = DataLoader(
+                phase_examples,
+                batch_size=CONFIG['batch_size'],
+                shuffle=True,
+                num_workers=0
+            )
+
+            log(f"   Batches per epoch: {len(phase_dataloader)}")
+            log(f"   Total steps this phase: {len(phase_dataloader) * CONFIG['epochs_per_phase']}")
+
+            # Train this phase
+            log(f"\n[TRAINING] {phase_name}...")
+            model.fit(
+                train_objectives=[(phase_dataloader, train_loss)],
+                evaluator=evaluator,
+                epochs=CONFIG['epochs_per_phase'],
+                warmup_steps=warmup_steps,
+                optimizer_params={'lr': CONFIG['lr']},
+                output_path=str(save_path),
+                evaluation_steps=eval_steps,
+                save_best_model=True,
+                show_progress_bar=True,
+                use_amp=use_amp,
+            )
+
+            log(f"[OK] {phase_name} complete!")
+
+        log(f"\n{'='*70}")
+        log("[SUCCESS] All curriculum phases complete!")
+        log(f"{'='*70}")
+
+    else:
+        # Non-curriculum: train on all examples together
+        log("\n[TRAINING] Standard training (no curriculum)")
+        train_dataloader = DataLoader(
+            train_examples,
+            batch_size=CONFIG['batch_size'],
+            shuffle=True,
+            num_workers=0
+        )
+
+        model.fit(
+            train_objectives=[(train_dataloader, train_loss)],
+            evaluator=evaluator,
+            epochs=CONFIG['epochs'],
+            warmup_steps=warmup_steps,
+            optimizer_params={'lr': CONFIG['lr']},
+            output_path=str(save_path),
+            evaluation_steps=eval_steps,
+            save_best_model=True,
+            show_progress_bar=True,
+            use_amp=use_amp,
+        )
+except RuntimeError as e:
+    err_msg = str(e).lower()
+    if ("out of memory" in err_msg) or ("no kernel image" in err_msg) or ("not compatible" in err_msg):
+        log(f"[ERROR] Runtime Error: {e}")
+        log("💡 Falling back to CPU/MPS to continue training...")
+        # Cleanup GPU
+        try:
+            del model
+        except Exception:
+            pass
+        try:
+            if torch.cuda.is_available():
+                torch.cuda.empty_cache()
+        except Exception:
+            pass
+        gc.collect()
+    
+        # Fallback device
+        if hasattr(torch.backends, 'mps') and torch.backends.mps.is_available():
+            DEVICE = 'mps'
+            log("🍎 Switching to MPS")
+        else:
+            DEVICE = 'cpu'
+            log("[BUILD] Switching to CPU")
+    
+        # Re-init model and loss on fallback device
+        model = init_model_with_lora(CONFIG, DEVICE)
+        # Always use CosineSimilarityLoss with all pairs
+        train_loss = losses.CosineSimilarityLoss(model)
+    
+        # Recreate dataloaders with safe batch size on fallback device
+        safe_batch = 8 if DEVICE != 'cuda' else 16
+        fallback_use_amp = DEVICE != 'cuda'
+        if CONFIG['use_curriculum']:
+            for phase_idx, (phase_name, phase_examples) in enumerate(sorted(CURRICULUM_PHASES.items())):
+                log(f"\n[Fallback] Phase {phase_idx + 1}: {CONFIG['epochs_per_phase']} epochs")
+                # Use pre-loaded phase examples (already in memory)
+                # phase_examples already available from loop
+                    CONFIG,
+                    desc=f"Phase {phase_idx+1}",
+                    phase_config=phase,
+                    tfidf_calc=tfidf_train
+                )
+                phase_dataloader = DataLoader(
+                    phase_train_examples,
+                    shuffle=True,
+                    batch_size=safe_batch,
+                    num_workers=0,
+                    pin_memory=(DEVICE in ['cuda', 'mps'])
+                )
+                phase_warmup = int(len(phase_dataloader) * CONFIG['epochs_per_phase'] * CONFIG['warmup_ratio'])
+                model.fit(
+                    train_objectives=[(phase_dataloader, train_loss)],
+                    evaluator=evaluator,
+                    epochs=CONFIG['epochs_per_phase'],
+                    warmup_steps=phase_warmup,
+                    optimizer_params={'lr': CONFIG['lr']},
+                    output_path=str(save_path),
+                    evaluation_steps=eval_steps,
+                    save_best_model=True,
+                    show_progress_bar=True,
+                    use_amp=fallback_use_amp,
+                )
+        else:
+            model.fit(
+                train_objectives=[(phase_dataloader, train_loss)],
+                evaluator=evaluator,
+                epochs=CONFIG['epochs'],
+                warmup_steps=warmup_steps,
+                optimizer_params={'lr': CONFIG['lr']},
+                output_path=str(save_path),
+                evaluation_steps=eval_steps,
+                save_best_model=True,
+                show_progress_bar=True,
+                use_amp=fallback_use_amp,
+            )
+    
+        log("\n[OK] Training complete on fallback device!")
+    else:
+        raise
+
+# Reload best model
+log("\n[STATS] Loading best model for final evaluation...")
+best_model = SentenceTransformer(str(save_path), device=DEVICE)
