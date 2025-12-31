@@ -1,0 +1,17 @@
+{
+  "timestamp": "2025-12-28T04:32:19.334663",
+  "python_version": "3.11.14",
+  "torch_version": "2.9.1+cu130",
+  "transformers_version": "4.57.3",
+  "sentence_transformers_version": "5.2.0",
+  "cuda_available": true,
+  "cuda_version": "13.0",
+  "device_name": "NVIDIA GeForce RTX 5090",
+  "evaluation_config": {
+    "test_pairs_file": "fixed_test_pairs.json",
+    "num_test_pairs": 1000,
+    "baseline_model": "sentence-transformers/all-mpnet-base-v2",
+    "num_models_evaluated": 3,
+    "random_seed": 42
+  }
+}

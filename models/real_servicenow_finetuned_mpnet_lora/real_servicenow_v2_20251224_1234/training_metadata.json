@@ -1,0 +1,43 @@
+{
+  "config": {
+    "model_name": "sentence-transformers/all-mpnet-base-v2",
+    "epochs": 10,
+    "batch_size": 32,
+    "lr": 0.0001,
+    "warmup_steps": 100,
+    "max_seq_length": 256,
+    "seed": 42,
+    "use_lora": true,
+    "lora_r": 32,
+    "lora_alpha": 64,
+    "lora_dropout": 0.05,
+    "use_pre_generated_pairs": true,
+    "train_pairs_path": "data_new/curriculum_training_pairs_20251224_065436.json",
+    "test_pairs_path": "data_new/fixed_test_pairs.json",
+    "use_curriculum": true,
+    "phase1_epochs": 0,
+    "phase2_epochs": 0,
+    "phase3_epochs": 10,
+    "output_dir": "models/real_servicenow_finetuned_mpnet_lora",
+    "save_best_model": true,
+    "eval_steps": 500,
+    "threshold_cv_folds": 5
+  },
+  "results": {
+    "spearman": 0.48325819140386056,
+    "roc_auc": 0.7790079999999999,
+    "f1": 0.6194690265486725,
+    "precision": 0.8419243986254296,
+    "recall": 0.49,
+    "separability": 0.21845510601997375
+  },
+  "training_date": "2025-12-25T02:35:41.183976",
+  "device": "cuda",
+  "total_training_pairs": 15000,
+  "total_test_pairs": 1000,
+  "curriculum_phases": {
+    "phase1": 5000,
+    "phase2": 5000,
+    "phase3": 5000
+  }
+}

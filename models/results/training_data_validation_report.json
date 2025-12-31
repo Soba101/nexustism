@@ -1,0 +1,44 @@
+{
+  "training_data": {
+    "file": "data_new\\curriculum_training_pairs_complete.json",
+    "total_pairs": 15000,
+    "positives": 10000,
+    "negatives": 5000,
+    "baseline_spearman": 0.6963202882697102,
+    "baseline_roc_auc": 0.9264073499999999,
+    "baseline_f1": 0.8787144011790995,
+    "optimal_threshold": 0.4005405902862549
+  },
+  "test_data": {
+    "file": "data_new\\fixed_test_pairs.json",
+    "total_pairs": 1000,
+    "positives": 500,
+    "negatives": 500,
+    "baseline_spearman": 0.5037924195925454,
+    "baseline_roc_auc": 0.79086,
+    "baseline_f1": 0.6907317073170731
+  },
+  "train_test_gap": {
+    "spearman_delta": 0.19252786867716476,
+    "roc_auc_delta": 0.13554734999999984,
+    "f1_delta": 0.18798269386202637
+  },
+  "potentially_mislabeled": {
+    "false_positive_candidates": 0,
+    "false_negative_candidates": 0,
+    "total_suspicious": 0,
+    "suspicious_percentage": 0.0
+  },
+  "score_distributions": {
+    "train_positive_mean": 0.5884341597557068,
+    "train_positive_std": 0.14603479206562042,
+    "train_negative_mean": 0.36042749881744385,
+    "train_negative_std": 0.07915724068880081,
+    "train_separation": 0.22800666093826294,
+    "test_positive_mean": 0.5412032604217529,
+    "test_positive_std": 0.19532671570777893,
+    "test_negative_mean": 0.3547181487083435,
+    "test_negative_std": 0.08779232949018478,
+    "test_separation": 0.18648511171340942
+  }
+}
