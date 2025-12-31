@@ -1,0 +1,2 @@
+,spearman,roc_auc,f1,precision,recall,accuracy,best_threshold,confusion_matrix
+Baseline (Raw MPNet),0.5037924195925454,0.79086,0.722664735698769,0.5664018161180476,0.998,0.617,0.3014847,"[[118, 382], [1, 499]]"
