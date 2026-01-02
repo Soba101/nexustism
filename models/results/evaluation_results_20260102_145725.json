@@ -1,0 +1,142 @@
+{
+  "Baseline (Raw MPNet)": {
+    "spearman": 0.5037924195925454,
+    "roc_auc": 0.79086,
+    "f1": 0.722664735698769,
+    "precision": 0.5664018161180476,
+    "recall": 0.998,
+    "accuracy": 0.617,
+    "best_threshold": "0.3014847",
+    "best_f1": 0.722664735698769,
+    "confusion_matrix": [
+      [
+        118,
+        382
+      ],
+      [
+        1,
+        499
+      ]
+    ]
+  },
+  "Baseline (Qwen3-Embedding-8B)": {
+    "spearman": 0.5088545569068916,
+    "roc_auc": 0.7937839999999999,
+    "f1": 0.7321063394683026,
+    "precision": 0.7489539748953975,
+    "recall": 0.716,
+    "accuracy": 0.738,
+    "best_threshold": "0.51417226",
+    "best_f1": 0.7321063394683026,
+    "confusion_matrix": [
+      [
+        380,
+        120
+      ],
+      [
+        142,
+        358
+      ]
+    ]
+  },
+  "Baseline (Octen-Embedding-8B)": {
+    "spearman": 0.5004018869413557,
+    "roc_auc": 0.788904,
+    "f1": 0.7297039159503342,
+    "precision": 0.6983546617915904,
+    "recall": 0.764,
+    "accuracy": 0.717,
+    "best_threshold": "0.36216813",
+    "best_f1": 0.7297039159503342,
+    "confusion_matrix": [
+      [
+        335,
+        165
+      ],
+      [
+        118,
+        382
+      ]
+    ]
+  },
+  "Baseline (Qwen3-Embedding-4B)": {
+    "spearman": 0.439377868180063,
+    "roc_auc": 0.753672,
+    "f1": 0.6962828649138713,
+    "precision": 0.6368159203980099,
+    "recall": 0.768,
+    "accuracy": 0.665,
+    "best_threshold": "0.4540603",
+    "best_f1": 0.6962828649138713,
+    "confusion_matrix": [
+      [
+        281,
+        219
+      ],
+      [
+        116,
+        384
+      ]
+    ]
+  },
+  "real_servicenow_v2_20251227_0214": {
+    "spearman": 0.38179686128286333,
+    "roc_auc": 0.720428,
+    "f1": 0.6890286512928022,
+    "precision": 0.5295381310418904,
+    "recall": 0.986,
+    "accuracy": 0.555,
+    "best_threshold": "0.79335904",
+    "best_f1": 0.6890286512928022,
+    "confusion_matrix": [
+      [
+        62,
+        438
+      ],
+      [
+        7,
+        493
+      ]
+    ]
+  },
+  "real_servicenow_v2_20251228_0418": {
+    "spearman": 0.2905648944516602,
+    "roc_auc": 0.667756,
+    "f1": 0.6676342525399129,
+    "precision": 0.5239179954441914,
+    "recall": 0.92,
+    "accuracy": 0.542,
+    "best_threshold": "0.9963983",
+    "best_f1": 0.6676342525399129,
+    "confusion_matrix": [
+      [
+        82,
+        418
+      ],
+      [
+        40,
+        460
+      ]
+    ]
+  },
+  "phase3_only_20260101_1238": {
+    "spearman": 0.490520009468462,
+    "roc_auc": 0.7831999999999999,
+    "f1": 0.7170191339375629,
+    "precision": 0.7221095334685599,
+    "recall": 0.712,
+    "accuracy": 0.719,
+    "best_threshold": "0.4538235",
+    "best_f1": 0.7170191339375629,
+    "confusion_matrix": [
+      [
+        363,
+        137
+      ],
+      [
+        144,
+        356
+      ]
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "spearman": 0.34722123386013853,
+  "roc_auc": 0.700468,
+  "best_threshold": 0.97,
+  "f1": 0.6711681296421337,
+  "accuracy": 0.513,
+  "config": {
+    "model_name": "sentence-transformers/all-mpnet-base-v2",
+    "use_lora": true,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.1,
+    "lora_target_modules": [
+      "q",
+      "k",
+      "v"
+    ],
+    "use_curriculum": false,
+    "train_pairs_path": "data_new/phase3_only_pairs.json",
+    "filter_positives_only": true,
+    "test_pairs_path": "data_new/fixed_test_pairs.json",
+    "epochs": 16,
+    "batch_size": 32,
+    "lr": 2e-05,
+    "warmup_ratio": 0.1,
+    "weight_decay": 0.01,
+    "max_seq_length": 256,
+    "loss_type": "mnrl",
+    "output_dir": "models/real_servicenow_finetuned_mpnet_lora",
+    "save_name_prefix": "phase3_mnrl",
+    "seed": 42,
+    "fp16": true,
+    "device": "cuda"
+  },
+  "timestamp": "20260101_1623"
+}
