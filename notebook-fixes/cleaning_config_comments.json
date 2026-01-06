@@ -1,0 +1,14 @@
+{
+  "field_strategy": "description_comments",
+  "min_text_length": 50,
+  "min_quality_score": 0.2,
+  "structured_text_action": "filter",
+  "tab_threshold": 5,
+  "newline_density_threshold": 0.02,
+  "url_handling": "keep",
+  "comments_strip_timestamps": true,
+  "comments_max_length": 2000,
+  "fix_encoding": false,
+  "save_filtered_samples": true,
+  "sample_size": 100
+}
