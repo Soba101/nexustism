@@ -1,0 +1,76 @@
+{
+  "training_timestamp": "2026-01-04T11:24:46.808931",
+  "model_version": "V2",
+  "model_name": "sentence-transformers/all-mpnet-base-v2",
+  "base_model": "sentence-transformers/all-mpnet-base-v2",
+  "hyperparameters": {
+    "epochs": 12,
+    "batch_size": 16,
+    "learning_rate": 2e-05,
+    "max_seq_length": 256,
+    "warmup_ratio": 0.1,
+    "loss_function": "CosineSimilarityLoss"
+  },
+  "curriculum_learning": {
+    "enabled": true,
+    "phases": []
+  },
+  "data_config": {
+    "source_data": "data_new\\SNow_incident_ticket_data.csv",
+    "num_pairs": 50000,
+    "min_text_length": 25,
+    "eval_split": 0.15,
+    "holdout_split": 0.1,
+    "pos_tfidf_threshold": null,
+    "neg_tfidf_threshold": null,
+    "pair_ratios": {
+      "positives": 0.3,
+      "hard_negatives": 0.45,
+      "easy_negatives": 0.25
+    }
+  },
+  "data_statistics": {
+    "total_records": 10486,
+    "train_size": 8021,
+    "eval_size": 1416,
+    "holdout_size": 1049,
+    "unique_categories": 5,
+    "unique_subcategories": 22,
+    "unique_assignment_groups": 26,
+    "avg_text_length": 561.0219340072478,
+    "tfidf_vocabulary_size": null
+  },
+  "tfidf_config": {
+    "max_features": 15000,
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "max_df": 0.95
+  },
+  "evaluation_metrics": {
+    "note": "Run evaluation cells first"
+  },
+  "cv_threshold": {
+    "value": null,
+    "std": null,
+    "n_folds": 5
+  },
+  "adversarial_diagnostic": {
+    "roc_auc": null,
+    "f1_score": null,
+    "pass_status": null
+  },
+  "error_analysis": {
+    "note": "Run error analysis first"
+  },
+  "environment": {
+    "device": "cuda",
+    "random_seed": 42,
+    "python_version": "3.11.14 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 18:30:03) [MSC v.1929 64 bit (AMD64)]",
+    "torch_version": "2.9.1+cu130",
+    "transformers_version": "4.57.3",
+    "sentence_transformers_version": "5.2.0"
+  }
+}
