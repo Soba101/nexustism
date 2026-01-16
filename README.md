@@ -68,6 +68,7 @@ curl -X POST http://localhost:8001/search/hybrid \
 **Access Supabase Studio:** <http://localhost:3000> (admin / SecureAdminPass2025!)
 
 **Configure Environment Variables:**
+
 ```bash
 # Copy example environment file
 cp .env.example .env
@@ -172,6 +173,7 @@ ServiceNow API
 | updated_at | timestamp | DB update timestamp | ✓ |
 
 **Indexes:**
+
 - HNSW on embedding (vector search)
 - GIN on fts (full-text search)
 - B-tree on state, priority, opened_at (filtering)
@@ -1038,10 +1040,11 @@ docker compose restart pooler
 **Goal:** Single unified `incidents` table, verify embeddings, set source as read-only archive
 
 **COMPLETED ACTIONS:**
+
 - ✅ Renamed `incident_tickets` → `source` for semantic clarity
 - ✅ Set `source` table as READ-ONLY (revoked INSERT/UPDATE/DELETE from public)
-- ✅ Renamed all RLS policies: incident_tickets_* → source_*
-- ✅ Renamed all indexes: incident_tickets_* → source_*
+- ✅ Renamed all RLS policies: incident_tickets_*→ source_*
+- ✅ Renamed all indexes: incident_tickets_*→ source_*
 - ✅ Renamed triggers: audit_incident_tickets_changes → audit_source_changes
 - ✅ Renamed sequence: incident_tickets_id_seq → source_id_seq
 - ✅ Updated api_service.py to reference source table (marked as DEPRECATED)
@@ -1050,6 +1053,7 @@ docker compose restart pooler
 - ✅ incidents table ALREADY HAS RLS policies and audit triggers
 
 **VERIFIED STATUS:**
+
 ```bash
 # incidents table (production)
 - ✓ 10,633 records
@@ -1067,6 +1071,7 @@ docker compose restart pooler
 ```
 
 **PENDING INVESTIGATION:**
+
 ```bash
 # Step 1: Verify embeddings are V4 cosine (not outdated)
 docker compose exec -T db psql -U postgres -d postgres -c "
@@ -1089,6 +1094,7 @@ INSERT INTO source (number, description) VALUES ('TEST', 'test');
 ```
 
 **Files Updated:**
+
 - [supabase/api_service.py](supabase/api_service.py) - Marked as DEPRECATED, updated to reference source table
 - [README.md](README.md) - Updated architecture diagrams and migration status
 
