@@ -1,0 +1,77 @@
+{
+  "MPNet baseline": {
+    "spearman": 0.8279093945867911,
+    "pearson": 0.9472948067406354,
+    "roc_auc": 1.0,
+    "pr_auc": 1.0,
+    "f1": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "accuracy": 1.0,
+    "mean_pos": 0.7073962092399597,
+    "mean_neg": 0.12883280217647552,
+    "separation": 0.578563392162323,
+    "best_threshold": 0.5335870981216431,
+    "best_f1": 1.0,
+    "confusion_matrix": [
+      [
+        360,
+        0
+      ],
+      [
+        0,
+        196
+      ]
+    ]
+  },
+  "EmbeddingGemma-300M": {
+    "spearman": 0.8278190327639023,
+    "pearson": 0.9417943135036865,
+    "roc_auc": 0.9999999999999999,
+    "pr_auc": 1.0,
+    "f1": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "accuracy": 1.0,
+    "mean_pos": 0.7697487473487854,
+    "mean_neg": 0.3524255156517029,
+    "separation": 0.4173232316970825,
+    "best_threshold": 0.71819007396698,
+    "best_f1": 1.0,
+    "confusion_matrix": [
+      [
+        360,
+        0
+      ],
+      [
+        0,
+        196
+      ]
+    ]
+  },
+  "V4 MPNet LoRA": {
+    "spearman": 0.8277473341861018,
+    "pearson": 0.9480090950842124,
+    "roc_auc": 0.9999999999999999,
+    "pr_auc": 1.0,
+    "f1": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "accuracy": 1.0,
+    "mean_pos": 0.715033769607544,
+    "mean_neg": 0.10962755233049393,
+    "separation": 0.6054062247276306,
+    "best_threshold": 0.5282824635505676,
+    "best_f1": 1.0,
+    "confusion_matrix": [
+      [
+        360,
+        0
+      ],
+      [
+        0,
+        196
+      ]
+    ]
+  }
+}
