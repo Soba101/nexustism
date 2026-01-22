@@ -1,0 +1,125 @@
+{
+  "MPNet baseline": {
+    "spearman": 0.3988976335333098,
+    "pearson": 0.44900594804549715,
+    "roc_auc": 0.7303,
+    "pr_auc": 0.7931357253065459,
+    "f1": 0.6611570247933884,
+    "precision": 0.5633802816901409,
+    "recall": 0.8,
+    "accuracy": 0.59,
+    "mean_pos": 0.47155535221099854,
+    "mean_neg": 0.30016911029815674,
+    "separation": 0.1713862419128418,
+    "val_best_threshold": 0.2759934067726135,
+    "val_best_f1": 0.7242798353909465,
+    "val_size": 200,
+    "test_size": 200,
+    "confusion_matrix": [
+      [
+        38,
+        62
+      ],
+      [
+        20,
+        80
+      ]
+    ],
+    "retrieval_recall@1": 0.0008300000000000001,
+    "retrieval_hit@1": 0.04,
+    "retrieval_ndcg@1": 0.04,
+    "retrieval_recall@3": 0.0020800000000000003,
+    "retrieval_hit@3": 0.086,
+    "retrieval_ndcg@3": 0.035156500571847035,
+    "retrieval_recall@5": 0.00331,
+    "retrieval_hit@5": 0.1255,
+    "retrieval_ndcg@5": 0.03380720579621928,
+    "retrieval_recall@10": 0.00674,
+    "retrieval_hit@10": 0.2365,
+    "retrieval_ndcg@10": 0.03382892955406345,
+    "retrieval_mrr@10": 0.08215555555555555,
+    "retrieval_retrieval_queries": 2000
+  },
+  "EmbeddingGemma-300M": {
+    "spearman": 0.30276728763188254,
+    "pearson": 0.38651601426963406,
+    "roc_auc": 0.6748000000000001,
+    "pr_auc": 0.7607922563017604,
+    "f1": 0.63003663003663,
+    "precision": 0.49710982658959535,
+    "recall": 0.86,
+    "accuracy": 0.495,
+    "mean_pos": 0.4852091073989868,
+    "mean_neg": 0.3665231466293335,
+    "separation": 0.11868596076965332,
+    "val_best_threshold": 0.3052980303764343,
+    "val_best_f1": 0.6911764705882353,
+    "val_size": 200,
+    "test_size": 200,
+    "confusion_matrix": [
+      [
+        13,
+        87
+      ],
+      [
+        14,
+        86
+      ]
+    ],
+    "retrieval_recall@1": 0.0008200000000000001,
+    "retrieval_hit@1": 0.0395,
+    "retrieval_ndcg@1": 0.0395,
+    "retrieval_recall@3": 0.00236,
+    "retrieval_hit@3": 0.092,
+    "retrieval_ndcg@3": 0.03779051649656257,
+    "retrieval_recall@5": 0.0035900000000000003,
+    "retrieval_hit@5": 0.1335,
+    "retrieval_ndcg@5": 0.03574060564244189,
+    "retrieval_recall@10": 0.00651,
+    "retrieval_hit@10": 0.2275,
+    "retrieval_ndcg@10": 0.033089467614032246,
+    "retrieval_mrr@10": 0.08327519841269841,
+    "retrieval_retrieval_queries": 2000
+  },
+  "V4 MPNet LoRA": {
+    "spearman": 0.3760353280570059,
+    "pearson": 0.4434856375073829,
+    "roc_auc": 0.7171000000000001,
+    "pr_auc": 0.781934314756116,
+    "f1": 0.6635514018691588,
+    "precision": 0.6228070175438597,
+    "recall": 0.71,
+    "accuracy": 0.64,
+    "mean_pos": 0.5118329524993896,
+    "mean_neg": 0.3096136748790741,
+    "separation": 0.20221927762031555,
+    "val_best_threshold": 0.32378047704696655,
+    "val_best_f1": 0.7264150943396226,
+    "val_size": 200,
+    "test_size": 200,
+    "confusion_matrix": [
+      [
+        57,
+        43
+      ],
+      [
+        29,
+        71
+      ]
+    ],
+    "retrieval_recall@1": 0.0006799999999999999,
+    "retrieval_hit@1": 0.033,
+    "retrieval_ndcg@1": 0.033,
+    "retrieval_recall@3": 0.00206,
+    "retrieval_hit@3": 0.083,
+    "retrieval_ndcg@3": 0.03365360636988622,
+    "retrieval_recall@5": 0.0034400000000000003,
+    "retrieval_hit@5": 0.1265,
+    "retrieval_ndcg@5": 0.033684049580165645,
+    "retrieval_recall@10": 0.0066,
+    "retrieval_hit@10": 0.2355,
+    "retrieval_ndcg@10": 0.032876687005905236,
+    "retrieval_mrr@10": 0.07830853174603175,
+    "retrieval_retrieval_queries": 2000
+  }
+}

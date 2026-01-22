@@ -1,0 +1,141 @@
+[
+  {
+    "path": "nexustism/data_new/fixed_training_pairs.json",
+    "keys": [
+      "labels",
+      "metadata",
+      "texts1",
+      "texts2"
+    ],
+    "pair_count": 10000,
+    "lengths": {
+      "texts1": 10000,
+      "texts2": 10000,
+      "labels": 10000
+    },
+    "label_counts": {
+      "1": 5000,
+      "0": 5000
+    },
+    "has_phase": false,
+    "has_categories": false,
+    "has_metadata": true
+  },
+  {
+    "path": "nexustism/data_new/curriculum_training_pairs_complete.json",
+    "keys": [
+      "labels",
+      "metadata",
+      "phase_indicators",
+      "texts1",
+      "texts2"
+    ],
+    "pair_count": 15000,
+    "lengths": {
+      "texts1": 15000,
+      "texts2": 15000,
+      "labels": 15000
+    },
+    "label_counts": {
+      "1": 10000,
+      "0": 5000
+    },
+    "has_phase": true,
+    "has_categories": false,
+    "has_metadata": true
+  },
+  {
+    "path": "nexustism/data_new/balanced_hard_training_pairs.json",
+    "keys": [
+      "categories1",
+      "categories2",
+      "labels",
+      "metadata",
+      "phase_indicators",
+      "texts1",
+      "texts2"
+    ],
+    "pair_count": 15000,
+    "lengths": {
+      "texts1": 15000,
+      "texts2": 15000,
+      "labels": 15000
+    },
+    "label_counts": {
+      "0": 12540,
+      "1": 2460
+    },
+    "has_phase": true,
+    "has_categories": true,
+    "has_metadata": true
+  },
+  {
+    "path": "nexustism/data_new/hard_training_pairs_adversarial.json",
+    "keys": [
+      "categories1",
+      "categories2",
+      "labels",
+      "metadata",
+      "phase_indicators",
+      "texts1",
+      "texts2"
+    ],
+    "pair_count": 8652,
+    "lengths": {
+      "texts1": 8652,
+      "texts2": 8652,
+      "labels": 8652
+    },
+    "label_counts": {
+      "0": 7467,
+      "1": 1185
+    },
+    "has_phase": true,
+    "has_categories": true,
+    "has_metadata": true
+  },
+  {
+    "path": "nexustism/data_new/phase2_medium_pairs_20251224_065339.json",
+    "keys": [
+      "labels",
+      "metadata",
+      "texts1",
+      "texts2"
+    ],
+    "pair_count": 5000,
+    "lengths": {
+      "texts1": 5000,
+      "texts2": 5000,
+      "labels": 5000
+    },
+    "label_counts": {
+      "1": 2500,
+      "0": 2500
+    },
+    "has_phase": false,
+    "has_categories": false,
+    "has_metadata": true
+  },
+  {
+    "path": "nexustism/data_new/phase3_hard_pairs_20251224_065339.json",
+    "keys": [
+      "labels",
+      "metadata",
+      "texts1",
+      "texts2"
+    ],
+    "pair_count": 5000,
+    "lengths": {
+      "texts1": 5000,
+      "texts2": 5000,
+      "labels": 5000
+    },
+    "label_counts": {
+      "1": 2500,
+      "0": 2500
+    },
+    "has_phase": false,
+    "has_categories": false,
+    "has_metadata": true
+  }
+]
