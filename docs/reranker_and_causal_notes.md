@@ -30,3 +30,14 @@
 - Sample 200–500 candidate pairs from embedding top-k
 - Label duplicate vs non-duplicate; if causal, also label direction
 - Use this set for reranker and causal classifier evaluation
+## Freeze Note (2026-01-22)
+
+We are freezing the causal pipeline tuning at the strict 10k silver-label configuration and deferring further model tweaks until a cleaner or human-labeled dataset is available.
+
+### Frozen configuration
+- Silver sources: `docs/labeling/silver_pairs_temporal_24h_10000.csv`
+- Reranker: `cross-encoder/ms-marco-MiniLM-L-6-v2` (no tuning yet)
+- Causal tuning: no further iteration without new labels
+
+### Reranker status
+Reranker evaluation/tuning is deferred until a human-labeled duplicate set exists.

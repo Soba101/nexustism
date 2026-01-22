@@ -2,6 +2,55 @@
 
 All notable changes to the ITSM Ticket Similarity project.
 
+## [2026-01-22] - Evaluation & Causal Pipeline Updates
+
+### Summary
+
+Strengthened embedding evaluation methodology (validation/test thresholding, retrieval Hit@k), added reranker/causal evaluation hooks, and hardened the causal pipeline split/evaluation logic to reduce leakage and single-class failures.
+
+### Changes Made
+
+**Evaluation Notebook:**
+
+- Updated `evaluate_local_embedding_models.ipynb` with validation/test splitting and retrieval metrics (Recall@k, Hit@k, nDCG, MRR).
+- Added JSON pairing controls (`pos_sim_min`, `pos_sim_max`, `hard_neg_sim_min`) to make positives less lexical and hard negatives more realistic.
+- Added reranker evaluation support (CrossEncoder) and causal evaluation support toggles.
+
+**Causal Notebook:**
+
+- Updated `causal_detection_pipeline.ipynb` with temporal split + stratified fallback, eval-based thresholding, and max sequence length handling.
+- Added causal tag formatting with pair-level truncation, meta hints (category/delta-hours), and strict time-order enforcement; disabled safetensors on save to avoid Windows file locks.
+- Recorded split mode and causal counts in saved metrics; added temporal-holdout metrics when fallback is used.
+- Wired `LEARNING_RATE` into training.
+- Added optional silver-label override to train from weakly labeled CSVs.
+- Reverted silver labeling to strict 10k configuration after weaker runs.
+
+**Documentation:**
+
+- Updated evaluation review: `docs/embedding_eval_review_20260122.md`.
+- Added causal evaluation review: `docs/causal_eval_review_20260122.md`.
+- Added V4 critique: `docs/v4_training_critique_20260122.md`.
+- Added reranker/causal notes: `docs/reranker_and_causal_notes.md`.
+- Documented freeze decision for causal tuning and reranker evaluation in `docs/reranker_and_causal_notes.md`.
+
+**End-to-End Evaluation:**
+
+- Added `end_to_end_eval.ipynb` to evaluate V4 retrieval, reranker, and causal pipeline together with visuals.
+
+**Labeling Data:**
+
+- Added `scripts/generate_labeling_sets.py` to produce temporal and embedding-neighbor labeling CSVs.
+- Generated labeling exports: `docs/labeling/labeling_pairs_temporal_24h_10000.csv` and `docs/labeling/labeling_pairs_embedding_neighbors_10000.csv`.
+- Added `docs/labeling/pair_files_summary.json` with an audit summary of existing training pair files.
+- Added `scripts/generate_silver_labels.py` with tuned thresholds, negative balancing, and weakly labeled exports: `docs/labeling/silver_pairs_temporal_24h_10000.csv` and `docs/labeling/silver_pairs_embedding_neighbors_10000.csv`.
+
+### Next Steps
+
+- Re-run causal notebook with updated split logic and review `evaluation_metrics.json` for split mode + temporal holdout.
+- Re-run embedding evaluation with updated JSON pairing and review retrieval Hit@k.
+
+---
+
 ## [2026-01-10] - ServiceNow Demo Data Loaded
 
 ### Summary
