@@ -1,0 +1,38 @@
+{
+  "timestamp": "20260205_163835",
+  "config": {
+    "base_model": "sentence-transformers/all-mpnet-base-v2",
+    "batch_size": 64,
+    "epochs": 1,
+    "learning_rate": 3e-05,
+    "warmup_ratio": 0.1,
+    "data_path": "data/incident_ticket_data_redacted.csv",
+    "text_column": "cleaned_text",
+    "max_samples": null,
+    "test_pairs_path": "data_new/fixed_test_pairs.json",
+    "output_dir": "models/unsupervised_simcse"
+  },
+  "baseline": {
+    "spearman": 0.5037901146837284,
+    "pearson": 0.5243298096976551,
+    "roc_auc": 0.79086,
+    "mean_similarity": 0.447960764169693,
+    "std_similarity": 0.17783188819885254
+  },
+  "simcse": {
+    "spearman": 0.4867554368240667,
+    "pearson": 0.4994116967030715,
+    "roc_auc": 0.7810280000000001,
+    "mean_similarity": 0.24381369352340698,
+    "std_similarity": 0.21132035553455353
+  },
+  "v4_cosine": {
+    "spearman": 0.5006553103872032,
+    "pearson": 0.5267549863939057,
+    "roc_auc": 0.789052,
+    "mean_similarity": 0.4829592704772949,
+    "std_similarity": 0.21379093825817108
+  },
+  "training_sentences": 982,
+  "test_pairs": 1000
+}
