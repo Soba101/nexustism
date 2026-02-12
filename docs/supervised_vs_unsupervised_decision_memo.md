@@ -5,7 +5,7 @@
 - Runner-up `unsupervised_simcse_best`; Spearman gap `0.0036`.
 
 ## Trustworthiness of comparison
-- Significance (cell 36): 1/5 pairwise Spearman comparisons significant at p < 0.05.
+- Significance (cell 36): 1/3 pairwise Spearman comparisons significant at p < 0.05.
 - Winner consistency (cell 31): runtime=`all-mpnet-base-v2` vs artifact=`all-mpnet-base-v2`.
 - Ranking metrics are now query-group-aware and report grouping diagnostics.
 - Adapter-only supervised checkpoints now fail fast.
