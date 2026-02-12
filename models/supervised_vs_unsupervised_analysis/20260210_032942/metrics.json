@@ -1,0 +1,916 @@
+{
+  "run_metadata": {
+    "timestamp": "20260210_032942",
+    "project_root": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism",
+    "output_root": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\supervised_vs_unsupervised_analysis\\20260210_032942",
+    "device": "cuda",
+    "seed": 42,
+    "research_mode": false,
+    "data_path": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\data_new\\incident_ticket_data_redacted.csv",
+    "test_pairs_path": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\data_new\\fixed_test_pairs.json",
+    "corpus_text_count": 1000,
+    "pair_count": 1000,
+    "failed_models": {
+      "nv-embed-v2": "'DynamicCache' object has no attribute 'get_usable_length'"
+    },
+    "simcse_sweep_results": []
+  },
+  "model_metrics": {
+    "all-mpnet-base-v2": {
+      "model_name": "all-mpnet-base-v2",
+      "method_type": "baseline",
+      "source": "sentence-transformers",
+      "path_or_id": "sentence-transformers/all-mpnet-base-v2",
+      "metrics": {
+        "calibration": {
+          "spearman": 0.5477976046272666,
+          "pearson": 0.5590643813971942,
+          "roc_auc": 0.8162666666666666,
+          "pr_auc": 0.8564494383434401,
+          "f1": 0.7339901477832512,
+          "accuracy": 0.64,
+          "threshold": 0.30499999999999994,
+          "spearman_ci": [
+            0.4697289923448555,
+            0.6292212228818758
+          ],
+          "roc_auc_ci": [
+            0.7714049051251957,
+            0.8639089983860393
+          ],
+          "mean_similarity": 0.45903970787922543,
+          "std_similarity": 0.19285447038655276,
+          "best_calibration_f1": 0.7339901477832512
+        },
+        "evaluation": {
+          "spearman": 0.4837235115398561,
+          "pearson": 0.5094326903103755,
+          "roc_auc": 0.7792734693877552,
+          "pr_auc": 0.822956047098806,
+          "f1": 0.721584984358707,
+          "accuracy": 0.6185714285714285,
+          "threshold": 0.30499999999999994,
+          "spearman_ci": [
+            0.4221355588217512,
+            0.551990443415379
+          ],
+          "roc_auc_ci": [
+            0.7441447579121769,
+            0.8186908618030054
+          ],
+          "mean_similarity": 0.44321256610964027,
+          "std_similarity": 0.17077020152785508
+        }
+      }
+    },
+    "unsupervised_simcse_best": {
+      "model_name": "unsupervised_simcse_best",
+      "method_type": "unsupervised",
+      "source": "local_or_trained",
+      "path_or_id": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\unsupervised_simcse\\simcse_20260206_145625",
+      "metrics": {
+        "calibration": {
+          "spearman": 0.5207018147792444,
+          "pearson": 0.5207335835256273,
+          "roc_auc": 0.8006222222222222,
+          "pr_auc": 0.8478946588420432,
+          "f1": 0.7588424437299035,
+          "accuracy": 0.75,
+          "threshold": 0.16999999999999993,
+          "spearman_ci": [
+            0.4496149980648667,
+            0.6061673241847074
+          ],
+          "roc_auc_ci": [
+            0.7596518834200348,
+            0.8501129984159624
+          ],
+          "mean_similarity": 0.2638869682730486,
+          "std_similarity": 0.2400202605779163,
+          "best_calibration_f1": 0.7588424437299035
+        },
+        "evaluation": {
+          "spearman": 0.480160379070532,
+          "pearson": 0.49199711346007124,
+          "roc_auc": 0.7772163265306125,
+          "pr_auc": 0.8223776069654536,
+          "f1": 0.7181571815718157,
+          "accuracy": 0.7028571428571428,
+          "threshold": 0.16999999999999993,
+          "spearman_ci": [
+            0.42116286826393823,
+            0.533662916638569
+          ],
+          "roc_auc_ci": [
+            0.7433709935563341,
+            0.8083109765532619
+          ],
+          "mean_similarity": 0.2496433422894084,
+          "std_similarity": 0.21817263607693263
+        }
+      }
+    },
+    "supervised_v4_cosine": {
+      "model_name": "supervised_v4_cosine",
+      "method_type": "supervised",
+      "source": "local",
+      "path_or_id": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\real_servicenow_finetuned_mpnet_lora\\real_servicenow_v2_20260104_2321",
+      "metrics": {
+        "calibration": {
+          "spearman": 0.5556509747748026,
+          "pearson": 0.575138459219611,
+          "roc_auc": 0.8208,
+          "pr_auc": 0.8579682323804596,
+          "f1": 0.7426900584795322,
+          "accuracy": 0.7066666666666667,
+          "threshold": 0.3800000000000001,
+          "spearman_ci": [
+            0.4796120845143337,
+            0.6299025277535857
+          ],
+          "roc_auc_ci": [
+            0.7772856008378841,
+            0.8646121520777938
+          ],
+          "mean_similarity": 0.49684783577919006,
+          "std_similarity": 0.22339037671000458,
+          "best_calibration_f1": 0.7426900584795322
+        },
+        "evaluation": {
+          "spearman": 0.47591393835176804,
+          "pearson": 0.5056676465486225,
+          "roc_auc": 0.7747673469387756,
+          "pr_auc": 0.8102954461619695,
+          "f1": 0.7144654088050314,
+          "accuracy": 0.6757142857142857,
+          "threshold": 0.3800000000000001,
+          "spearman_ci": [
+            0.4119866573620166,
+            0.5382043731310754
+          ],
+          "roc_auc_ci": [
+            0.7379936587988121,
+            0.8111788321668116
+          ],
+          "mean_similarity": 0.4770069968886673,
+          "std_similarity": 0.20926033609002528
+        }
+      }
+    },
+    "all-MiniLM-L6-v2": {
+      "model_name": "all-MiniLM-L6-v2",
+      "method_type": "baseline",
+      "source": "sentence-transformers",
+      "path_or_id": "sentence-transformers/all-MiniLM-L6-v2",
+      "metrics": {
+        "calibration": {
+          "spearman": 0.5237023414871788,
+          "pearson": 0.524232023205974,
+          "roc_auc": 0.8023555555555556,
+          "pr_auc": 0.8328602300695758,
+          "f1": 0.75,
+          "accuracy": 0.7333333333333333,
+          "threshold": 0.33000000000000007,
+          "spearman_ci": [
+            0.45801354565192187,
+            0.619730277817835
+          ],
+          "roc_auc_ci": [
+            0.7648032180424318,
+            0.8579815381734183
+          ],
+          "mean_similarity": 0.39617805718133847,
+          "std_similarity": 0.18525810191161082,
+          "best_calibration_f1": 0.75
+        },
+        "evaluation": {
+          "spearman": 0.4204336128294133,
+          "pearson": 0.4450929885959738,
+          "roc_auc": 0.742734693877551,
+          "pr_auc": 0.7847696246455413,
+          "f1": 0.7080581241743725,
+          "accuracy": 0.6842857142857143,
+          "threshold": 0.33000000000000007,
+          "spearman_ci": [
+            0.3618185273089595,
+            0.4900959163045938
+          ],
+          "roc_auc_ci": [
+            0.7089477997988864,
+            0.7829571264045379
+          ],
+          "mean_similarity": 0.38703368059226445,
+          "std_similarity": 0.16935191482989861
+        }
+      }
+    },
+    "embeddinggemma-300m": {
+      "model_name": "embeddinggemma-300m",
+      "method_type": "baseline",
+      "source": "huggingface",
+      "path_or_id": "google/embeddinggemma-300m",
+      "metrics": {
+        "calibration": {
+          "spearman": 0.42239415023354004,
+          "pearson": 0.46257709059499036,
+          "roc_auc": 0.7438666666666666,
+          "pr_auc": 0.8081195818205595,
+          "f1": 0.7023411371237458,
+          "accuracy": 0.7033333333333334,
+          "threshold": 0.45500000000000007,
+          "spearman_ci": [
+            0.33079912128447675,
+            0.5297642886281191
+          ],
+          "roc_auc_ci": [
+            0.6917108654760106,
+            0.8080540364704639
+          ],
+          "mean_similarity": 0.4954588723182678,
+          "std_similarity": 0.15263397652448737,
+          "best_calibration_f1": 0.7023411371237458
+        },
+        "evaluation": {
+          "spearman": 0.37189053282351325,
+          "pearson": 0.43083678548439364,
+          "roc_auc": 0.7147102040816327,
+          "pr_auc": 0.7796920807678276,
+          "f1": 0.6666666666666666,
+          "accuracy": 0.6757142857142857,
+          "threshold": 0.45500000000000007,
+          "spearman_ci": [
+            0.30409850733435967,
+            0.4319903601729614
+          ],
+          "roc_auc_ci": [
+            0.6757071201203116,
+            0.7494432939877294
+          ],
+          "mean_similarity": 0.483588239806039,
+          "std_similarity": 0.1403742616391695
+        }
+      }
+    },
+    "multilingual-e5-large-instruct": {
+      "model_name": "multilingual-e5-large-instruct",
+      "method_type": "baseline",
+      "source": "huggingface",
+      "path_or_id": "intfloat/multilingual-e5-large-instruct",
+      "metrics": {
+        "calibration": {
+          "spearman": 0.5431830834128882,
+          "pearson": 0.5343033312057082,
+          "roc_auc": 0.8136,
+          "pr_auc": 0.8548514685947686,
+          "f1": 0.7357142857142858,
+          "accuracy": 0.7533333333333333,
+          "threshold": 0.8700000000000001,
+          "spearman_ci": [
+            0.4666547517439432,
+            0.6429741332887661
+          ],
+          "roc_auc_ci": [
+            0.7694746282657592,
+            0.8738734764173742
+          ],
+          "mean_similarity": 0.8749667523304622,
+          "std_similarity": 0.036214294675732187,
+          "best_calibration_f1": 0.7357142857142858
+        },
+        "evaluation": {
+          "spearman": 0.4639848969295774,
+          "pearson": 0.4854360490916278,
+          "roc_auc": 0.7678775510204082,
+          "pr_auc": 0.8197696571035865,
+          "f1": 0.6709470304975923,
+          "accuracy": 0.7071428571428572,
+          "threshold": 0.8700000000000001,
+          "spearman_ci": [
+            0.3870207838824328,
+            0.5167251952053014
+          ],
+          "roc_auc_ci": [
+            0.7235136907554813,
+            0.7984742443526452
+          ],
+          "mean_similarity": 0.8721321026768003,
+          "std_similarity": 0.03215590547905492
+        }
+      }
+    },
+    "bge-m3": {
+      "model_name": "bge-m3",
+      "method_type": "baseline",
+      "source": "huggingface",
+      "path_or_id": "BAAI/bge-m3",
+      "metrics": {
+        "calibration": {
+          "spearman": 0.5631213513556231,
+          "pearson": 0.5425933964687523,
+          "roc_auc": 0.8251111111111111,
+          "pr_auc": 0.8629277601090289,
+          "f1": 0.7553956834532374,
+          "accuracy": 0.7733333333333333,
+          "threshold": 0.53,
+          "spearman_ci": [
+            0.4929754591830585,
+            0.655983726882846
+          ],
+          "roc_auc_ci": [
+            0.7846623585943414,
+            0.8795413085416295
+          ],
+          "mean_similarity": 0.5580157209436098,
+          "std_similarity": 0.1340291672563478,
+          "best_calibration_f1": 0.7553956834532374
+        },
+        "evaluation": {
+          "spearman": 0.44645202256746624,
+          "pearson": 0.4694197907861404,
+          "roc_auc": 0.7577551020408163,
+          "pr_auc": 0.8109632007137573,
+          "f1": 0.6813186813186813,
+          "accuracy": 0.71,
+          "threshold": 0.53,
+          "spearman_ci": [
+            0.38464661486611884,
+            0.5033323604591298
+          ],
+          "roc_auc_ci": [
+            0.7222018127431429,
+            0.7906706645246674
+          ],
+          "mean_similarity": 0.5457295336467879,
+          "std_similarity": 0.1203543844708333
+        }
+      }
+    },
+    "gte-multilingual-base": {
+      "model_name": "gte-multilingual-base",
+      "method_type": "baseline",
+      "source": "huggingface",
+      "path_or_id": "Alibaba-NLP/gte-multilingual-base",
+      "metrics": {
+        "calibration": {
+          "spearman": 0.5860576739394799,
+          "pearson": 0.5601387183158155,
+          "roc_auc": 0.8383555555555556,
+          "pr_auc": 0.8660784911480195,
+          "f1": 0.7719298245614035,
+          "accuracy": 0.7833333333333333,
+          "threshold": 0.615,
+          "spearman_ci": [
+            0.5107002113971267,
+            0.6661705108046653
+          ],
+          "roc_auc_ci": [
+            0.7948712667756371,
+            0.8850470597529406
+          ],
+          "mean_similarity": 0.6386645794908206,
+          "std_similarity": 0.11044656895923832,
+          "best_calibration_f1": 0.7719298245614035
+        },
+        "evaluation": {
+          "spearman": 0.4145643714975427,
+          "pearson": 0.4516223029630203,
+          "roc_auc": 0.7393469387755102,
+          "pr_auc": 0.7775955788057411,
+          "f1": 0.639269406392694,
+          "accuracy": 0.6614285714285715,
+          "threshold": 0.615,
+          "spearman_ci": [
+            0.3474361401222021,
+            0.464555756321948
+          ],
+          "roc_auc_ci": [
+            0.7006303945898087,
+            0.7682122273380356
+          ],
+          "mean_similarity": 0.6280566997187478,
+          "std_similarity": 0.09844454908770055
+        }
+      }
+    },
+    "jina-embeddings-v3": {
+      "model_name": "jina-embeddings-v3",
+      "method_type": "baseline",
+      "source": "huggingface",
+      "path_or_id": "jinaai/jina-embeddings-v3",
+      "metrics": {
+        "calibration": {
+          "spearman": 0.5304730817141339,
+          "pearson": 0.5370734702019283,
+          "roc_auc": 0.8062666666666667,
+          "pr_auc": 0.8409796879138972,
+          "f1": 0.7581699346405228,
+          "accuracy": 0.7533333333333333,
+          "threshold": 0.635,
+          "spearman_ci": [
+            0.45680477820333804,
+            0.6201856426607761
+          ],
+          "roc_auc_ci": [
+            0.7637403595164814,
+            0.8581297480059877
+          ],
+          "mean_similarity": 0.6710960298776627,
+          "std_similarity": 0.11390273249054009,
+          "best_calibration_f1": 0.7581699346405228
+        },
+        "evaluation": {
+          "spearman": 0.4142087260655377,
+          "pearson": 0.4528666977210292,
+          "roc_auc": 0.7391428571428571,
+          "pr_auc": 0.7865352828174981,
+          "f1": 0.6870653685674548,
+          "accuracy": 0.6785714285714286,
+          "threshold": 0.635,
+          "spearman_ci": [
+            0.34648353423310707,
+            0.47055286490979026
+          ],
+          "roc_auc_ci": [
+            0.7002249635190003,
+            0.7718446576002267
+          ],
+          "mean_similarity": 0.6582466926319258,
+          "std_similarity": 0.10366801219425988
+        }
+      }
+    },
+    "nomic-embed-text-v2-moe": {
+      "model_name": "nomic-embed-text-v2-moe",
+      "method_type": "baseline",
+      "source": "huggingface",
+      "path_or_id": "nomic-ai/nomic-embed-text-v2-moe",
+      "metrics": {
+        "calibration": {
+          "spearman": 0.5677372270691035,
+          "pearson": 0.5311751096996172,
+          "roc_auc": 0.8277777777777777,
+          "pr_auc": 0.858694186146047,
+          "f1": 0.7470588235294118,
+          "accuracy": 0.7133333333333334,
+          "threshold": 0.3700000000000001,
+          "spearman_ci": [
+            0.4916159352445786,
+            0.651086227190013
+          ],
+          "roc_auc_ci": [
+            0.7838638551615523,
+            0.8766934255070592
+          ],
+          "mean_similarity": 0.4418139108022054,
+          "std_similarity": 0.15028280964439197,
+          "best_calibration_f1": 0.7470588235294118
+        },
+        "evaluation": {
+          "spearman": 0.4123431051509444,
+          "pearson": 0.4464516528217893,
+          "roc_auc": 0.738065306122449,
+          "pr_auc": 0.7906290995201457,
+          "f1": 0.6778783958602846,
+          "accuracy": 0.6442857142857142,
+          "threshold": 0.3700000000000001,
+          "spearman_ci": [
+            0.3445422833315508,
+            0.460909518261072
+          ],
+          "roc_auc_ci": [
+            0.6989845701130724,
+            0.7661089407192381
+          ],
+          "mean_similarity": 0.4258147409984044,
+          "std_similarity": 0.1357507235867421
+        }
+      }
+    },
+    "all-MiniLM-L12-v2": {
+      "model_name": "all-MiniLM-L12-v2",
+      "method_type": "baseline",
+      "source": "sentence-transformers",
+      "path_or_id": "sentence-transformers/all-MiniLM-L12-v2",
+      "metrics": {
+        "calibration": {
+          "spearman": 0.3798248146755106,
+          "pearson": 0.4626226439495206,
+          "roc_auc": 0.719288888888889,
+          "pr_auc": 0.804125900290208,
+          "f1": 0.6865671641791045,
+          "accuracy": 0.72,
+          "threshold": 0.375,
+          "spearman_ci": [
+            0.28832585122063165,
+            0.4971659007306548
+          ],
+          "roc_auc_ci": [
+            0.6673896267372261,
+            0.7882738295761494
+          ],
+          "mean_similarity": 0.4017172556122144,
+          "std_similarity": 0.21223316780298657,
+          "best_calibration_f1": 0.6865671641791045
+        },
+        "evaluation": {
+          "spearman": 0.36751145110842515,
+          "pearson": 0.43787652950480566,
+          "roc_auc": 0.7121795918367346,
+          "pr_auc": 0.7748384459927744,
+          "f1": 0.6260032102728732,
+          "accuracy": 0.6671428571428571,
+          "threshold": 0.375,
+          "spearman_ci": [
+            0.30243713025075014,
+            0.42392081337643217
+          ],
+          "roc_auc_ci": [
+            0.6746658934032047,
+            0.7447579159410566
+          ],
+          "mean_similarity": 0.38362012871141943,
+          "std_similarity": 0.19939051619981485
+        }
+      }
+    },
+    "qwen3-embedding-0.6b": {
+      "model_name": "qwen3-embedding-0.6b",
+      "method_type": "baseline",
+      "source": "huggingface",
+      "path_or_id": "Qwen/Qwen3-Embedding-0.6B",
+      "metrics": {
+        "calibration": {
+          "spearman": 0.5244716861573286,
+          "pearson": 0.5312281655446915,
+          "roc_auc": 0.8028,
+          "pr_auc": 0.8385934821759236,
+          "f1": 0.7374005305039788,
+          "accuracy": 0.67,
+          "threshold": 0.405,
+          "spearman_ci": [
+            0.44768732109957293,
+            0.6159660673391869
+          ],
+          "roc_auc_ci": [
+            0.7584978186598252,
+            0.855716438480921
+          ],
+          "mean_similarity": 0.5186879192789395,
+          "std_similarity": 0.1576400658018827,
+          "best_calibration_f1": 0.7374005305039788
+        },
+        "evaluation": {
+          "spearman": 0.49133839448791217,
+          "pearson": 0.504829343461809,
+          "roc_auc": 0.7836734693877552,
+          "pr_auc": 0.8254059207340113,
+          "f1": 0.6941964285714286,
+          "accuracy": 0.6085714285714285,
+          "threshold": 0.405,
+          "spearman_ci": [
+            0.4245023022645206,
+            0.5428899801291881
+          ],
+          "roc_auc_ci": [
+            0.7451634679390671,
+            0.8138862892382016
+          ],
+          "mean_similarity": 0.5085355799538749,
+          "std_similarity": 0.14186674840592167
+        }
+      }
+    }
+  },
+  "method_summary": {
+    "retrieval": {
+      "baseline": {
+        "best_model": "qwen3-embedding-0.6b",
+        "best_spearman": 0.49133839448791217,
+        "best_roc_auc": 0.7836734693877552,
+        "best_f1": 0.6941964285714286,
+        "median_spearman": 0.41749899216347797,
+        "median_roc_auc": 0.7410408163265305,
+        "median_f1": 0.6795985385894829
+      },
+      "supervised": {
+        "best_model": "supervised_v4_cosine",
+        "best_spearman": 0.47591393835176804,
+        "best_roc_auc": 0.7747673469387756,
+        "best_f1": 0.7144654088050314,
+        "median_spearman": 0.47591393835176804,
+        "median_roc_auc": 0.7747673469387756,
+        "median_f1": 0.7144654088050314
+      },
+      "unsupervised": {
+        "best_model": "unsupervised_simcse_best",
+        "best_spearman": 0.480160379070532,
+        "best_roc_auc": 0.7772163265306125,
+        "best_f1": 0.7181571815718157,
+        "median_spearman": 0.480160379070532,
+        "median_roc_auc": 0.7772163265306125,
+        "median_f1": 0.7181571815718157
+      }
+    },
+    "cluster_evidence": {
+      "baseline": {
+        "median_kmeans_silhouette": 0.02630343846976757,
+        "best_kmeans_silhouette": 0.04186083748936653
+      },
+      "supervised": {
+        "median_kmeans_silhouette": 0.03521369397640228,
+        "best_kmeans_silhouette": 0.03521369397640228
+      },
+      "unsupervised": {
+        "median_kmeans_silhouette": 0.051758088171482086,
+        "best_kmeans_silhouette": 0.051758088171482086
+      }
+    }
+  },
+  "cluster_summary": {
+    "global_k": 10,
+    "hdbscan_discovered_clusters": [],
+    "per_model": {
+      "qwen3-embedding-0.6b": {
+        "hdbscan": {
+          "available": false,
+          "reason": "No module named 'hdbscan'"
+        },
+        "kmeans": {
+          "n_clusters": 10,
+          "noise_ratio": 0.0,
+          "silhouette": 0.022341106086969376,
+          "calinski_harabasz": 19.40181152832862,
+          "davies_bouldin": 3.999642287407508
+        }
+      },
+      "all-mpnet-base-v2": {
+        "hdbscan": {
+          "available": false,
+          "reason": "No module named 'hdbscan'"
+        },
+        "kmeans": {
+          "n_clusters": 10,
+          "noise_ratio": 0.0,
+          "silhouette": 0.04186083748936653,
+          "calinski_harabasz": 20.86281223811302,
+          "davies_bouldin": 3.795433199025343
+        }
+      },
+      "unsupervised_simcse_best": {
+        "hdbscan": {
+          "available": false,
+          "reason": "No module named 'hdbscan'"
+        },
+        "kmeans": {
+          "n_clusters": 10,
+          "noise_ratio": 0.0,
+          "silhouette": 0.051758088171482086,
+          "calinski_harabasz": 18.911027104065788,
+          "davies_bouldin": 3.7236645240565607
+        }
+      },
+      "supervised_v4_cosine": {
+        "hdbscan": {
+          "available": false,
+          "reason": "No module named 'hdbscan'"
+        },
+        "kmeans": {
+          "n_clusters": 10,
+          "noise_ratio": 0.0,
+          "silhouette": 0.03521369397640228,
+          "calinski_harabasz": 23.549077503796415,
+          "davies_bouldin": 3.661201984047055
+        }
+      },
+      "multilingual-e5-large-instruct": {
+        "hdbscan": {
+          "available": false,
+          "reason": "No module named 'hdbscan'"
+        },
+        "kmeans": {
+          "n_clusters": 10,
+          "noise_ratio": 0.0,
+          "silhouette": 0.01743188686668873,
+          "calinski_harabasz": 17.997678660850102,
+          "davies_bouldin": 3.825396748836213
+        }
+      },
+      "bge-m3": {
+        "hdbscan": {
+          "available": false,
+          "reason": "No module named 'hdbscan'"
+        },
+        "kmeans": {
+          "n_clusters": 10,
+          "noise_ratio": 0.0,
+          "silhouette": 0.013714559376239777,
+          "calinski_harabasz": 16.157344821786495,
+          "davies_bouldin": 4.205518465264236
+        }
+      },
+      "all-MiniLM-L6-v2": {
+        "hdbscan": {
+          "available": false,
+          "reason": "No module named 'hdbscan'"
+        },
+        "kmeans": {
+          "n_clusters": 10,
+          "noise_ratio": 0.0,
+          "silhouette": 0.030332354828715324,
+          "calinski_harabasz": 20.128227457088418,
+          "davies_bouldin": 4.049742313298424
+        }
+      },
+      "gte-multilingual-base": {
+        "hdbscan": {
+          "available": false,
+          "reason": "No module named 'hdbscan'"
+        },
+        "kmeans": {
+          "n_clusters": 10,
+          "noise_ratio": 0.0,
+          "silhouette": 0.028769226744771004,
+          "calinski_harabasz": 18.121906165299517,
+          "davies_bouldin": 4.126255341063922
+        }
+      },
+      "jina-embeddings-v3": {
+        "hdbscan": {
+          "available": false,
+          "reason": "No module named 'hdbscan'"
+        },
+        "kmeans": {
+          "n_clusters": 10,
+          "noise_ratio": 0.0,
+          "silhouette": 0.023754814639687538,
+          "calinski_harabasz": 19.56526237849235,
+          "davies_bouldin": 3.8704490885207656
+        }
+      },
+      "nomic-embed-text-v2-moe": {
+        "hdbscan": {
+          "available": false,
+          "reason": "No module named 'hdbscan'"
+        },
+        "kmeans": {
+          "n_clusters": 10,
+          "noise_ratio": 0.0,
+          "silhouette": 0.02942262962460518,
+          "calinski_harabasz": 16.0395459426005,
+          "davies_bouldin": 4.5523719696192275
+        }
+      },
+      "embeddinggemma-300m": {
+        "hdbscan": {
+          "available": false,
+          "reason": "No module named 'hdbscan'"
+        },
+        "kmeans": {
+          "n_clusters": 10,
+          "noise_ratio": 0.0,
+          "silhouette": 0.023837650194764137,
+          "calinski_harabasz": 15.984830773739889,
+          "davies_bouldin": 4.366746985127745
+        }
+      },
+      "all-MiniLM-L12-v2": {
+        "hdbscan": {
+          "available": false,
+          "reason": "No module named 'hdbscan'"
+        },
+        "kmeans": {
+          "n_clusters": 10,
+          "noise_ratio": 0.0,
+          "silhouette": 0.038067542016506195,
+          "calinski_harabasz": 19.881253346341342,
+          "davies_bouldin": 4.064309104073781
+        }
+      }
+    },
+    "cluster_report_csv": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\supervised_vs_unsupervised_analysis\\20260210_032942\\cluster_report.csv",
+    "cluster_report_json": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\supervised_vs_unsupervised_analysis\\20260210_032942\\cluster_report.json"
+  },
+  "graph_summary": {
+    "qwen3-embedding-0.6b": {
+      "nodes": 1000,
+      "edges": 8074,
+      "avg_degree": 16.148,
+      "n_components": 1,
+      "min_edge_weight": 0.35,
+      "graph_path": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\supervised_vs_unsupervised_analysis\\20260210_032942\\semantic_graph_qwen3-embedding-0.6b.png"
+    },
+    "all-mpnet-base-v2": {
+      "nodes": 1000,
+      "edges": 7584,
+      "avg_degree": 15.168,
+      "n_components": 9,
+      "min_edge_weight": 0.35,
+      "graph_path": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\supervised_vs_unsupervised_analysis\\20260210_032942\\semantic_graph_all-mpnet-base-v2.png"
+    },
+    "unsupervised_simcse_best": {
+      "nodes": 1000,
+      "edges": 4016,
+      "avg_degree": 8.032,
+      "n_components": 61,
+      "min_edge_weight": 0.35,
+      "graph_path": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\supervised_vs_unsupervised_analysis\\20260210_032942\\semantic_graph_unsupervised_simcse_best.png"
+    },
+    "supervised_v4_cosine": {
+      "nodes": 1000,
+      "edges": 7745,
+      "avg_degree": 15.49,
+      "n_components": 12,
+      "min_edge_weight": 0.35,
+      "graph_path": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\supervised_vs_unsupervised_analysis\\20260210_032942\\semantic_graph_supervised_v4_cosine.png"
+    },
+    "multilingual-e5-large-instruct": {
+      "nodes": 1000,
+      "edges": 7809,
+      "avg_degree": 15.618,
+      "n_components": 1,
+      "min_edge_weight": 0.35,
+      "graph_path": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\supervised_vs_unsupervised_analysis\\20260210_032942\\semantic_graph_multilingual-e5-large-instruct.png"
+    },
+    "bge-m3": {
+      "nodes": 1000,
+      "edges": 7829,
+      "avg_degree": 15.658,
+      "n_components": 1,
+      "min_edge_weight": 0.35,
+      "graph_path": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\supervised_vs_unsupervised_analysis\\20260210_032942\\semantic_graph_bge-m3.png"
+    },
+    "all-MiniLM-L6-v2": {
+      "nodes": 1000,
+      "edges": 7282,
+      "avg_degree": 14.564,
+      "n_components": 13,
+      "min_edge_weight": 0.35,
+      "graph_path": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\supervised_vs_unsupervised_analysis\\20260210_032942\\semantic_graph_all-MiniLM-L6-v2.png"
+    },
+    "gte-multilingual-base": {
+      "nodes": 1000,
+      "edges": 7782,
+      "avg_degree": 15.564,
+      "n_components": 1,
+      "min_edge_weight": 0.35,
+      "graph_path": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\supervised_vs_unsupervised_analysis\\20260210_032942\\semantic_graph_gte-multilingual-base.png"
+    },
+    "jina-embeddings-v3": {
+      "nodes": 1000,
+      "edges": 7887,
+      "avg_degree": 15.774,
+      "n_components": 1,
+      "min_edge_weight": 0.35,
+      "graph_path": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\supervised_vs_unsupervised_analysis\\20260210_032942\\semantic_graph_jina-embeddings-v3.png"
+    },
+    "nomic-embed-text-v2-moe": {
+      "nodes": 1000,
+      "edges": 7430,
+      "avg_degree": 14.86,
+      "n_components": 6,
+      "min_edge_weight": 0.35,
+      "graph_path": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\supervised_vs_unsupervised_analysis\\20260210_032942\\semantic_graph_nomic-embed-text-v2-moe.png"
+    },
+    "embeddinggemma-300m": {
+      "nodes": 1000,
+      "edges": 7535,
+      "avg_degree": 15.07,
+      "n_components": 1,
+      "min_edge_weight": 0.35,
+      "graph_path": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\supervised_vs_unsupervised_analysis\\20260210_032942\\semantic_graph_embeddinggemma-300m.png"
+    },
+    "all-MiniLM-L12-v2": {
+      "nodes": 1000,
+      "edges": 7289,
+      "avg_degree": 14.578,
+      "n_components": 5,
+      "min_edge_weight": 0.35,
+      "graph_path": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\supervised_vs_unsupervised_analysis\\20260210_032942\\semantic_graph_all-MiniLM-L12-v2.png"
+    }
+  },
+  "winner": {
+    "winner_model": "qwen3-embedding-0.6b",
+    "winner_method_type": "baseline",
+    "decision_rule": "retrieval_first_spearman_then_roc_auc_then_f1",
+    "retrieval_metrics": {
+      "spearman": 0.49133839448791217,
+      "roc_auc": 0.7836734693877552,
+      "pr_auc": 0.8254059207340113,
+      "f1": 0.6941964285714286
+    },
+    "cluster_evidence": {
+      "baseline": {
+        "median_kmeans_silhouette": 0.02630343846976757,
+        "best_kmeans_silhouette": 0.04186083748936653
+      },
+      "supervised": {
+        "median_kmeans_silhouette": 0.03521369397640228,
+        "best_kmeans_silhouette": 0.03521369397640228
+      },
+      "unsupervised": {
+        "median_kmeans_silhouette": 0.051758088171482086,
+        "best_kmeans_silhouette": 0.051758088171482086
+      }
+    }
+  }
+}

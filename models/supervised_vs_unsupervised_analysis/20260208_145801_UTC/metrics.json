@@ -1,0 +1,369 @@
+{
+  "run_metadata": {
+    "timestamp": "20260208_145801_UTC",
+    "project_root": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism",
+    "output_root": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\supervised_vs_unsupervised_analysis\\20260208_145801_UTC",
+    "device": "cuda",
+    "seed": 42,
+    "research_mode": true,
+    "data_path": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\data_new\\incident_ticket_data_redacted.csv",
+    "test_pairs_path": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\data_new\\fixed_test_pairs.json",
+    "corpus_text_count": 984,
+    "pair_count": 1000,
+    "failed_models": {}
+  },
+  "model_metrics": {
+    "all-mpnet-base-v2": {
+      "model_name": "all-mpnet-base-v2",
+      "method_type": "baseline",
+      "source": "sentence-transformers",
+      "path_or_id": "sentence-transformers/all-mpnet-base-v2",
+      "metrics": {
+        "calibration": {
+          "spearman": 0.5751613195999801,
+          "pearson": 0.579562967779817,
+          "roc_auc": 0.832065306122449,
+          "pr_auc": 0.8678636030085671,
+          "f1": 0.7423167848699763,
+          "accuracy": 0.6885714285714286,
+          "threshold": 0.3400000000000001,
+          "spearman_ci": [
+            0.4945146470621004,
+            0.6398059878577295
+          ],
+          "roc_auc_ci": [
+            0.785727944343246,
+            0.8694883477561393
+          ],
+          "mean_similarity": 0.46083890611571926,
+          "std_similarity": 0.19512849374254299,
+          "best_calibration_f1": 0.7423167848699763
+        },
+        "evaluation": {
+          "spearman": 0.4622789975137187,
+          "pearson": 0.4932494959343523,
+          "roc_auc": 0.7668923076923078,
+          "pr_auc": 0.8131740565856328,
+          "f1": 0.6973848069738481,
+          "accuracy": 0.6261538461538462,
+          "threshold": 0.3400000000000001,
+          "spearman_ci": [
+            0.391112025908813,
+            0.522149353563606
+          ],
+          "roc_auc_ci": [
+            0.7262678569801179,
+            0.8016502696523929
+          ],
+          "mean_similarity": 0.4410262980713294,
+          "std_similarity": 0.16737145457212949
+        }
+      }
+    },
+    "unsupervised_simcse_best": {
+      "model_name": "unsupervised_simcse_best",
+      "method_type": "unsupervised",
+      "source": "local_or_trained",
+      "path_or_id": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\unsupervised_simcse\\simcse_20260206_145625",
+      "metrics": {
+        "calibration": {
+          "spearman": 0.5471644851087342,
+          "pearson": 0.5440524151749347,
+          "roc_auc": 0.8159020408163266,
+          "pr_auc": 0.8591245035910904,
+          "f1": 0.7603305785123967,
+          "accuracy": 0.7514285714285714,
+          "threshold": 0.16999999999999993,
+          "spearman_ci": [
+            0.4645668739857645,
+            0.6216216870732927
+          ],
+          "roc_auc_ci": [
+            0.7682456943982301,
+            0.8588965800817538
+          ],
+          "mean_similarity": 0.26994690051568404,
+          "std_similarity": 0.24464119617257216,
+          "best_calibration_f1": 0.7603305785123967
+        },
+        "evaluation": {
+          "spearman": 0.4610163209805407,
+          "pearson": 0.47650613808048864,
+          "roc_auc": 0.7661633136094674,
+          "pr_auc": 0.8129470397966401,
+          "f1": 0.7142857142857143,
+          "accuracy": 0.6984615384615385,
+          "threshold": 0.16999999999999993,
+          "spearman_ci": [
+            0.3929923405580752,
+            0.5227155115480838
+          ],
+          "roc_auc_ci": [
+            0.7272344888604985,
+            0.8019207824877939
+          ],
+          "mean_similarity": 0.2452846426058274,
+          "std_similarity": 0.21325102468279747
+        }
+      }
+    },
+    "supervised_v4_cosine": {
+      "model_name": "supervised_v4_cosine",
+      "method_type": "supervised",
+      "source": "local",
+      "path_or_id": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\real_servicenow_finetuned_mpnet_lora\\real_servicenow_v2_20260104_2321",
+      "metrics": {
+        "calibration": {
+          "spearman": 0.5779320296577715,
+          "pearson": 0.5929744308169426,
+          "roc_auc": 0.833665306122449,
+          "pr_auc": 0.8674659710491841,
+          "f1": 0.7580174927113703,
+          "accuracy": 0.7628571428571429,
+          "threshold": 0.44999999999999996,
+          "spearman_ci": [
+            0.49632278605299385,
+            0.6446465549714177
+          ],
+          "roc_auc_ci": [
+            0.7871457619240625,
+            0.8728058569178482
+          ],
+          "mean_similarity": 0.4990744648022311,
+          "std_similarity": 0.2266828838068974,
+          "best_calibration_f1": 0.7580174927113703
+        },
+        "evaluation": {
+          "spearman": 0.4572402791617078,
+          "pearson": 0.4897026195070323,
+          "roc_auc": 0.763985798816568,
+          "pr_auc": 0.8006238661921568,
+          "f1": 0.6698412698412698,
+          "accuracy": 0.68,
+          "threshold": 0.44999999999999996,
+          "spearman_ci": [
+            0.3878667915456634,
+            0.5264418117735374
+          ],
+          "roc_auc_ci": [
+            0.7240009686400897,
+            0.8042647006130197
+          ],
+          "mean_similarity": 0.47428182310782946,
+          "std_similarity": 0.20599451545802058
+        }
+      }
+    },
+    "all-MiniLM-L6-v2": {
+      "model_name": "all-MiniLM-L6-v2",
+      "method_type": "baseline",
+      "source": "sentence-transformers",
+      "path_or_id": "sentence-transformers/all-MiniLM-L6-v2",
+      "metrics": {
+        "calibration": {
+          "spearman": 0.5431509626097577,
+          "pearson": 0.5409815600226181,
+          "roc_auc": 0.8135836734693878,
+          "pr_auc": 0.8448333245747435,
+          "f1": 0.7593582887700535,
+          "accuracy": 0.7428571428571429,
+          "threshold": 0.33000000000000007,
+          "spearman_ci": [
+            0.45948363160703937,
+            0.6218274592782149
+          ],
+          "roc_auc_ci": [
+            0.7655767647287214,
+            0.8600894370779278
+          ],
+          "mean_similarity": 0.39813508774553025,
+          "std_similarity": 0.18948783125511462,
+          "best_calibration_f1": 0.7593582887700535
+        },
+        "evaluation": {
+          "spearman": 0.3991271373829074,
+          "pearson": 0.42802891101908785,
+          "roc_auc": 0.7304331360946745,
+          "pr_auc": 0.7732401745491235,
+          "f1": 0.6998577524893315,
+          "accuracy": 0.6753846153846154,
+          "threshold": 0.33000000000000007,
+          "spearman_ci": [
+            0.319379951522302,
+            0.46386878024022715
+          ],
+          "roc_auc_ci": [
+            0.6846412850241863,
+            0.768136383978226
+          ],
+          "mean_similarity": 0.38527648494220695,
+          "std_similarity": 0.16541411381607207
+        }
+      }
+    }
+  },
+  "method_summary": {
+    "retrieval": {
+      "baseline": {
+        "best_model": "all-mpnet-base-v2",
+        "best_spearman": 0.4622789975137187,
+        "best_roc_auc": 0.7668923076923078,
+        "best_f1": 0.6973848069738481,
+        "median_spearman": 0.43070306744831305,
+        "median_roc_auc": 0.7486627218934911,
+        "median_f1": 0.6986212797315898
+      },
+      "supervised": {
+        "best_model": "supervised_v4_cosine",
+        "best_spearman": 0.4572402791617078,
+        "best_roc_auc": 0.763985798816568,
+        "best_f1": 0.6698412698412698,
+        "median_spearman": 0.4572402791617078,
+        "median_roc_auc": 0.763985798816568,
+        "median_f1": 0.6698412698412698
+      },
+      "unsupervised": {
+        "best_model": "unsupervised_simcse_best",
+        "best_spearman": 0.4610163209805407,
+        "best_roc_auc": 0.7661633136094674,
+        "best_f1": 0.7142857142857143,
+        "median_spearman": 0.4610163209805407,
+        "median_roc_auc": 0.7661633136094674,
+        "median_f1": 0.7142857142857143
+      }
+    },
+    "cluster_evidence": {
+      "baseline": {
+        "median_kmeans_silhouette": 0.03310490120202303,
+        "best_kmeans_silhouette": 0.04250653088092804
+      },
+      "supervised": {
+        "median_kmeans_silhouette": 0.0384325310587883,
+        "best_kmeans_silhouette": 0.0384325310587883
+      },
+      "unsupervised": {
+        "median_kmeans_silhouette": 0.04970310628414154,
+        "best_kmeans_silhouette": 0.04970310628414154
+      }
+    }
+  },
+  "cluster_summary": {
+    "global_k": 10,
+    "hdbscan_discovered_clusters": [],
+    "per_model": {
+      "all-mpnet-base-v2": {
+        "hdbscan": {
+          "available": false,
+          "reason": "No module named 'hdbscan'"
+        },
+        "kmeans": {
+          "n_clusters": 10,
+          "noise_ratio": 0.0,
+          "silhouette": 0.04250653088092804,
+          "calinski_harabasz": 20.68404416506311,
+          "davies_bouldin": 3.7035633987207524
+        }
+      },
+      "unsupervised_simcse_best": {
+        "hdbscan": {
+          "available": false,
+          "reason": "No module named 'hdbscan'"
+        },
+        "kmeans": {
+          "n_clusters": 10,
+          "noise_ratio": 0.0,
+          "silhouette": 0.04970310628414154,
+          "calinski_harabasz": 18.57773988744126,
+          "davies_bouldin": 3.8495112827628133
+        }
+      },
+      "supervised_v4_cosine": {
+        "hdbscan": {
+          "available": false,
+          "reason": "No module named 'hdbscan'"
+        },
+        "kmeans": {
+          "n_clusters": 10,
+          "noise_ratio": 0.0,
+          "silhouette": 0.0384325310587883,
+          "calinski_harabasz": 23.31724947100211,
+          "davies_bouldin": 3.6809954415108104
+        }
+      },
+      "all-MiniLM-L6-v2": {
+        "hdbscan": {
+          "available": false,
+          "reason": "No module named 'hdbscan'"
+        },
+        "kmeans": {
+          "n_clusters": 10,
+          "noise_ratio": 0.0,
+          "silhouette": 0.02370327152311802,
+          "calinski_harabasz": 19.657225563558132,
+          "davies_bouldin": 3.8557547676039627
+        }
+      }
+    },
+    "cluster_report_csv": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\supervised_vs_unsupervised_analysis\\20260208_145801_UTC\\cluster_report.csv",
+    "cluster_report_json": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\supervised_vs_unsupervised_analysis\\20260208_145801_UTC\\cluster_report.json"
+  },
+  "graph_summary": {
+    "all-mpnet-base-v2": {
+      "nodes": 984,
+      "edges": 7486,
+      "avg_degree": 15.215447154471544,
+      "n_components": 8,
+      "min_edge_weight": 0.35,
+      "graph_path": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\supervised_vs_unsupervised_analysis\\20260208_145801_UTC\\semantic_graph_all-mpnet-base-v2.png"
+    },
+    "unsupervised_simcse_best": {
+      "nodes": 984,
+      "edges": 3965,
+      "avg_degree": 8.058943089430894,
+      "n_components": 60,
+      "min_edge_weight": 0.35,
+      "graph_path": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\supervised_vs_unsupervised_analysis\\20260208_145801_UTC\\semantic_graph_unsupervised_simcse_best.png"
+    },
+    "supervised_v4_cosine": {
+      "nodes": 984,
+      "edges": 7640,
+      "avg_degree": 15.528455284552846,
+      "n_components": 11,
+      "min_edge_weight": 0.35,
+      "graph_path": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\supervised_vs_unsupervised_analysis\\20260208_145801_UTC\\semantic_graph_supervised_v4_cosine.png"
+    },
+    "all-MiniLM-L6-v2": {
+      "nodes": 984,
+      "edges": 7195,
+      "avg_degree": 14.623983739837398,
+      "n_components": 11,
+      "min_edge_weight": 0.35,
+      "graph_path": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\supervised_vs_unsupervised_analysis\\20260208_145801_UTC\\semantic_graph_all-MiniLM-L6-v2.png"
+    }
+  },
+  "winner": {
+    "winner_model": "all-mpnet-base-v2",
+    "winner_method_type": "baseline",
+    "decision_rule": "retrieval_first_spearman_then_roc_auc_then_f1",
+    "retrieval_metrics": {
+      "spearman": 0.4622789975137187,
+      "roc_auc": 0.7668923076923078,
+      "pr_auc": 0.8131740565856328,
+      "f1": 0.6973848069738481
+    },
+    "cluster_evidence": {
+      "baseline": {
+        "median_kmeans_silhouette": 0.03310490120202303,
+        "best_kmeans_silhouette": 0.04250653088092804
+      },
+      "supervised": {
+        "median_kmeans_silhouette": 0.0384325310587883,
+        "best_kmeans_silhouette": 0.0384325310587883
+      },
+      "unsupervised": {
+        "median_kmeans_silhouette": 0.04970310628414154,
+        "best_kmeans_silhouette": 0.04970310628414154
+      }
+    }
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "timestamp": "20260206_125107",
+  "test_pairs_count": 1000,
+  "models_tested": [
+    "all-mpnet-base-v2",
+    "all-MiniLM-L6-v2",
+    "EmbeddingGemma-300M",
+    "bge-base-en-v1.5",
+    "e5-base-v2",
+    "bge-large-en-v1.5",
+    "bge-m3",
+    "NV-Embed-v2",
+    "e5-mistral-7b",
+    "gte-Qwen2-7B",
+    "V4 Cosine"
+  ],
+  "results": {
+    "all-mpnet-base-v2": {
+      "error": "MPNetModel.__init__() got an unexpected keyword argument 'use_cache'",
+      "model_name": "all-mpnet-base-v2",
+      "params": "109M",
+      "dims": 768,
+      "source": "Baseline"
+    },
+    "all-MiniLM-L6-v2": {
+      "error": "BertModel.__init__() got an unexpected keyword argument 'use_cache'",
+      "model_name": "all-MiniLM-L6-v2",
+      "params": "22M",
+      "dims": 384,
+      "source": "Form B"
+    },
+    "EmbeddingGemma-300M": {
+      "error": "Gemma3TextModel.__init__() got an unexpected keyword argument 'use_cache'",
+      "model_name": "EmbeddingGemma-300M",
+      "params": "300M",
+      "dims": 768,
+      "source": "Form B"
+    },
+    "bge-base-en-v1.5": {
+      "error": "BertModel.__init__() got an unexpected keyword argument 'use_cache'",
+      "model_name": "bge-base-en-v1.5",
+      "params": "109M",
+      "dims": 768,
+      "source": "MTEB (44.52)"
+    },
+    "e5-base-v2": {
+      "error": "BertModel.__init__() got an unexpected keyword argument 'use_cache'",
+      "model_name": "e5-base-v2",
+      "params": "109M",
+      "dims": 768,
+      "source": "MTEB (45.98)"
+    },
+    "bge-large-en-v1.5": {
+      "error": "BertModel.__init__() got an unexpected keyword argument 'use_cache'",
+      "model_name": "bge-large-en-v1.5",
+      "params": "335M",
+      "dims": 1024,
+      "source": "MTEB (45.08)"
+    },
+    "bge-m3": {
+      "error": "XLMRobertaModel.__init__() got an unexpected keyword argument 'use_cache'",
+      "model_name": "bge-m3",
+      "params": "568M",
+      "dims": 1024,
+      "source": "MTEB (63.0)"
+    },
+    "NV-Embed-v2": {
+      "error": "NVEmbedModel.__init__() got an unexpected keyword argument 'use_cache'",
+      "model_name": "NV-Embed-v2",
+      "params": "7.8B",
+      "dims": 4096,
+      "source": "MTEB (69.32)"
+    },
+    "e5-mistral-7b": {
+      "error": "MistralModel.__init__() got an unexpected keyword argument 'use_cache'",
+      "model_name": "e5-mistral-7b",
+      "params": "7B",
+      "dims": 4096,
+      "source": "MTEB (61.8)"
+    },
+    "gte-Qwen2-7B": {
+      "error": "Qwen2Model.__init__() got an unexpected keyword argument 'use_cache'",
+      "model_name": "gte-Qwen2-7B",
+      "params": "7B",
+      "dims": 4096,
+      "source": "Form B / MTEB"
+    },
+    "V4 Cosine": {
+      "spearman": 0.5006582452844575,
+      "pearson": 0.526754993085457,
+      "roc_auc": 0.789052,
+      "mean_similarity": 0.4829593002796173,
+      "std_similarity": 0.2137909233570099,
+      "model_name": "V4 Cosine",
+      "params": "109M (fine-tuned)",
+      "dims": 768,
+      "source": "Production"
+    }
+  }
+}

@@ -1,0 +1,362 @@
+[
+  {
+    "model_name":"all-MiniLM-L6-v2",
+    "cluster_algo":"kmeans",
+    "cluster_id":9,
+    "cluster_size":163,
+    "top_terms":"help | 2024 | change | date | material",
+    "representative_text_1":"help , asset name th-l43l410grb2640394 in pgi-wo-2402007218 is already register 14\/05\/2023 but warranty expiry date is 13\/05\/2023 should be 13\/05\/2024 and status wo should be in warranty, current wo is out warranty",
+    "representative_text_2":"dpr 11764\/acxb32c21530-c84\/ it's should have shown in qm01 instead of mm07 when we do draw part return from 541 warehouse, 7954 plant. check."
+  },
+  {
+    "model_name":"all-MiniLM-L6-v2",
+    "cluster_algo":"kmeans",
+    "cluster_id":7,
+    "cluster_size":149,
+    "top_terms":"sap | order | error | sales | check",
+    "representative_text_1":"check this delivery order 3000786322 cannot interface sap",
+    "representative_text_2":"sales order no: pm-sales order-2404003197 dated 18\/4\/24 not link to sap. assist to link urgently."
+  },
+  {
+    "model_name":"all-MiniLM-L6-v2",
+    "cluster_algo":"kmeans",
+    "cluster_id":3,
+    "cluster_size":133,
+    "top_terms":"user | check | attached | error | computer",
+    "representative_text_1":"user : rosemarie ( ac accounting) edo-s1-24003539 posting failed . hlep to investigate .",
+    "representative_text_2":"user: sofia loraine issue: eso-s1-24005475 posting failed message\": \"sales order 110038198 is not yet send to ework\","
+  },
+  {
+    "model_name":"all-MiniLM-L6-v2",
+    "cluster_algo":"kmeans",
+    "cluster_id":5,
+    "cluster_size":123,
+    "top_terms":"order | purchase | purchase order | sales | sales order",
+    "representative_text_1":"help for this issue, part cwa12100105000821 in pgi-sales order-2402001097 status is still backorder it cannot process generated invoiced",
+    "representative_text_2":"pr , purchase order not generated ,"
+  },
+  {
+    "model_name":"all-MiniLM-L6-v2",
+    "cluster_algo":"kmeans",
+    "cluster_id":8,
+    "cluster_size":110,
+    "top_terms":"error | file | check | attached | help",
+    "representative_text_1":"see attached the list of error all these fpl is urgent, help to settle urgently.",
+    "representative_text_2":"error occurred while processing the edi transaction. find the details below and attached is the file associated to the transaction. interface fpl subsidiary pidsap api name pana-pagitp-mgmt-eapi flow direction inbound source system pagitp end system sap s4hana file name yemm_ipl_invoice_754 storage path \/inds\/prod\/inbound\/pidsap\/fpl\/nip\/yemm_ipl_invoice_754_5b714f08-a2f2-43c6-9202-11f60619b576.xml error source mulesoft transaction id 5b714f08-a2f2-43c6-9202-11f60619b576 error summary 500 connectivity error details ***********443\/api\/v1\/fpl' failed: remotely closed. comments"
+  },
+  {
+    "model_name":"all-MiniLM-L6-v2",
+    "cluster_algo":"kmeans",
+    "cluster_id":6,
+    "cluster_size":107,
+    "top_terms":"price | sales | report | order | help",
+    "representative_text_1":"help to check inventory ledger report (y0gco_0028). we generate ledger report for fy 2023, but the standard price show is standard price fy 2024. the detail issue i attach excel file.",
+    "representative_text_2":"user raised the dn 4210000197 correct amt post in sap is usd6,367.08 but in servicenow ecd-s1-24000341 they add up the total amt instead of computing debit & credit amt usd 14042.26 anyway dn amount show correctly but need to inform service now about this error."
+  },
+  {
+    "model_name":"all-MiniLM-L6-v2",
+    "cluster_algo":"kmeans",
+    "cluster_id":4,
+    "cluster_size":80,
+    "top_terms":"urgent | invoice | order | urgent urgent | sales",
+    "representative_text_1":"the order number \"psv-sales order-2405010529\/9536008019\" doesn't have invoice number. issuse new invoice.",
+    "representative_text_2":"si-192390 of psv-wo-2404011237, psv-sales order-2404010941 do not have invoice number. help to fix it"
+  },
+  {
+    "model_name":"all-MiniLM-L6-v2",
+    "cluster_algo":"kmeans",
+    "cluster_id":2,
+    "cluster_size":55,
+    "top_terms":"time | min | order | wait | status",
+    "representative_text_1":"pacmy-sales order-2403003007 to have been confirm at sap but status at salesforce take time to change and make it longer time for billing invoice.",
+    "representative_text_2":"pacmy-sales order-2403003010 to have been confirm at sap but status at salesforce take time to change and make it longer time for billing invoice."
+  },
+  {
+    "model_name":"all-MiniLM-L6-v2",
+    "cluster_algo":"kmeans",
+    "cluster_id":0,
+    "cluster_size":36,
+    "top_terms":"order | wo | cancel | sales | sales order",
+    "representative_text_1":"pph-sales order-2403004838 - did not proceed to confirmed in sap. cancel ordered parts. unable to cancel.",
+    "representative_text_2":"cs phuong nam 2 \/ psv-wo-2404002667 -> there are 2 sales order created under this wo 1) psv-sales order-2404002571 \/item psa200jksb \/ 1pc -> cancelled in both salesforce and sap 2) psv-sales order-2404004250 \/ psa200jksd \/ 1pc -> invoiced even the 1st sales order was cancelled, item line psa200jksb in wo is still \"back order\" status -> the total part quantity charged in wo is 2pcs -> we cannot close psv-wo-2404002667 help to check and cancel wo lines which belong to cancelled sales order"
+  },
+  {
+    "model_name":"all-MiniLM-L6-v2",
+    "cluster_algo":"kmeans",
+    "cluster_id":1,
+    "cluster_size":28,
+    "top_terms":"order | sales | sales order | pacmy | pacmy sales",
+    "representative_text_1":"pacmy-sales order-2404004528",
+    "representative_text_2":"pacmy-sales order-2404003179"
+  },
+  {
+    "model_name":"all-mpnet-base-v2",
+    "cluster_algo":"kmeans",
+    "cluster_id":7,
+    "cluster_size":156,
+    "top_terms":"order | sales | purchase | sales order | purchase order",
+    "representative_text_1":"user: lilibeth caspe\/ jian hui issue: edo-s1-24004332 - posting error in sap due to purchasing document 100027431 not yet released. now the purchase order already posted successful. need ams to rerun the job to repost.",
+    "representative_text_2":"pph-sales order-2403004838 - did not proceed to confirmed in sap. cancel ordered parts. unable to cancel."
+  },
+  {
+    "model_name":"all-mpnet-base-v2",
+    "cluster_algo":"kmeans",
+    "cluster_id":2,
+    "cluster_size":151,
+    "top_terms":"error | check | user | posting | file",
+    "representative_text_1":"there is an einvoice: 9117 posting failed due to cross cost centre posting. praveen, as requested i have checked and there was past record inv9002 had successful posted. investigate this error and advise.",
+    "representative_text_2":"i cannot able to proceed due to this error. see attached file for the print screen."
+  },
+  {
+    "model_name":"all-mpnet-base-v2",
+    "cluster_algo":"kmeans",
+    "cluster_id":3,
+    "cluster_size":145,
+    "top_terms":"help | report | sales | 2024 | check",
+    "representative_text_1":"user : mike 1. ecu-s1-24000174 => 80910311 2. ecu-si-24000175 => 80931903 refer email from accounting.",
+    "representative_text_2":"we would like to report that there are some discrepancies in t-code y0gmm_1770. we compare transferred qty. through mb51 but it does not match with y0gmm_1770 data. note: see attached"
+  },
+  {
+    "model_name":"all-mpnet-base-v2",
+    "cluster_algo":"kmeans",
+    "cluster_id":4,
+    "cluster_size":131,
+    "top_terms":"sap | error | order | check | sales",
+    "representative_text_1":"sales order no: pm-sales order-2404003197 dated 18\/4\/24 not link to sap. assist to link urgently.",
+    "representative_text_2":"check this delivery order 3000786322 cannot interface sap"
+  },
+  {
+    "model_name":"all-mpnet-base-v2",
+    "cluster_algo":"kmeans",
+    "cluster_id":5,
+    "cluster_size":96,
+    "top_terms":"warranty | material | model | wo | number",
+    "representative_text_1":"cn number : pcmsc-2403-00005 part number : cwa73c4696 warehouse : mip1 stock not return back to q loc after perform cn at 12\/*3\/2024. the physical stock in our hand, we can't return to warehouse.",
+    "representative_text_2":"help , asset name th-l43l410grb2640394 in pgi-wo-2402007218 is already register 14\/05\/2023 but warranty expiry date is 13\/05\/2023 should be 13\/05\/2024 and status wo should be in warranty, current wo is out warranty"
+  },
+  {
+    "model_name":"all-mpnet-base-v2",
+    "cluster_algo":"kmeans",
+    "cluster_id":9,
+    "cluster_size":87,
+    "top_terms":"user | report | issue | attached | lightning",
+    "representative_text_1":"support, advise any changes done from your end because all the attachments cannot be downloaded from eworkplace. it showed file can\u2019t be downloaded securely for all the attachment. https:\/\/www.eworkplace.intra.panasonic.computer.sg\/sites\/pfsap\/sitepages\/apachome.aspx --> download with error https:\/\/eworkplace.apac.panasonic.computer\/sites\/pfsap\/sitepages\/apachome.aspx? --> download without error",
+    "representative_text_2":"no applicable approval process was found. refer to image attached."
+  },
+  {
+    "model_name":"all-mpnet-base-v2",
+    "cluster_algo":"kmeans",
+    "cluster_id":1,
+    "cluster_size":82,
+    "top_terms":"urgent | invoice | urgent urgent | order | sales",
+    "representative_text_1":"si-192390 of psv-wo-2404011237, psv-sales order-2404010941 do not have invoice number. help to fix it",
+    "representative_text_2":"si-191120 of psv-wo-2404009750 psv-sales order-2404009616 do not have invoice number => help to fix it"
+  },
+  {
+    "model_name":"all-mpnet-base-v2",
+    "cluster_algo":"kmeans",
+    "cluster_id":0,
+    "cluster_size":56,
+    "top_terms":"account | computer | customer | id | wo",
+    "representative_text_1":"account sales forces alwi yasin with user name : alwi.yassin@id.panasonic.computer ? sorry recheck this user id is true or wrong it cannot login in sales forces, when we try to forgot password appear error too for detail see servicenow and my email too.",
+    "representative_text_2":"sorry help this case, account sales forces alwi yasin with user name : nasrullah.hamzah@id.panasonic.computer ==> check this is user id right or no nurwahyu tribowo : nurwahyu.triwibowo@id.panasonic.computer , the email get notification is in dealer.support@id.panasonic.computer it cannot login in sales forces, fix this case"
+  },
+  {
+    "model_name":"all-mpnet-base-v2",
+    "cluster_algo":"kmeans",
+    "cluster_id":8,
+    "cluster_size":52,
+    "top_terms":"order | sales | sales order | pacmy | pacmy sales",
+    "representative_text_1":"pacmy-sales order-2403003409 to have confirm at sap but status at salesforce take time to change and make it longer to billing.",
+    "representative_text_2":"pacmy-sales order-2403003002 to have been confirm at sap but status at salesforce take time to change and make it longer time for billing invoice."
+  },
+  {
+    "model_name":"all-mpnet-base-v2",
+    "cluster_algo":"kmeans",
+    "cluster_id":6,
+    "cluster_size":28,
+    "top_terms":"min | really | wait | need | invoice",
+    "representative_text_1":"status again need to wait up to 20 min - 30 min to wait for the invoice, customer really unhappy with this!! this of issuse when can settle?",
+    "representative_text_2":"settle this of issuse as soon as possible!! we can not keep give customer and subcon to wait for invoice, need wait 20 min - 30 min. they really disappointed with us, really wasting their time just for waiting the invoice"
+  },
+  {
+    "model_name":"supervised_v4_cosine",
+    "cluster_algo":"kmeans",
+    "cluster_id":4,
+    "cluster_size":175,
+    "top_terms":"order | sales | sales order | purchase | purchase order",
+    "representative_text_1":"there are 2 orders don't have invoice number: psv-sales order-2404006776\/9536008321 and psv-sales order-2405010142\/9536008342 check and issue new invoice.",
+    "representative_text_2":"si-191120 of psv-wo-2404009750 psv-sales order-2404009616 do not have invoice number => help to fix it"
+  },
+  {
+    "model_name":"supervised_v4_cosine",
+    "cluster_algo":"kmeans",
+    "cluster_id":2,
+    "cluster_size":154,
+    "top_terms":"sap | error | order | check | sales",
+    "representative_text_1":"ap-sap:t1-fico-inc (urgent) : request to check payment transaction (f110) can't payment for vendor (21011279-1 \/ 21015230-1 \/21039352-1 \/ 21042338-1) detail as attachment.",
+    "representative_text_2":"sales order no: pm-sales order-2404003197 dated 18\/4\/24 not link to sap. assist to link urgently."
+  },
+  {
+    "model_name":"supervised_v4_cosine",
+    "cluster_algo":"kmeans",
+    "cluster_id":7,
+    "cluster_size":135,
+    "top_terms":"help | report | price | check | 2024",
+    "representative_text_1":"user : mike 1. ecu-s1-24000174 => 80910311 2. ecu-si-24000175 => 80931903 refer email from accounting.",
+    "representative_text_2":"refer attached, purchase order accruals amount rm2,545,457.97, only rm818,776.95 was posted to gl23030003."
+  },
+  {
+    "model_name":"supervised_v4_cosine",
+    "cluster_algo":"kmeans",
+    "cluster_id":0,
+    "cluster_size":106,
+    "top_terms":"attached | report | user | lightning | view",
+    "representative_text_1":"\"\"\"work order with woli and soli\"\" report type was a custom report made for psv. thus, limit the user only for psv accounts, and not modifiable to prevent errors (occur in may and massively affected cs operation)\"",
+    "representative_text_2":"to patch this document \u201cpsp200279\u201d postflag as \u201cposted\u201d to complete the hriq posting today."
+  },
+  {
+    "model_name":"supervised_v4_cosine",
+    "cluster_algo":"kmeans",
+    "cluster_id":5,
+    "cluster_size":99,
+    "top_terms":"user | check | wo | issue | error",
+    "representative_text_1":"below customer unable to register e-warranty due to single sign in error 1)giant chome <giantchome@outlook.computer> this customer request settle by today 22-apr-2024 2)xoom order status team <lcggin@yahoo.computer> 3)tan yet hui <yethui@gmail.computer>",
+    "representative_text_2":"t-code: zcgafi_0011 accounts with issue: 008100-615 1002, 008100-616 1002(it\u2019s the first time for these accounts have actual biz ) details refer to attach."
+  },
+  {
+    "model_name":"supervised_v4_cosine",
+    "cluster_algo":"kmeans",
+    "cluster_id":9,
+    "cluster_size":83,
+    "top_terms":"error | posting | check | message | invoice",
+    "representative_text_1":"there is an einvoice: 9117 posting failed due to cross cost centre posting. praveen, as requested i have checked and there was past record inv9002 had successful posted. investigate this error and advise.",
+    "representative_text_2":"below ecustomer all failed and still not posting. advise. 1)ecu-s1-24000158 (cust : widex a\/s (g\/c : 80910311) - delivery model is empty \/\/ suck keng => domestic ? revised account assignment grp from \u201802\u2019 to \u201801\u2019. 2)ecu-s1-24000157 cust : widex a\/s (g\/c : 80910311) - delivery model is empty \/\/ suck keng=> domestic ? revised account assignment grp from \u201802\u2019 to \u201801\u2019 3)ecu-s1-24000148 (integrated micro-electronics inc (g\/c : 80910400) - delivery model is empty \/\/ suck keng => domestic? revised ship to address"
+  },
+  {
+    "model_name":"supervised_v4_cosine",
+    "cluster_algo":"kmeans",
+    "cluster_id":6,
+    "cluster_size":79,
+    "top_terms":"warranty | ews | wo | model | sales",
+    "representative_text_1":"cn number : pcmsc-2403-00005 part number : cwa73c4696 warehouse : mip1 stock not return back to q loc after perform cn at 12\/*3\/2024. the physical stock in our hand, we can't return to warehouse.",
+    "representative_text_2":"part order in psv-wo-2403011393 was error (picked from different warehouse) then create wrong invoice. we need to cancel this wo."
+  },
+  {
+    "model_name":"supervised_v4_cosine",
+    "cluster_algo":"kmeans",
+    "cluster_id":1,
+    "cluster_size":59,
+    "top_terms":"error | file | fpl | check | attached",
+    "representative_text_1":"i cannot able to proceed due to this error. see attached file for the print screen.",
+    "representative_text_2":"see attached the list of error all these fpl is urgent, help to settle urgently."
+  },
+  {
+    "model_name":"supervised_v4_cosine",
+    "cluster_algo":"kmeans",
+    "cluster_id":8,
+    "cluster_size":53,
+    "top_terms":"order | sales order | sales | pacmy | pacmy sales",
+    "representative_text_1":"pacmy-sales order-2403003002 to have been confirm at sap but status at salesforce take time to change and make it longer time for billing invoice.",
+    "representative_text_2":"pacmy-sales order-2403003409 to have confirm at sap but status at salesforce take time to change and make it longer to billing."
+  },
+  {
+    "model_name":"supervised_v4_cosine",
+    "cluster_algo":"kmeans",
+    "cluster_id":3,
+    "cluster_size":41,
+    "top_terms":"urgent | min | urgent urgent | really | wait",
+    "representative_text_1":"status again need to wait up to 20 min - 30 min to wait for the invoice, customer really unhappy with this!! this of issuse when can settle?",
+    "representative_text_2":"settle this of issuse as soon as possible!! we can not keep give customer and subcon to wait for invoice, need wait 20 min - 30 min. they really disappointed with us, really wasting their time just for waiting the invoice"
+  },
+  {
+    "model_name":"unsupervised_simcse_best",
+    "cluster_algo":"kmeans",
+    "cluster_id":3,
+    "cluster_size":175,
+    "top_terms":"order | user | error | check | sales",
+    "representative_text_1":"user: heather issue: epo posting failed resulted user unable to recevei edi and process shipping doc. epo-s1-24010290 \/\/ 0100016709 epo-s1-24010291 \/\/ 0100017699 epo-s1-24010292 \/\/ 0100020720 epo-s1-24010293 \/\/ 0100021213 system work notes\u20222024-03-10 22:28:41 payload: { \"errorcode\": \"500\", \"errormessage\": \"http get on resource 'https:\/\/vhpmkmbpci.hec.privatecloudedition.computer:44300\/sap\/opu\/odata\/sap\/ymbc_sapework_api_srv\/' failed: couldn't resolve address.\", \"errortype\": \"internal_server_error\", \"errorsource\": \"sap s\/4hana\", \"correlationid\": \"64b1e2d6-c5ab-4ec8-9978-ebe271a5dede\", \"timestamp\": \"2024-03-10t14:28:40.866z\", \"responsepayload\": \"\" }",
+    "representative_text_2":"user : rosemarie ( ac accounting) edo-s1-24003539 posting failed . hlep to investigate ."
+  },
+  {
+    "model_name":"unsupervised_simcse_best",
+    "cluster_algo":"kmeans",
+    "cluster_id":8,
+    "cluster_size":145,
+    "top_terms":"sap | order | sales | error | sales order",
+    "representative_text_1":"sap part had been delivered but data not sync to sf affected wo as below: 1) pm-wo-2405004281 - pm-sales order-2405005848 2) pm-wo-2405002480 - pm-sales order-2405003225 3) pm-wo-2404004109 - pm-sales order-2404005321 4) pm-wo-2404003447 - pm-sales order-2404004016 5) pm-wo-2404004348 - pm-sales order-2404005398 6) pm-wo-2405004480 - pm-sales order-2405005889 7) pm-wo-2405001854 - pm-sales order-2405002595 8) pm-wo-2405001896 - pm-sales order-2405002589 9) pm-wo-2405004445 - pm-sales order-2405005860 10) pm-wo-2404004298 - pm-sales order-2405000116 11) pm-wo-2405003065 - pm-sales order-2405003956 12) pm-wo-2405003437 - pm-sales order-2405005837",
+    "representative_text_2":"check this delivery order 3000786322 cannot interface sap"
+  },
+  {
+    "model_name":"unsupervised_simcse_best",
+    "cluster_algo":"kmeans",
+    "cluster_id":4,
+    "cluster_size":137,
+    "top_terms":"order | report | sales | purchase | date",
+    "representative_text_1":"we found daily shipment plan report (ztgasd_0018) show etd bkk by sea incorrect date detail as attached file.",
+    "representative_text_2":"based on business requirement and original program design, an new purchase order 10 pcs should be generated from ro 1045464358 on 16th may for material yefu0112310a via ro to purchase order conversion night batch job. and the delivery date of the new purchase order should be on 20th may for the production on 21th may. but the purchase order didn\u2019t be converted by end of today. so pasdl purchase member converted from ro 1045464358 to purchase order, 4500893125, 3pcs for yefu0112310a manually as a workaround solution to prevent inventory shortage help to investigate why the batch job didn\u2019t convert to purchase order 10 pcs on 16th may then solve it."
+  },
+  {
+    "model_name":"unsupervised_simcse_best",
+    "cluster_algo":"kmeans",
+    "cluster_id":1,
+    "cluster_size":130,
+    "top_terms":"order | sales | wo | warranty | sales order",
+    "representative_text_1":"change account from 84944424840 to 84977794148 in warranty registration w-4973507.",
+    "representative_text_2":"cancel extended warranty sales (ews) psv-ews-2405000271; warranty registration w-8399359, asset e133827403\/ cs-ru9akh-8 in salesforce"
+  },
+  {
+    "model_name":"unsupervised_simcse_best",
+    "cluster_algo":"kmeans",
+    "cluster_id":6,
+    "cluster_size":118,
+    "top_terms":"error | check | file | attached | message",
+    "representative_text_1":"i cannot able to proceed due to this error. see attached file for the print screen.",
+    "representative_text_2":"item part ani2000n923x , ani1091s63z8 is cannot be uploaded to the dmr, when we try to upload dmr template is appear notification \"enter a valid material\" message no. \/irm\/epg107, for detail see my email and itmaas (servicenow) attachment"
+  },
+  {
+    "model_name":"unsupervised_simcse_best",
+    "cluster_algo":"kmeans",
+    "cluster_id":7,
+    "cluster_size":108,
+    "top_terms":"price | order | sales | purchase | help",
+    "representative_text_1":"now, accounting conduct to key in landed cost in sap, the difference btw actual and accrual of part was recorded in account no. account 71010001 - price variance-merch. this is not reasonable. therefore, support us to investigate and change to correct account.",
+    "representative_text_2":"refer attached, purchase order accruals amount rm2,545,457.97, only rm818,776.95 was posted to gl23030003."
+  },
+  {
+    "model_name":"unsupervised_simcse_best",
+    "cluster_algo":"kmeans",
+    "cluster_id":2,
+    "cluster_size":102,
+    "top_terms":"urgent | invoice | order | sales | urgent urgent",
+    "representative_text_1":"the order number \"psv-sales order-2405010529\/9536008019\" doesn't have invoice number. issuse new invoice.",
+    "representative_text_2":"si-192390 of psv-wo-2404011237, psv-sales order-2404010941 do not have invoice number. help to fix it"
+  },
+  {
+    "model_name":"unsupervised_simcse_best",
+    "cluster_algo":"kmeans",
+    "cluster_id":9,
+    "cluster_size":37,
+    "top_terms":"min | wait | really | need | order",
+    "representative_text_1":"when can settle this of case?! customer & subcon need always wait 20 min - 30 min to wait for the invoice. they always complain, like this really waste their time to wait for the invoice only",
+    "representative_text_2":"settle this of issuse as soon as possible!! we can not keep give customer and subcon to wait for invoice, need wait 20 min - 30 min. they really disappointed with us, really wasting their time just for waiting the invoice"
+  },
+  {
+    "model_name":"unsupervised_simcse_best",
+    "cluster_algo":"kmeans",
+    "cluster_id":0,
+    "cluster_size":19,
+    "top_terms":"time | status salesforce | time change | sap | salesforce time",
+    "representative_text_1":"pacmy-sales order-2403003453 to have been confirm at sap but status at salesforce take time to change and make it longer to billing",
+    "representative_text_2":"pacmy-sales order-2403003463 to have been confirm at sap but status at salesforce take time to change and make it more longer to billing"
+  },
+  {
+    "model_name":"unsupervised_simcse_best",
+    "cluster_algo":"kmeans",
+    "cluster_id":5,
+    "cluster_size":13,
+    "top_terms":"sales order | sales | pacmy sales | pacmy | order",
+    "representative_text_1":"pacmy-sales order-2404000343",
+    "representative_text_2":"pacmy-sales order-2405003961"
+  }
+]

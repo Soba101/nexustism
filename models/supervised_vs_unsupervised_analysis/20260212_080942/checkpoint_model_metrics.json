@@ -1,0 +1,190 @@
+{
+  "all-mpnet-base-v2": {
+    "model_name": "all-mpnet-base-v2",
+    "method_type": "baseline",
+    "source": "sentence-transformers",
+    "path_or_id": "sentence-transformers/all-mpnet-base-v2",
+    "metrics": {
+      "calibration": {
+        "spearman": 0.5477976046272666,
+        "pearson": 0.5590643813971942,
+        "roc_auc": 0.8162666666666666,
+        "pr_auc": 0.8564494383434401,
+        "f1": 0.7339901477832512,
+        "accuracy": 0.64,
+        "threshold": 0.30499999999999994,
+        "spearman_ci": [
+          0.4697289923448555,
+          0.6292212228818758
+        ],
+        "roc_auc_ci": [
+          0.7714049051251957,
+          0.8639089983860393
+        ],
+        "mean_similarity": 0.45903970787922543,
+        "std_similarity": 0.19285447038655276,
+        "best_calibration_f1": 0.7339901477832512
+      },
+      "evaluation": {
+        "spearman": 0.4837235115398561,
+        "pearson": 0.5094326903103755,
+        "roc_auc": 0.7792734693877552,
+        "pr_auc": 0.822956047098806,
+        "f1": 0.721584984358707,
+        "accuracy": 0.6185714285714285,
+        "threshold": 0.30499999999999994,
+        "spearman_ci": [
+          0.4221355588217512,
+          0.551990443415379
+        ],
+        "roc_auc_ci": [
+          0.7441447579121769,
+          0.8186908618030054
+        ],
+        "mean_similarity": 0.44321256610964027,
+        "std_similarity": 0.17077020152785508
+      }
+    }
+  },
+  "unsupervised_simcse_best": {
+    "model_name": "unsupervised_simcse_best",
+    "method_type": "unsupervised",
+    "source": "local_or_trained",
+    "path_or_id": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\unsupervised_simcse\\simcse_20260206_145625",
+    "metrics": {
+      "calibration": {
+        "spearman": 0.5207018147792444,
+        "pearson": 0.5207335835256273,
+        "roc_auc": 0.8006222222222222,
+        "pr_auc": 0.8478946588420432,
+        "f1": 0.7588424437299035,
+        "accuracy": 0.75,
+        "threshold": 0.16999999999999993,
+        "spearman_ci": [
+          0.4496149980648667,
+          0.6061673241847074
+        ],
+        "roc_auc_ci": [
+          0.7596518834200348,
+          0.8501129984159624
+        ],
+        "mean_similarity": 0.2638869682730486,
+        "std_similarity": 0.2400202605779163,
+        "best_calibration_f1": 0.7588424437299035
+      },
+      "evaluation": {
+        "spearman": 0.480160379070532,
+        "pearson": 0.49199711346007124,
+        "roc_auc": 0.7772163265306125,
+        "pr_auc": 0.8223776069654536,
+        "f1": 0.7181571815718157,
+        "accuracy": 0.7028571428571428,
+        "threshold": 0.16999999999999993,
+        "spearman_ci": [
+          0.42116286826393823,
+          0.533662916638569
+        ],
+        "roc_auc_ci": [
+          0.7433709935563341,
+          0.8083109765532619
+        ],
+        "mean_similarity": 0.2496433422894084,
+        "std_similarity": 0.21817263607693263
+      }
+    }
+  },
+  "supervised_v4_cosine": {
+    "model_name": "supervised_v4_cosine",
+    "method_type": "supervised",
+    "source": "local",
+    "path_or_id": "C:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\real_servicenow_finetuned_mpnet_lora\\real_servicenow_v2_20260104_2321",
+    "metrics": {
+      "calibration": {
+        "spearman": 0.5477976046272666,
+        "pearson": 0.5706324432419432,
+        "roc_auc": 0.8162666666666667,
+        "pr_auc": 0.8544829180387765,
+        "f1": 0.7397260273972602,
+        "accuracy": 0.7466666666666667,
+        "threshold": 0.44999999999999996,
+        "spearman_ci": [
+          0.4724156475356032,
+          0.6254807465088104
+        ],
+        "roc_auc_ci": [
+          0.7732257743434694,
+          0.8611138272812124
+        ],
+        "mean_similarity": 0.49748287522544465,
+        "std_similarity": 0.22364766018406818,
+        "best_calibration_f1": 0.7397260273972602
+      },
+      "evaluation": {
+        "spearman": 0.47088492723729874,
+        "pearson": 0.503574830080309,
+        "roc_auc": 0.771861224489796,
+        "pr_auc": 0.8083357036819532,
+        "f1": 0.686046511627907,
+        "accuracy": 0.6914285714285714,
+        "threshold": 0.44999999999999996,
+        "spearman_ci": [
+          0.4038731102319115,
+          0.5353577941556562
+        ],
+        "roc_auc_ci": [
+          0.7335798631590557,
+          0.8094375977964869
+        ],
+        "mean_similarity": 0.4781359705621643,
+        "std_similarity": 0.207966237782776
+      }
+    }
+  },
+  "all-MiniLM-L6-v2": {
+    "model_name": "all-MiniLM-L6-v2",
+    "method_type": "baseline",
+    "source": "sentence-transformers",
+    "path_or_id": "sentence-transformers/all-MiniLM-L6-v2",
+    "metrics": {
+      "calibration": {
+        "spearman": 0.5237023414871788,
+        "pearson": 0.524232023205974,
+        "roc_auc": 0.8023555555555556,
+        "pr_auc": 0.8328602300695758,
+        "f1": 0.75,
+        "accuracy": 0.7333333333333333,
+        "threshold": 0.33000000000000007,
+        "spearman_ci": [
+          0.45801354565192187,
+          0.619730277817835
+        ],
+        "roc_auc_ci": [
+          0.7648032180424318,
+          0.8579815381734183
+        ],
+        "mean_similarity": 0.39617805718133847,
+        "std_similarity": 0.18525810191161082,
+        "best_calibration_f1": 0.75
+      },
+      "evaluation": {
+        "spearman": 0.4204336128294133,
+        "pearson": 0.4450929885959738,
+        "roc_auc": 0.742734693877551,
+        "pr_auc": 0.7847696246455413,
+        "f1": 0.7080581241743725,
+        "accuracy": 0.6842857142857143,
+        "threshold": 0.33000000000000007,
+        "spearman_ci": [
+          0.3618185273089595,
+          0.4900959163045938
+        ],
+        "roc_auc_ci": [
+          0.7089477997988864,
+          0.7829571264045379
+        ],
+        "mean_similarity": 0.38703368059226445,
+        "std_similarity": 0.16935191482989861
+      }
+    }
+  }
+}
