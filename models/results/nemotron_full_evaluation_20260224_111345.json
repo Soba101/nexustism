@@ -1,0 +1,366 @@
+{
+  "timestamp": "20260224_111345",
+  "production_baseline": "V4-Cosine [PRODUCTION]",
+  "thresholds": {
+    "roc_auc_min_improvement": 0.02,
+    "spearman_min_improvement": 0.02,
+    "max_latency_ms": 50.0
+  },
+  "supervised_results": {
+    "MPNet-Base (raw)": {
+      "spearman": 0.5037924195925454,
+      "roc_auc": 0.79086,
+      "f1": 0.722664735698769,
+      "precision": 0.5664018161180476,
+      "recall": 0.998,
+      "accuracy": 0.617,
+      "threshold": 0.30148469950213574,
+      "adversarial_roc_auc": 0.99004,
+      "latency_ms_mean": 3.072751333333296,
+      "latency_ms_std": 0.015298231473103982,
+      "embedding_dim": 768,
+      "model_name": "MPNet-Base (raw)",
+      "model_type": "sentence_transformer"
+    },
+    "MiniLM-L6-v2": {
+      "spearman": 0.45166377811534936,
+      "roc_auc": 0.760764,
+      "f1": 0.7188940092165899,
+      "precision": 0.6666666666666666,
+      "recall": 0.78,
+      "accuracy": 0.695,
+      "threshold": 0.32695150648177873,
+      "adversarial_roc_auc": 0.9542533333333333,
+      "latency_ms_mean": 0.9732070000010632,
+      "latency_ms_std": 0.013573852388568466,
+      "embedding_dim": 384,
+      "model_name": "MiniLM-L6-v2",
+      "model_type": "sentence_transformer"
+    },
+    "EmbeddingGemma-300M": {
+      "spearman": 0.3872221629912686,
+      "roc_auc": 0.7235599999999999,
+      "f1": 0.6766917293233082,
+      "precision": 0.514018691588785,
+      "recall": 0.99,
+      "accuracy": 0.527,
+      "threshold": 0.32654046831708966,
+      "adversarial_roc_auc": 0.9129866666666666,
+      "latency_ms_mean": 18.781733666666394,
+      "latency_ms_std": 0.16927563372036758,
+      "embedding_dim": 768,
+      "model_name": "EmbeddingGemma-300M",
+      "model_type": "sentence_transformer"
+    },
+    "V4-Cosine [PRODUCTION]": {
+      "spearman": 0.49488260660215805,
+      "roc_auc": 0.7857160000000001,
+      "f1": 0.7134199134199134,
+      "precision": 0.6290076335877862,
+      "recall": 0.824,
+      "accuracy": 0.669,
+      "threshold": 0.37839386476711795,
+      "adversarial_roc_auc": 0.9813999999999999,
+      "latency_ms_mean": 2.8854663333322605,
+      "latency_ms_std": 0.05421878325506717,
+      "embedding_dim": 768,
+      "model_name": "V4-Cosine [PRODUCTION]",
+      "model_type": "lora_peft"
+    },
+    "MPNet-LoRA Phase3-Only": {
+      "spearman": 0.49052469651588004,
+      "roc_auc": 0.7832,
+      "f1": 0.7170191339375629,
+      "precision": 0.7221095334685599,
+      "recall": 0.712,
+      "accuracy": 0.719,
+      "threshold": 0.45382351721778064,
+      "adversarial_roc_auc": 0.97152,
+      "latency_ms_mean": 2.9710026666672698,
+      "latency_ms_std": 0.06469630881435079,
+      "embedding_dim": 768,
+      "model_name": "MPNet-LoRA Phase3-Only",
+      "model_type": "lora_peft"
+    },
+    "MPNet-LoRA MNRL-2322": {
+      "spearman": 0.3817986504364491,
+      "roc_auc": 0.7204280000000001,
+      "f1": 0.6890286512928022,
+      "precision": 0.5295381310418904,
+      "recall": 0.986,
+      "accuracy": 0.555,
+      "threshold": 0.7933590141209689,
+      "adversarial_roc_auc": 0.9302533333333333,
+      "latency_ms_mean": 2.90982966666661,
+      "latency_ms_std": 0.08203506704290407,
+      "embedding_dim": 768,
+      "model_name": "MPNet-LoRA MNRL-2322",
+      "model_type": "lora_peft"
+    },
+    "MPNet-LoRA Expanded-Data": {
+      "spearman": 0.2905495672742933,
+      "roc_auc": 0.667746,
+      "f1": 0.6676342525399129,
+      "precision": 0.5239179954441914,
+      "recall": 0.92,
+      "accuracy": 0.542,
+      "threshold": 0.9963983044479833,
+      "adversarial_roc_auc": 0.9195600000000002,
+      "latency_ms_mean": 2.8707586666663096,
+      "latency_ms_std": 0.02078613278697643,
+      "embedding_dim": 768,
+      "model_name": "MPNet-LoRA Expanded-Data",
+      "model_type": "lora_peft"
+    },
+    "SimCSE-HardNeg (best)": {
+      "spearman": 0.4241375829280952,
+      "roc_auc": 0.744872,
+      "f1": 0.6948275862068966,
+      "precision": 0.6106060606060606,
+      "recall": 0.806,
+      "accuracy": 0.646,
+      "threshold": 0.9793304891297312,
+      "adversarial_roc_auc": 0.9379333333333333,
+      "latency_ms_mean": 2.1277329999998074,
+      "latency_ms_std": 0.1037759136239088,
+      "embedding_dim": 768,
+      "model_name": "SimCSE-HardNeg (best)",
+      "model_type": "sentence_transformer"
+    },
+    "SimCSE-Standard (best)": {
+      "spearman": 0.37820978330657307,
+      "roc_auc": 0.718356,
+      "f1": 0.6843335931410756,
+      "precision": 0.5606641123882503,
+      "recall": 0.878,
+      "accuracy": 0.595,
+      "threshold": 0.21406934782862663,
+      "adversarial_roc_auc": 0.9505466666666667,
+      "latency_ms_mean": 2.0837583333332077,
+      "latency_ms_std": 0.09956190118863818,
+      "embedding_dim": 768,
+      "model_name": "SimCSE-Standard (best)",
+      "model_type": "sentence_transformer"
+    },
+    "SimCSE-Feb12-v1": {
+      "spearman": 0.37820978330657307,
+      "roc_auc": 0.718356,
+      "f1": 0.6843335931410756,
+      "precision": 0.5606641123882503,
+      "recall": 0.878,
+      "accuracy": 0.595,
+      "threshold": 0.21406934782862663,
+      "adversarial_roc_auc": 0.9505466666666667,
+      "latency_ms_mean": 2.1190490000003592,
+      "latency_ms_std": 0.15554022170675694,
+      "embedding_dim": 768,
+      "model_name": "SimCSE-Feb12-v1",
+      "model_type": "sentence_transformer"
+    },
+    "Nemotron-8B (4096-dim)": {
+      "spearman": 0.2979083213408624,
+      "roc_auc": 0.671886,
+      "f1": 0.6676076217360621,
+      "precision": 0.5158124318429662,
+      "recall": 0.946,
+      "accuracy": 0.529,
+      "threshold": 0.04267888789940061,
+      "adversarial_roc_auc": 0.9184866666666667,
+      "latency_ms_mean": 26.248652666666505,
+      "latency_ms_std": 0.13547126982082283,
+      "embedding_dim": 4096,
+      "model_name": "Nemotron-8B (4096-dim)",
+      "model_type": "nemotron"
+    },
+    "Nemotron-8B (768-dim)": {
+      "spearman": 0.2881166607460283,
+      "roc_auc": 0.666218,
+      "f1": 0.6666666666666666,
+      "precision": 0.5,
+      "recall": 1.0,
+      "accuracy": 0.5,
+      "threshold": -0.057394832372665405,
+      "adversarial_roc_auc": 0.9078733333333333,
+      "latency_ms_mean": 26.881610333333203,
+      "latency_ms_std": 0.15557757262713467,
+      "embedding_dim": 768,
+      "model_name": "Nemotron-8B (768-dim)",
+      "model_type": "nemotron"
+    }
+  },
+  "decisions": [
+    {
+      "Model": "MPNet-Base (raw)",
+      "\u0394 ROC-AUC": "+0.0051",
+      "\u0394 Spearman": "+0.0089",
+      "Latency (ms)": "3.07",
+      "Adv-AUC": "0.9900",
+      "Verdict": "\u274c KEEP V4 \u2014 no meaningful accuracy gain",
+      "Action": "\u0394 ROC-AUC=+0.0051 \u2014 not enough to justify switch"
+    },
+    {
+      "Model": "MPNet-LoRA Phase3-Only",
+      "\u0394 ROC-AUC": "-0.0025",
+      "\u0394 Spearman": "-0.0044",
+      "Latency (ms)": "2.97",
+      "Adv-AUC": "0.9715",
+      "Verdict": "\u274c KEEP V4 \u2014 no meaningful accuracy gain",
+      "Action": "\u0394 ROC-AUC=-0.0025 \u2014 not enough to justify switch"
+    },
+    {
+      "Model": "MiniLM-L6-v2",
+      "\u0394 ROC-AUC": "-0.0250",
+      "\u0394 Spearman": "-0.0432",
+      "Latency (ms)": "0.97",
+      "Adv-AUC": "0.9543",
+      "Verdict": "\u274c KEEP V4 \u2014 no meaningful accuracy gain",
+      "Action": "\u0394 ROC-AUC=-0.0250 \u2014 not enough to justify switch"
+    },
+    {
+      "Model": "SimCSE-HardNeg (best)",
+      "\u0394 ROC-AUC": "-0.0408",
+      "\u0394 Spearman": "-0.0707",
+      "Latency (ms)": "2.13",
+      "Adv-AUC": "0.9379",
+      "Verdict": "\u274c KEEP V4 \u2014 no meaningful accuracy gain",
+      "Action": "\u0394 ROC-AUC=-0.0408 \u2014 not enough to justify switch"
+    },
+    {
+      "Model": "EmbeddingGemma-300M",
+      "\u0394 ROC-AUC": "-0.0622",
+      "\u0394 Spearman": "-0.1077",
+      "Latency (ms)": "18.78",
+      "Adv-AUC": "0.9130",
+      "Verdict": "\u274c KEEP V4 \u2014 no meaningful accuracy gain",
+      "Action": "\u0394 ROC-AUC=-0.0622 \u2014 not enough to justify switch"
+    },
+    {
+      "Model": "MPNet-LoRA MNRL-2322",
+      "\u0394 ROC-AUC": "-0.0653",
+      "\u0394 Spearman": "-0.1131",
+      "Latency (ms)": "2.91",
+      "Adv-AUC": "0.9303",
+      "Verdict": "\u274c KEEP V4 \u2014 no meaningful accuracy gain",
+      "Action": "\u0394 ROC-AUC=-0.0653 \u2014 not enough to justify switch"
+    },
+    {
+      "Model": "SimCSE-Standard (best)",
+      "\u0394 ROC-AUC": "-0.0674",
+      "\u0394 Spearman": "-0.1167",
+      "Latency (ms)": "2.08",
+      "Adv-AUC": "0.9505",
+      "Verdict": "\u274c KEEP V4 \u2014 no meaningful accuracy gain",
+      "Action": "\u0394 ROC-AUC=-0.0674 \u2014 not enough to justify switch"
+    },
+    {
+      "Model": "SimCSE-Feb12-v1",
+      "\u0394 ROC-AUC": "-0.0674",
+      "\u0394 Spearman": "-0.1167",
+      "Latency (ms)": "2.12",
+      "Adv-AUC": "0.9505",
+      "Verdict": "\u274c KEEP V4 \u2014 no meaningful accuracy gain",
+      "Action": "\u0394 ROC-AUC=-0.0674 \u2014 not enough to justify switch"
+    },
+    {
+      "Model": "Nemotron-8B (4096-dim)",
+      "\u0394 ROC-AUC": "-0.1138",
+      "\u0394 Spearman": "-0.1970",
+      "Latency (ms)": "26.25",
+      "Adv-AUC": "0.9185",
+      "Verdict": "\u274c KEEP V4 \u2014 no meaningful accuracy gain",
+      "Action": "\u0394 ROC-AUC=-0.1138 \u2014 not enough to justify switch"
+    },
+    {
+      "Model": "MPNet-LoRA Expanded-Data",
+      "\u0394 ROC-AUC": "-0.1180",
+      "\u0394 Spearman": "-0.2043",
+      "Latency (ms)": "2.87",
+      "Adv-AUC": "0.9196",
+      "Verdict": "\u274c KEEP V4 \u2014 no meaningful accuracy gain",
+      "Action": "\u0394 ROC-AUC=-0.1180 \u2014 not enough to justify switch"
+    },
+    {
+      "Model": "Nemotron-8B (768-dim)",
+      "\u0394 ROC-AUC": "-0.1195",
+      "\u0394 Spearman": "-0.2068",
+      "Latency (ms)": "26.88",
+      "Adv-AUC": "0.9079",
+      "Verdict": "\u274c KEEP V4 \u2014 no meaningful accuracy gain",
+      "Action": "\u0394 ROC-AUC=-0.1195 \u2014 not enough to justify switch"
+    }
+  ],
+  "latency_benchmark": [
+    {
+      "Model": "MPNet-Base (raw)",
+      "Latency (ms/sample)": 3.072751333333296,
+      "Std": 0.015298231473103982,
+      "Dim": 768
+    },
+    {
+      "Model": "MiniLM-L6-v2",
+      "Latency (ms/sample)": 0.9732070000010632,
+      "Std": 0.013573852388568466,
+      "Dim": 384
+    },
+    {
+      "Model": "EmbeddingGemma-300M",
+      "Latency (ms/sample)": 18.781733666666394,
+      "Std": 0.16927563372036758,
+      "Dim": 768
+    },
+    {
+      "Model": "V4-Cosine [PRODUCTION]",
+      "Latency (ms/sample)": 2.8854663333322605,
+      "Std": 0.05421878325506717,
+      "Dim": 768
+    },
+    {
+      "Model": "MPNet-LoRA Phase3-Only",
+      "Latency (ms/sample)": 2.9710026666672698,
+      "Std": 0.06469630881435079,
+      "Dim": 768
+    },
+    {
+      "Model": "MPNet-LoRA MNRL-2322",
+      "Latency (ms/sample)": 2.90982966666661,
+      "Std": 0.08203506704290407,
+      "Dim": 768
+    },
+    {
+      "Model": "MPNet-LoRA Expanded-Data",
+      "Latency (ms/sample)": 2.8707586666663096,
+      "Std": 0.02078613278697643,
+      "Dim": 768
+    },
+    {
+      "Model": "SimCSE-HardNeg (best)",
+      "Latency (ms/sample)": 2.1277329999998074,
+      "Std": 0.1037759136239088,
+      "Dim": 768
+    },
+    {
+      "Model": "SimCSE-Standard (best)",
+      "Latency (ms/sample)": 2.0837583333332077,
+      "Std": 0.09956190118863818,
+      "Dim": 768
+    },
+    {
+      "Model": "SimCSE-Feb12-v1",
+      "Latency (ms/sample)": 2.1190490000003592,
+      "Std": 0.15554022170675694,
+      "Dim": 768
+    },
+    {
+      "Model": "Nemotron-8B (4096-dim)",
+      "Latency (ms/sample)": 26.248652666666505,
+      "Std": 0.13547126982082283,
+      "Dim": 4096
+    },
+    {
+      "Model": "Nemotron-8B (768-dim)",
+      "Latency (ms/sample)": 26.881610333333203,
+      "Std": 0.15557757262713467,
+      "Dim": 768
+    }
+  ]
+}

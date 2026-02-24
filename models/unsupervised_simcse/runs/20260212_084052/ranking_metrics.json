@@ -1,0 +1,81 @@
+{
+  "ranking_metrics": {
+    "baseline_mpnet": {
+      "n_queries": 531,
+      "queries_with_positive": 316,
+      "mean_group_size": 1.8832391713747645,
+      "max_group_size": 73,
+      "single_candidate_query_ratio": 0.7250470809792844,
+      "mrr": 0.9672995780590716,
+      "ndcg@5": 0.9345974945167476,
+      "recall@5": 1.0,
+      "ndcg@10": 0.9339644708805328,
+      "recall@10": 1.0
+    },
+    "stage1_simcse": {
+      "n_queries": 531,
+      "queries_with_positive": 316,
+      "mean_group_size": 1.8832391713747645,
+      "max_group_size": 73,
+      "single_candidate_query_ratio": 0.7250470809792844,
+      "mrr": 0.944620253164557,
+      "ndcg@5": 0.8868765219996683,
+      "recall@5": 0.9968354430379747,
+      "ndcg@10": 0.8936012645237784,
+      "recall@10": 1.0
+    },
+    "stage2_hardneg": {
+      "n_queries": 531,
+      "queries_with_positive": 316,
+      "mean_group_size": 1.8832391713747645,
+      "max_group_size": 73,
+      "single_candidate_query_ratio": 0.7250470809792844,
+      "mrr": 0.9512130801687763,
+      "ndcg@5": 0.905186813388721,
+      "recall@5": 1.0,
+      "ndcg@10": 0.906587019180823,
+      "recall@10": 1.0
+    }
+  },
+  "ranking_table": [
+    {
+      "model_name": "baseline_mpnet",
+      "n_queries": 531,
+      "queries_with_positive": 316,
+      "mean_group_size": 1.8832391713747645,
+      "max_group_size": 73,
+      "single_candidate_query_ratio": 0.7250470809792844,
+      "mrr": 0.9672995780590716,
+      "ndcg@5": 0.9345974945167476,
+      "recall@5": 1.0,
+      "ndcg@10": 0.9339644708805328,
+      "recall@10": 1.0
+    },
+    {
+      "model_name": "stage2_hardneg",
+      "n_queries": 531,
+      "queries_with_positive": 316,
+      "mean_group_size": 1.8832391713747645,
+      "max_group_size": 73,
+      "single_candidate_query_ratio": 0.7250470809792844,
+      "mrr": 0.9512130801687763,
+      "ndcg@5": 0.905186813388721,
+      "recall@5": 1.0,
+      "ndcg@10": 0.906587019180823,
+      "recall@10": 1.0
+    },
+    {
+      "model_name": "stage1_simcse",
+      "n_queries": 531,
+      "queries_with_positive": 316,
+      "mean_group_size": 1.8832391713747645,
+      "max_group_size": 73,
+      "single_candidate_query_ratio": 0.7250470809792844,
+      "mrr": 0.944620253164557,
+      "ndcg@5": 0.8868765219996683,
+      "recall@5": 0.9968354430379747,
+      "ndcg@10": 0.8936012645237784,
+      "recall@10": 1.0
+    }
+  ]
+}

@@ -1,0 +1,226 @@
+{
+  "run_timestamp": "20260212_084052",
+  "project_root": "c:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism",
+  "device": "cuda",
+  "config": {
+    "seed": 42,
+    "paths": {
+      "train_csv": "data_new/SNow_incident_ticket_data.csv",
+      "eval_pairs_json": "data_new/fixed_test_pairs.json",
+      "run_output_root": "models/unsupervised_simcse/runs/20260212_084052",
+      "simcse_parent": "models/unsupervised_simcse"
+    },
+    "model": {
+      "base_model_id": "sentence-transformers/all-mpnet-base-v2"
+    },
+    "eval": {
+      "calibration_fraction": 0.3,
+      "batch_size": 32,
+      "bootstrap_iters": 200,
+      "k_values": [
+        5,
+        10
+      ]
+    },
+    "train": {
+      "stage1": {
+        "run": true,
+        "batch_size": 64,
+        "epochs": 1,
+        "lr": 2e-05,
+        "warmup_ratio": 0.1,
+        "max_seq_length": 256,
+        "max_train_sentences": 30000
+      },
+      "stage2_hardneg": {
+        "run": true,
+        "batch_size": 32,
+        "epochs": 1,
+        "lr": 1e-05,
+        "warmup_ratio": 0.1,
+        "max_seq_length": 256,
+        "max_hard_negatives": 300,
+        "max_refinement_pairs": 2000
+      }
+    },
+    "privacy": {
+      "max_words": 180,
+      "min_words": 4
+    }
+  },
+  "training_profile": {
+    "path": "c:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\data_new\\SNow_incident_ticket_data.csv",
+    "text_col": "Description",
+    "raw_rows": 10633,
+    "normalized_non_empty": 10498,
+    "unique_non_empty": 10278
+  },
+  "checkpoints": {
+    "stage1": "c:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\unsupervised_simcse\\simcse_20260212_084052",
+    "stage2": "c:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\models\\unsupervised_simcse\\simcse_20260212_084052_hardneg"
+  },
+  "model_metrics": {
+    "baseline_mpnet": {
+      "calibration": {
+        "spearman": 0.5477976046272666,
+        "pearson": 0.5590643813971942,
+        "roc_auc": 0.8162666666666666,
+        "pr_auc": 0.8564494383434401,
+        "f1": 0.7339901477832512,
+        "accuracy": 0.64,
+        "threshold": 0.30499999999999994,
+        "spearman_ci": [
+          0.4697289923448555,
+          0.6292212228818758
+        ],
+        "roc_auc_ci": [
+          0.7714049051251957,
+          0.8639089983860393
+        ],
+        "best_calibration_f1": 0.7339901477832512
+      },
+      "evaluation": {
+        "spearman": 0.4837235115398561,
+        "pearson": 0.5094326903103755,
+        "roc_auc": 0.7792734693877552,
+        "pr_auc": 0.822956047098806,
+        "f1": 0.721584984358707,
+        "accuracy": 0.6185714285714285,
+        "threshold": 0.30499999999999994,
+        "spearman_ci": [
+          0.4221355588217512,
+          0.551990443415379
+        ],
+        "roc_auc_ci": [
+          0.7441447579121769,
+          0.8186908618030054
+        ]
+      }
+    },
+    "stage1_simcse": {
+      "calibration": {
+        "spearman": 0.42532065283384596,
+        "pearson": 0.43189773903177486,
+        "roc_auc": 0.7455555555555555,
+        "pr_auc": 0.7821059189340651,
+        "f1": 0.6978193146417445,
+        "accuracy": 0.6766666666666666,
+        "threshold": 0.27500000000000013,
+        "spearman_ci": [
+          0.32134735426415884,
+          0.5208702098936479
+        ],
+        "roc_auc_ci": [
+          0.68566352571233,
+          0.8008154455275038
+        ],
+        "best_calibration_f1": 0.6978193146417445
+      },
+      "evaluation": {
+        "spearman": 0.3561152951285497,
+        "pearson": 0.38026472014341833,
+        "roc_auc": 0.7055999999999999,
+        "pr_auc": 0.7442491415283734,
+        "f1": 0.6409574468085106,
+        "accuracy": 0.6142857142857143,
+        "threshold": 0.27500000000000013,
+        "spearman_ci": [
+          0.2843700602652556,
+          0.4162911113124315
+        ],
+        "roc_auc_ci": [
+          0.664236312276792,
+          0.7403507180214551
+        ]
+      }
+    },
+    "stage2_hardneg": {
+      "calibration": {
+        "spearman": 0.48544797298568226,
+        "pearson": 0.49018312017925864,
+        "roc_auc": 0.7802666666666667,
+        "pr_auc": 0.8222461566858269,
+        "f1": 0.7070707070707071,
+        "accuracy": 0.6133333333333333,
+        "threshold": 0.925,
+        "spearman_ci": [
+          0.41781152728052906,
+          0.5660143111102867
+        ],
+        "roc_auc_ci": [
+          0.7414066220238095,
+          0.8270096216545719
+        ],
+        "best_calibration_f1": 0.7070707070707071
+      },
+      "evaluation": {
+        "spearman": 0.5191851632583664,
+        "pearson": 0.5166230638943949,
+        "roc_auc": 0.7997469387755103,
+        "pr_auc": 0.8290371525378719,
+        "f1": 0.7339847991313789,
+        "accuracy": 0.65,
+        "threshold": 0.925,
+        "spearman_ci": [
+          0.4628228971555114,
+          0.57790542069323
+        ],
+        "roc_auc_ci": [
+          0.7672844408386896,
+          0.833654364224138
+        ]
+      }
+    }
+  },
+  "comparison_table": [
+    {
+      "model_name": "stage2_hardneg",
+      "spearman": 0.5191851632583664,
+      "roc_auc": 0.7997469387755103,
+      "pr_auc": 0.8290371525378719,
+      "f1": 0.7339847991313789,
+      "accuracy": 0.65,
+      "threshold": 0.925
+    },
+    {
+      "model_name": "baseline_mpnet",
+      "spearman": 0.4837235115398561,
+      "roc_auc": 0.7792734693877552,
+      "pr_auc": 0.822956047098806,
+      "f1": 0.721584984358707,
+      "accuracy": 0.6185714285714285,
+      "threshold": 0.30499999999999994
+    },
+    {
+      "model_name": "stage1_simcse",
+      "spearman": 0.3561152951285497,
+      "roc_auc": 0.7055999999999999,
+      "pr_auc": 0.7442491415283734,
+      "f1": 0.6409574468085106,
+      "accuracy": 0.6142857142857143,
+      "threshold": 0.27500000000000013
+    }
+  ],
+  "significance": {
+    "top_model": "stage2_hardneg",
+    "runner_up": "baseline_mpnet",
+    "spearman": {
+      "delta": 0.006491292845413199,
+      "p_value": 0.722,
+      "ci": [
+        -0.032776244037580476,
+        0.045056996160334414
+      ],
+      "significant": false
+    },
+    "roc_auc": {
+      "delta": 0.0037491383707275675,
+      "p_value": 0.724,
+      "ci": [
+        -0.018923381409217108,
+        0.026017221194833566
+      ],
+      "significant": false
+    }
+  }
+}

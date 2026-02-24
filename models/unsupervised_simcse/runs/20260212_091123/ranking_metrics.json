@@ -1,0 +1,81 @@
+{
+  "ranking_metrics": {
+    "baseline_mpnet": {
+      "n_queries": 416,
+      "queries_with_positive": 242,
+      "mean_group_size": 1.6826923076923077,
+      "max_group_size": 51,
+      "single_candidate_query_ratio": 0.7836538461538461,
+      "mrr": 0.9696969696969697,
+      "ndcg@5": 0.9200859665820381,
+      "recall@5": 1.0,
+      "ndcg@10": 0.915038578542859,
+      "recall@10": 1.0
+    },
+    "stage1_simcse": {
+      "n_queries": 416,
+      "queries_with_positive": 242,
+      "mean_group_size": 1.6826923076923077,
+      "max_group_size": 51,
+      "single_candidate_query_ratio": 0.7836538461538461,
+      "mrr": 0.9517906336088154,
+      "ndcg@5": 0.8807985512470811,
+      "recall@5": 1.0,
+      "ndcg@10": 0.8857239347779732,
+      "recall@10": 1.0
+    },
+    "stage2_hardneg": {
+      "n_queries": 416,
+      "queries_with_positive": 242,
+      "mean_group_size": 1.6826923076923077,
+      "max_group_size": 51,
+      "single_candidate_query_ratio": 0.7836538461538461,
+      "mrr": 0.9362947658402204,
+      "ndcg@5": 0.8465985416865741,
+      "recall@5": 1.0,
+      "ndcg@10": 0.8418939805517123,
+      "recall@10": 1.0
+    }
+  },
+  "ranking_table": [
+    {
+      "model_name": "baseline_mpnet",
+      "n_queries": 416,
+      "queries_with_positive": 242,
+      "mean_group_size": 1.6826923076923077,
+      "max_group_size": 51,
+      "single_candidate_query_ratio": 0.7836538461538461,
+      "mrr": 0.9696969696969697,
+      "ndcg@5": 0.9200859665820381,
+      "recall@5": 1.0,
+      "ndcg@10": 0.915038578542859,
+      "recall@10": 1.0
+    },
+    {
+      "model_name": "stage1_simcse",
+      "n_queries": 416,
+      "queries_with_positive": 242,
+      "mean_group_size": 1.6826923076923077,
+      "max_group_size": 51,
+      "single_candidate_query_ratio": 0.7836538461538461,
+      "mrr": 0.9517906336088154,
+      "ndcg@5": 0.8807985512470811,
+      "recall@5": 1.0,
+      "ndcg@10": 0.8857239347779732,
+      "recall@10": 1.0
+    },
+    {
+      "model_name": "stage2_hardneg",
+      "n_queries": 416,
+      "queries_with_positive": 242,
+      "mean_group_size": 1.6826923076923077,
+      "max_group_size": 51,
+      "single_candidate_query_ratio": 0.7836538461538461,
+      "mrr": 0.9362947658402204,
+      "ndcg@5": 0.8465985416865741,
+      "recall@5": 1.0,
+      "ndcg@10": 0.8418939805517123,
+      "recall@10": 1.0
+    }
+  ]
+}
