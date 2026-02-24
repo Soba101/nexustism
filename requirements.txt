@@ -20,10 +20,14 @@ sentence-transformers>=2.2.2
 sqlalchemy
 torch
 tqdm
-transformers>=4.30.0
+transformers>=4.37.0
 peft>=0.4.0
 pytest
 pytorch-lightning
 fastapi
 uvicorn
 hdbscan
+# Nemotron-8B & visualization dependencies (added 2026-02-19)
+umap-learn
+accelerate>=0.26.0
+huggingface-hub>=0.21.0
