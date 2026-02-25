@@ -1,0 +1,184 @@
+{
+  "timestamp": "20260225_1427",
+  "retrieval_clean": {
+    "TF-IDF_BM25": {
+      "NDCG@10": 0.8112616680677581,
+      "MRR@10": 0.9082291666666668,
+      "Recall@1": 0.0003827638211387338,
+      "Recall@5": 0.0016435404299589278,
+      "Recall@10": 0.0031150373523077006
+    },
+    "Base_MPNet": {
+      "NDCG@10": 0.8308324784154186,
+      "MRR@10": 0.920986111111111,
+      "Recall@1": 0.00040418855024376227,
+      "Recall@5": 0.001748960041685734,
+      "Recall@10": 0.0033024981561576923
+    },
+    "V4_Cosine": {
+      "NDCG@10": 0.8156416071924864,
+      "MRR@10": 0.9036626984126984,
+      "Recall@1": 0.00038473501836051085,
+      "Recall@5": 0.0017072672519943815,
+      "Recall@10": 0.003226649591555589
+    },
+    "ICT": {
+      "NDCG@10": 0.8436822865083777,
+      "MRR@10": 0.9079642857142857,
+      "Recall@1": 0.0003559336214281485,
+      "Recall@5": 0.001739763423171874,
+      "Recall@10": 0.003295316772489152
+    },
+    "TSDAE": {
+      "NDCG@10": 0.5374934390569046,
+      "MRR@10": 0.6563323412698412,
+      "Recall@1": 0.00021279115643480694,
+      "Recall@5": 0.0011305864849956802,
+      "Recall@10": 0.002060529867840213
+    },
+    "GPL": {
+      "NDCG@10": 0.528295538055374,
+      "MRR@10": 0.6609295634920634,
+      "Recall@1": 0.00028487458862580945,
+      "Recall@5": 0.0011182650805240833,
+      "Recall@10": 0.0020240882150237257
+    }
+  },
+  "pair_old": {
+    "TF-IDF_BM25": {
+      "Spearman": 0.3614,
+      "ROC_AUC": 0.7086,
+      "F1_test": 0.6288,
+      "Precision_test": 0.705,
+      "Recall_test": 0.5675,
+      "Accuracy_test": 0.665,
+      "Threshold": 0.0259,
+      "Val_F1": 0.7204
+    },
+    "Base_MPNet": {
+      "Spearman": 0.5038,
+      "ROC_AUC": 0.7909,
+      "F1_test": 0.7109,
+      "Precision_test": 0.601,
+      "Recall_test": 0.87,
+      "Accuracy_test": 0.6462,
+      "Threshold": 0.3407,
+      "Val_F1": 0.7295
+    },
+    "V4_Cosine": {
+      "Spearman": 0.4949,
+      "ROC_AUC": 0.7857,
+      "F1_test": 0.7135,
+      "Precision_test": 0.636,
+      "Recall_test": 0.8125,
+      "Accuracy_test": 0.6737,
+      "Threshold": 0.3862,
+      "Val_F1": 0.7321
+    },
+    "ICT": {
+      "Spearman": 0.3569,
+      "ROC_AUC": 0.706,
+      "F1_test": 0.632,
+      "Precision_test": 0.6585,
+      "Recall_test": 0.6075,
+      "Accuracy_test": 0.6462,
+      "Threshold": 0.1103,
+      "Val_F1": 0.7429
+    },
+    "TSDAE": {
+      "Spearman": 0.3316,
+      "ROC_AUC": 0.6914,
+      "F1_test": 0.6797,
+      "Precision_test": 0.5992,
+      "Recall_test": 0.785,
+      "Accuracy_test": 0.63,
+      "Threshold": 0.8985,
+      "Val_F1": 0.7311
+    },
+    "GPL": {
+      "Spearman": 0.1222,
+      "ROC_AUC": 0.5705,
+      "F1_test": 0.6656,
+      "Precision_test": 0.4994,
+      "Recall_test": 0.9975,
+      "Accuracy_test": 0.4988,
+      "Threshold": -0.9975,
+      "Val_F1": 0.6667
+    }
+  },
+  "pair_new_metadata": {
+    "TF-IDF_BM25": {
+      "Spearman": 0.8051,
+      "ROC_AUC": 0.9641,
+      "F1_test": 0.9365,
+      "Precision_test": 0.951,
+      "Recall_test": 0.9225,
+      "Accuracy_test": 0.9375,
+      "Threshold": 0.0423,
+      "Val_F1": 0.9534
+    },
+    "Base_MPNet": {
+      "Spearman": 0.8333,
+      "ROC_AUC": 0.9811,
+      "F1_test": 0.9514,
+      "Precision_test": 0.9738,
+      "Recall_test": 0.93,
+      "Accuracy_test": 0.9525,
+      "Threshold": 0.4952,
+      "Val_F1": 0.9746
+    },
+    "ICT": {
+      "Spearman": 0.7972,
+      "ROC_AUC": 0.9603,
+      "F1_test": 0.9169,
+      "Precision_test": 0.9541,
+      "Recall_test": 0.8825,
+      "Accuracy_test": 0.92,
+      "Threshold": 0.1745,
+      "Val_F1": 0.9271
+    },
+    "TSDAE": {
+      "Spearman": 0.7126,
+      "ROC_AUC": 0.9114,
+      "F1_test": 0.864,
+      "Precision_test": 0.8706,
+      "Recall_test": 0.8575,
+      "Accuracy_test": 0.865,
+      "Threshold": 0.9869,
+      "Val_F1": 0.8808
+    },
+    "GPL": {
+      "Spearman": 0.4064,
+      "ROC_AUC": 0.7346,
+      "F1_test": 0.6983,
+      "Precision_test": 0.6965,
+      "Recall_test": 0.7,
+      "Accuracy_test": 0.6975,
+      "Threshold": 0.9899,
+      "Val_F1": 0.6947
+    },
+    "V4_Cosine": {
+      "Spearman": 0.8382,
+      "ROC_AUC": 0.9839,
+      "F1_test": 0.9495,
+      "Precision_test": 0.9839,
+      "Recall_test": 0.9175,
+      "Accuracy_test": 0.9513,
+      "Threshold": 0.6556,
+      "Val_F1": 0.9691
+    }
+  },
+  "audit_summary": {
+    "total_gt_pairs": 1000,
+    "high_tfidf_overlap_pct": 0.0,
+    "high_tfidf_positive_pct": 0.0,
+    "mpnet_pos_mean": 0.5412,
+    "mpnet_neg_mean": 0.3547
+  },
+  "new_benchmark_info": {
+    "total_pairs": 1000,
+    "num_positive": 500,
+    "num_negative": 500,
+    "saved_to": "c:\\Users\\donov\\Documents\\itsm project\\Final_nexustism\\nexustism\\data_new\\semantic_test_pairs_v2.json"
+  }
+}
