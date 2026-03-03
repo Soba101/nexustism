@@ -2,9 +2,9 @@
 
 SentenceTransformer fine-tuning pipeline for IT Service Management ticket similarity and causal relationship detection.
 
-- **Production Model:** V4 Cosine (Spearman 0.4949, ROC-AUC 0.7857)
-- **Base Model:** all-mpnet-base-v2 (109M params, 768-dim)
-- **Fine-tuning:** LoRA (r=16, α=32) with curriculum learning
+- **Production Model:** Nomic Embed Text v1.5 (zero-shot, Spearman 0.4476 on grounded benchmark)
+- **Model ID:** `nomic-ai/nomic-embed-text-v1.5` (loaded from HuggingFace at runtime)
+- **Embedding Dim:** 768 (L2-normalised)
 
 ---
 
@@ -16,12 +16,13 @@ Encodes tickets into 768-dim embeddings for cosine similarity ranking.
 
 ```python
 query = "database connection timeout"
-embedding = bi_encoder.encode(query)  # → shape (768,)
-top_k_candidates = vector_db.search(embedding, k=20)
+embedding = model.encode_query([query])  # → shape (1, 768), prepends "search_query: "
+top_k_candidates = vector_db.search(embedding[0], k=20)
 ```
 
-- **Model:** all-mpnet-base-v2 + LoRA adapters
-- **Output:** 768-dimensional vector per ticket
+- **Model:** `nomic-ai/nomic-embed-text-v1.5` (zero-shot)
+- **Output:** 768-dimensional L2-normalised vector per ticket
+- **Encode asymmetry:** `encode()` for documents (`"search_document: "` prefix), `encode_query()` for queries (`"search_query: "` prefix)
 - **Inference:** ~5ms per query
 
 ### Stage 2: Cross-Encoder (Causal Reranking)
@@ -42,20 +43,26 @@ causal_scores = cross_encoder.predict([
 
 ---
 
-## Production Model (V4 Cosine)
+## Production Model (Nomic Embed Text v1.5)
+
+| Property | Value |
+|----------|-------|
+| Model ID | `nomic-ai/nomic-embed-text-v1.5` |
+| Type | Zero-shot (no local checkpoint) |
+| Embedding dim | 768 (L2-normalised) |
+| Deploy script | `notebook-fixes/deploy_nomic.py` → `NomicModelDeployment` |
+| Document prefix | `"search_document: "` (via `encode()`) |
+| Query prefix | `"search_query: "` (via `encode_query()`) |
+| Spearman (grounded) | 0.4476 (on `benchmark_v4_semantic_resnotes`) |
+| ROC-AUC (grounded) | 0.7584 |
+
+**Archived model (V4 Cosine MPNet LoRA):**
 
 | Property | Value |
 |----------|-------|
 | Path | `models/real_servicenow_finetuned_mpnet_lora/real_servicenow_v2_20260104_2321` |
-| Base | all-mpnet-base-v2 (109M params) |
-| Embedding dim | 768 |
-| Loss | Pure CosineSimilarityLoss |
-| LoRA | r=16, α=32 |
-| Training | 12 epochs (4 per curriculum phase), batch=32, lr=2e-5 |
-| Spearman | 0.4949 |
-| ROC-AUC | 0.7857 |
-| F1 | 0.7134 |
-| Adversarial ROC-AUC | 0.967 (verified semantic understanding) |
+| Spearman (grounded) | 0.2949 (below Nomic zero-shot) |
+| Status | Archived — kept for comparison only |
 
 ---
 
@@ -91,11 +98,12 @@ Spearman progression: 0.413 → 0.487 → 0.498 across phases.
 
 ## Training
 
-### Train V4 Cosine (Production)
+### Train V4 Cosine (Archived)
 
 ```bash
 jupyter notebook model_promax_mpnet_lorapeft_v4_semantic_mnrl.ipynb
 # Run all cells sequentially
+# Note: V4 underperforms Nomic zero-shot on grounded benchmark
 ```
 
 ### Generate Curriculum Dataset
@@ -161,7 +169,15 @@ Context metadata placed at **end** of text to prevent shortcut learning:
 
 ## Evaluation
 
-### Run Evaluation
+### Run Evaluation (Primary — 3-Benchmark Sweep)
+
+```bash
+jupyter notebook evaluate_v4_benchmark.ipynb
+# Key benchmark: v4_semantic_resnotes (grounded ground truth)
+# Beating Nomic zero-shot Sp=0.4476 is the bar for any new model
+```
+
+### Legacy Evaluation
 
 ```bash
 jupyter notebook evaluate_model_v2.ipynb
@@ -177,10 +193,10 @@ Models must pass adversarial testing before production:
 
 ### Production Checklist
 
-- [ ] Spearman correlation ≥ 0.80
-- [ ] ROC-AUC ≥ 0.95
-- [ ] Adversarial diagnostic PASSED (ROC-AUC ≥ 0.70, F1 ≥ 0.70)
-- [ ] Holdout metrics within 5% of eval metrics
+- [ ] Spearman ≥ 0.4476 on `benchmark_v4_semantic_resnotes` (grounded ground truth)
+- [ ] ROC-AUC ≥ 0.75 on `benchmark_v4_semantic_resnotes`
+- [ ] Evaluated on all 3 benchmarks in `evaluate_v4_benchmark.ipynb`
+- [ ] No catastrophic forgetting (compare to Nomic zero-shot baseline)
 - [ ] `training_metadata.json` saved with model
 
 ---
@@ -188,30 +204,25 @@ Models must pass adversarial testing before production:
 ## Model Deployment
 
 ```python
-from deploy_model_v4 import V4CosineModelDeployment
+from deploy_nomic import NomicModelDeployment
 
-model = V4CosineModelDeployment()
+model = NomicModelDeployment()
 
-# Compute similarity
-similarity = model.compute_similarity(
-    "User cannot login to SAP",
-    "SAP authentication failed"
-)
+# Encode documents (for indexing)
+doc_embeddings = model.encode(["User cannot login to SAP", "SAP authentication failed"])
+# → shape (2, 768), L2-normalised, prepends "search_document: "
 
-# Find similar tickets
-results = model.find_similar(
-    query="Email not working",
-    candidates=["Outlook crashes", "VPN issue", "Cannot send emails"],
-    top_k=3
-)
+# Encode queries (for search)
+query_embedding = model.encode_query(["Email not working"])
+# → shape (1, 768), L2-normalised, prepends "search_query: "
 ```
 
-Deployment script: `notebook-fixes/deploy_model_v4.py`
+Deployment script: `notebook-fixes/deploy_nomic.py`
 
 ### Generate Embeddings
 
 ```bash
-python supabase/embed_incidents_v4_cosine.py
+python supabase/embed_incidents_nomic.py
 python supabase/rebuild_v4_indexes.py
 ```
 
@@ -221,18 +232,16 @@ python supabase/rebuild_v4_indexes.py
 
 | Model | Parameters | Embedding Dim | Speed | Use Case |
 |-------|-----------|---------------|-------|----------|
-| MPNet-base + LoRA | 109M | 768 | Medium | **Production** |
-| Nomic-embed-text-v1.5 | 137M | 768 | Fast | Speed-optimized alternative |
+| Nomic-embed-text-v1.5 (zero-shot) | 137M | 768 | Fast | **Production** (Sp=0.4476) |
+| MPNet-base + LoRA (V4 Cosine) | 109M | 768 | Medium | Archived (Sp=0.2949) |
 | Qwen3-Embedding-8B | 8B | 768 (truncated) | Slow | Experimental |
 
 ### Training Notebooks
 
 | Notebook | Model | Notes |
 |----------|-------|-------|
-| `model_promax_mpnet_lorapeft_v4_semantic_mnrl.ipynb` | MPNet + LoRA | **Production (V4 Cosine)** |
-| `model_promax_mpnet_lorapeft_v3.ipynb` | MPNet + LoRA | V3 iteration |
-| `model_promax_nomic_v3_clean.ipynb` | Nomic v1.5 | Standard accuracy |
-| `model_promax_nomic_speed_v3_clean.ipynb` | Nomic v1.5 | Speed-optimized (FP16) |
+| `model_promax_nomic_lorapeft_v4_semantic_mnrl.ipynb` | Nomic + LoRA | V5.3 — caused catastrophic forgetting |
+| `model_promax_mpnet_lorapeft_v4_semantic_mnrl.ipynb` | MPNet + LoRA | V4 Cosine (archived) |
 | `qwen3_embedding_768.ipynb` | Qwen3-8B | Experimental |
 
 ---
@@ -258,4 +267,4 @@ python supabase/rebuild_v4_indexes.py
 
 ---
 
-**Last Updated:** January 29, 2026
+**Last Updated:** March 3, 2026
