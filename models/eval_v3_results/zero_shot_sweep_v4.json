@@ -1,0 +1,168 @@
+{
+  "Base MPNet": {
+    "v4_group_cat": {
+      "spearman": -0.0922,
+      "roc_auc": 0.4468,
+      "pr_auc": 0.4557,
+      "pos_mean": 0.4997,
+      "neg_mean": 0.5349,
+      "delta": -0.0351
+    },
+    "v4_rescode": {
+      "spearman": 0.0744,
+      "roc_auc": 0.5429,
+      "pr_auc": 0.5447,
+      "pos_mean": 0.5039,
+      "neg_mean": 0.4717,
+      "delta": 0.0321
+    },
+    "v4_semantic_resnotes": {
+      "spearman": 0.292,
+      "roc_auc": 0.6686,
+      "pr_auc": 0.7009,
+      "pos_mean": 0.5801,
+      "neg_mean": 0.4568,
+      "delta": 0.1233
+    }
+  },
+  "V4 Cosine (production)": {
+    "v4_group_cat": {
+      "spearman": -0.0913,
+      "roc_auc": 0.4473,
+      "pr_auc": 0.4555,
+      "pos_mean": 0.5,
+      "neg_mean": 0.5354,
+      "delta": -0.0354
+    },
+    "v4_rescode": {
+      "spearman": 0.0755,
+      "roc_auc": 0.5436,
+      "pr_auc": 0.5457,
+      "pos_mean": 0.5046,
+      "neg_mean": 0.4718,
+      "delta": 0.0328
+    },
+    "v4_semantic_resnotes": {
+      "spearman": 0.2949,
+      "roc_auc": 0.6702,
+      "pr_auc": 0.6999,
+      "pos_mean": 0.5798,
+      "neg_mean": 0.4559,
+      "delta": 0.1239
+    }
+  },
+  "V5.2 Merged (latest)": {
+    "v4_group_cat": {
+      "spearman": -0.0223,
+      "roc_auc": 0.4871,
+      "pr_auc": 0.4971,
+      "pos_mean": 0.6999,
+      "neg_mean": 0.7136,
+      "delta": -0.0137
+    },
+    "v4_rescode": {
+      "spearman": 0.1128,
+      "roc_auc": 0.5651,
+      "pr_auc": 0.554,
+      "pos_mean": 0.4759,
+      "neg_mean": 0.4251,
+      "delta": 0.0508
+    },
+    "v4_semantic_resnotes": {
+      "spearman": 0.3269,
+      "roc_auc": 0.6888,
+      "pr_auc": 0.6601,
+      "pos_mean": 0.5718,
+      "neg_mean": 0.4246,
+      "delta": 0.1471
+    }
+  },
+  "BGE-base-en-v1.5": {
+    "v4_group_cat": {
+      "spearman": -0.0327,
+      "roc_auc": 0.4811,
+      "pr_auc": 0.4715,
+      "pos_mean": 0.679,
+      "neg_mean": 0.6906,
+      "delta": -0.0115
+    },
+    "v4_rescode": {
+      "spearman": 0.1129,
+      "roc_auc": 0.5652,
+      "pr_auc": 0.5566,
+      "pos_mean": 0.6832,
+      "neg_mean": 0.6599,
+      "delta": 0.0233
+    },
+    "v4_semantic_resnotes": {
+      "spearman": 0.3654,
+      "roc_auc": 0.7109,
+      "pr_auc": 0.7331,
+      "pos_mean": 0.7276,
+      "neg_mean": 0.6473,
+      "delta": 0.0802
+    }
+  },
+  "E5-base-v2": {
+    "v4_group_cat": {
+      "spearman": -0.015,
+      "roc_auc": 0.4913,
+      "pr_auc": 0.4772,
+      "pos_mean": 0.8383,
+      "neg_mean": 0.8412,
+      "delta": -0.0028
+    },
+    "v4_rescode": {
+      "spearman": 0.0684,
+      "roc_auc": 0.5395,
+      "pr_auc": 0.5381,
+      "pos_mean": 0.8303,
+      "neg_mean": 0.8226,
+      "delta": 0.0077
+    },
+    "v4_semantic_resnotes": {
+      "spearman": 0.3579,
+      "roc_auc": 0.7066,
+      "pr_auc": 0.7296,
+      "pos_mean": 0.8539,
+      "neg_mean": 0.8171,
+      "delta": 0.0368
+    }
+  },
+  "Nomic-embed-text-v1.5": {
+    "v4_group_cat": {
+      "spearman": 0.0248,
+      "roc_auc": 0.5143,
+      "pr_auc": 0.49,
+      "pos_mean": 0.7724,
+      "neg_mean": 0.7706,
+      "delta": 0.0018
+    },
+    "v4_rescode": {
+      "spearman": 0.1258,
+      "roc_auc": 0.5726,
+      "pr_auc": 0.5596,
+      "pos_mean": 0.7395,
+      "neg_mean": 0.7177,
+      "delta": 0.0218
+    },
+    "v4_semantic_resnotes": {
+      "spearman": 0.4476,
+      "roc_auc": 0.7584,
+      "pr_auc": 0.7559,
+      "pos_mean": 0.7911,
+      "neg_mean": 0.7094,
+      "delta": 0.0817
+    }
+  },
+  "V5.3 Nomic (fine-tuned)": {
+    "v4_semantic_resnotes": {
+      "spearman": 0.204,
+      "roc_auc": 0.6178,
+      "pr_auc": 0.6334,
+      "pos_mean": 0.7707,
+      "neg_mean": 0.7163,
+      "delta": 0.0544
+    }
+  }
+}

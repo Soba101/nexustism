@@ -1,0 +1,195 @@
+{
+  "BGE-M3 (dense)": {
+    "v4_semantic_resnotes": {
+      "spearman": 0.4107,
+      "roc_auc": 0.7371,
+      "pr_auc": 0.7572,
+      "pos_mean": 0.6706,
+      "neg_mean": 0.5681,
+      "delta": 0.1025
+    },
+    "v4_group_cat": {
+      "spearman": -0.0065,
+      "roc_auc": 0.4962,
+      "pr_auc": 0.4796,
+      "pos_mean": 0.6058,
+      "neg_mean": 0.6118,
+      "delta": -0.006
+    },
+    "v4_rescode": {
+      "spearman": 0.11,
+      "roc_auc": 0.5635,
+      "pr_auc": 0.5554,
+      "pos_mean": 0.6046,
+      "neg_mean": 0.5798,
+      "delta": 0.0248
+    }
+  },
+  "mxbai-embed-large-v1": {
+    "v4_semantic_resnotes": {
+      "spearman": 0.2898,
+      "roc_auc": 0.6673,
+      "pr_auc": 0.7078,
+      "pos_mean": 0.7236,
+      "neg_mean": 0.6543,
+      "delta": 0.0693
+    },
+    "v4_group_cat": {
+      "spearman": -0.0427,
+      "roc_auc": 0.4754,
+      "pr_auc": 0.4649,
+      "pos_mean": 0.6772,
+      "neg_mean": 0.6865,
+      "delta": -0.0093
+    },
+    "v4_rescode": {
+      "spearman": 0.0578,
+      "roc_auc": 0.5334,
+      "pr_auc": 0.5406,
+      "pos_mean": 0.6753,
+      "neg_mean": 0.6602,
+      "delta": 0.0151
+    }
+  },
+  "BGE-large-en-v1.5": {
+    "v4_semantic_resnotes": {
+      "spearman": 0.3377,
+      "roc_auc": 0.695,
+      "pr_auc": 0.7299,
+      "pos_mean": 0.7354,
+      "neg_mean": 0.6624,
+      "delta": 0.073
+    },
+    "v4_group_cat": {
+      "spearman": -0.0184,
+      "roc_auc": 0.4894,
+      "pr_auc": 0.472,
+      "pos_mean": 0.6935,
+      "neg_mean": 0.6996,
+      "delta": -0.0061
+    },
+    "v4_rescode": {
+      "spearman": 0.078,
+      "roc_auc": 0.545,
+      "pr_auc": 0.5477,
+      "pos_mean": 0.6865,
+      "neg_mean": 0.6694,
+      "delta": 0.0171
+    }
+  },
+  "E5-large-v2": {
+    "v4_semantic_resnotes": {
+      "spearman": 0.3802,
+      "roc_auc": 0.7195,
+      "pr_auc": 0.7417,
+      "pos_mean": 0.8424,
+      "neg_mean": 0.8074,
+      "delta": 0.035
+    },
+    "v4_group_cat": {
+      "spearman": -0.0512,
+      "roc_auc": 0.4704,
+      "pr_auc": 0.4609,
+      "pos_mean": 0.8236,
+      "neg_mean": 0.8284,
+      "delta": -0.0048
+    },
+    "v4_rescode": {
+      "spearman": 0.1118,
+      "roc_auc": 0.5645,
+      "pr_auc": 0.5531,
+      "pos_mean": 0.8192,
+      "neg_mean": 0.8097,
+      "delta": 0.0095
+    }
+  },
+  "Multilingual-E5-large-instruct": {
+    "v4_semantic_resnotes": {
+      "spearman": 0.293,
+      "roc_auc": 0.6692,
+      "pr_auc": 0.7081,
+      "pos_mean": 0.8789,
+      "neg_mean": 0.8525,
+      "delta": 0.0264
+    },
+    "v4_group_cat": {
+      "spearman": -0.0181,
+      "roc_auc": 0.4896,
+      "pr_auc": 0.476,
+      "pos_mean": 0.8618,
+      "neg_mean": 0.8647,
+      "delta": -0.0029
+    },
+    "v4_rescode": {
+      "spearman": 0.0802,
+      "roc_auc": 0.5463,
+      "pr_auc": 0.5443,
+      "pos_mean": 0.8628,
+      "neg_mean": 0.856,
+      "delta": 0.0068
+    }
+  },
+  "Snowflake-arctic-embed-l": {
+    "v4_semantic_resnotes": {
+      "spearman": 0.3947,
+      "roc_auc": 0.7279,
+      "pr_auc": 0.7396,
+      "pos_mean": 0.5554,
+      "neg_mean": 0.4432,
+      "delta": 0.1122
+    },
+    "v4_group_cat": {
+      "spearman": -0.0143,
+      "roc_auc": 0.4917,
+      "pr_auc": 0.4722,
+      "pos_mean": 0.4924,
+      "neg_mean": 0.5031,
+      "delta": -0.0107
+    },
+    "v4_rescode": {
+      "spearman": 0.1196,
+      "roc_auc": 0.569,
+      "pr_auc": 0.5547,
+      "pos_mean": 0.4859,
+      "neg_mean": 0.4546,
+      "delta": 0.0314
+    }
+  },
+  "Gemma-Embedding-300M": {
+    "v4_semantic_resnotes": {
+      "spearman": 0.3785,
+      "roc_auc": 0.7185,
+      "pr_auc": 0.7371,
+      "pos_mean": 0.6243,
+      "neg_mean": 0.5039,
+      "delta": 0.1204
+    },
+    "v4_group_cat": {
+      "spearman": 0.0449,
+      "roc_auc": 0.5259,
+      "pr_auc": 0.499,
+      "pos_mean": 0.571,
+      "neg_mean": 0.5757,
+      "delta": -0.0048
+    },
+    "v4_rescode": {
+      "spearman": 0.0891,
+      "roc_auc": 0.5514,
+      "pr_auc": 0.5445,
+      "pos_mean": 0.5585,
+      "neg_mean": 0.5252,
+      "delta": 0.0332
+    }
+  },
+  "GTE-Qwen2-1.5B-instruct": {
+    "v4_semantic_resnotes": {
+      "error": "Attention mask should be of size (32, 1, 2899, 8697), but is torch.Size([32, 1, 2899, 2899])"
+    },
+    "v4_group_cat": {
+      "error": "Attention mask should be of size (32, 1, 3506, 10518), but is torch.Size([32, 1, 3506, 3506])"
+    },
+    "v4_rescode": {
+      "error": "Attention mask should be of size (32, 1, 5582, 16746), but is torch.Size([32, 1, 5582, 5582])"
+    }
+  }
+}
