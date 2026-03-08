@@ -4,7 +4,7 @@ tags:
 - cross-encoder
 - reranker
 - generated_from_trainer
-- dataset_size:2792
+- dataset_size:2737
 - loss:BinaryCrossEntropyLoss
 base_model: cross-encoder/ms-marco-MiniLM-L12-v2
 pipeline_tag: text-ranking
@@ -51,11 +51,11 @@ from sentence_transformers import CrossEncoder
 model = CrossEncoder("cross_encoder_model_id")
 # Get scores for pairs of texts
 pairs = [
-    ["cause : dear team error occurred while processing the edi transaction. please find the details below and attached is the file associated to the transaction. interface gitp subsidiary pidsmy api name inds - global - if - mgmt - papi flow direction outbound source system sap end system ibmmq file name 0000000001763941 _ 007a05c0 - b21c - 11ef - 98df - 9601f4f6b381. xml storage path / inds / prod / outbound / nocompany / ordrsp / 0000000001763941 _ 007a05c0 - b21c - 11ef - 98df - 9601f4f6b381. xml error source mulesoft transaction id 007a05c0 - b21c - 11ef - 98df - 9601f4f6b381 error summary 500 connectivity error details * * * * * * * * * * * 443 / api / v1 / sd / order / confirmation'failed : remotely closed. comments unable to find 0000000001763941 _ 007a05c0 - b21c", "effect : dear team error occurred while processing the edi transaction. please find the details below and attached is the file associated to the transaction. interface gitp subsidiary pidsmy api name inds - global - if - mgmt - papi flow direction outbound source system sap end system ibmmq file name 0000000001769646 _ 040157c0 - b21c - 11ef - 98df - 9601f4f6b381. xml storage path / inds / prod / outbound / nocompany / ordrsp / 0000000001769646 _ 040157c0 - b21c - 11ef - 98df - 9601f4f6b381. xml error source mulesoft transaction id 040157c0 - b21c - 11ef - 98df - 9601f4f6b381 error summary 500 connectivity error details * * * * * * * * * * * 443 / api / v1 / aleaud'failed : remotely closed. comments unable to find 0000000001769646 _ 040157c0 - b21c - 11ef - 98df - 9601"],
-    ["cause : authorized member can't access sap. | cat : application / software", 'effect : 3 ar pass data : 1 ). pgi so 2410000709 2 ). pgi so 2410000882 3 ). pgi so 2409012425 status is already paid, but not not included in the " gdn inv reg pass report buy part paid " report, please include all this data in the report, for detail please see the attchment, thanks | cat : application / software | delta _ hours : - 1921. 30'],
-    ["cause : i can't edit my esanction even though finance azah san re - opened for topup. # iaf2015297 | cat : nan", 'effect : for wo : psv - wo - 2412009287 can not find charge : " phi v? n chuy? n... " to add into work order, pls check and fix it. | cat : application / software | delta _ hours : 766. 18'],
-    ['cause : item part axw - 16038000a25466, that unable to be purchased ( po to factory ) we used ( tcode : me21n ), zeru san ( user ) already process dmr, pir already ok but only unable to po to factory, for detail we attached in servicenow, thanks | cat : application / software', 'effect : user : fenny issue : user did cnlexp under invoice 130023838 due to revise in qty. however the sales advise in the new billing ( 130024123 ) is failed as attached screenshot. | cat : application / software | delta _ hours : 23. 62'],
-    ['cause : dear team error occurred while processing the edi transaction. please find the details below and attached is the file associated to the transaction. flow direction inbound subsidiary papvn - tl2 source system invoice end system sap file name na storage path api name sgst - fi - invoice - papi error source invoice transaction id 9793e450 - 3da7 - 11f0 - b397 - fe052cc11875 error summary < html > < head > < meta name = " viewport " content = " width = device - width, initial - scale = 1 " > < style type = " text / css " > / *! * bootstrap v3. 3. 5 ( http : / / getbootstrap. com ) * copyright 2011 - 2015 twitter, inc. * licensed under mit ( https : / / github. com / twbs / bootstrap / blob / master / license ) * / / *! normalize. css v3. 0. 3 | mit license | github. com / necolas / normalize. css * / html { font - family : sans - serif ; - ms - text - size - adjust : 100 % ; - webkit - text - size - adjust : 100 % ; } body { margin : 0 ; } h1 { font - size : 1. 7em ; font - weight : 400 ; line - height : 1. 3 ; margin : 0. 68em 0 ; } * { - webkit - box - sizing : border - box ; - moz - box - sizing : border - box ; box - sizing : border - box ; } * : before, * : after { - webkit - box - sizing : border - box ; - moz - box - sizing : border - box ; box - sizing : border - box ; } html { - webkit - tap - highlight - color : rgba ( 0, 0, 0, 0', 'effect : as i shared in msteams po, would like to inquire if we can check this bp code under papvn cause for pmpc we will be uploading this bp code 00039173 - 1 panasonic global excellence we wanted to check if there would be any issue if we proceed | cat : application / software | delta _ hours : - 6597. 73'],
+    ['cause : pgi - so - 2505003793 is appear in sfdc & partner portal but not appear ( cannot be read in sap ), please fix. | cat : application / software', "effect : job : pm - wo - 2501004489 part no : m4d154810zm ( pcb ) part still udr part requested - didn't link to sap pls assist to link as customer request urgent repair / to close job sheet | cat : application / software | delta _ hours : 3266. 45"],
+    ["cause : pls cancel ews psv - ews - 2503000221 in sfdc and don't trigger to sap | cat : application / software", 'effect : dear team error occurred while processing the edi transaction interface subsidiary no subsidiary api name pana - pagitp - mgmt - eapi flow direction inbound source system pagitp end system sap s4hana file name no file name storage path no attachment error source mulesoft transaction id 946bd1f9 - c3a8 - 4309 - 9216 - df00e3efc6c4 error summary 500 source _ response _ send error details client connection was closed comments note : this is an automated mail, please do not reply. thanks and regards, apac support, panasonic | cat : application / software | delta _ hours : 2826. 65'],
+    ['cause : material : srf3704 - kd10 | cat : application / software', 'effect : dear team error occurred while processing the edi transaction interface change - over subsidiary pau api name pana - sdesk - ext - eapi flow direction outbound source system pau end system zoho file name no file name storage path no attachment error source pana - sdesk - ext - eapi transaction id 819e3530 - a313 - 11ef - 8b0c - 02b4130d4440 error summary 500 expression error details expression : " org. mule. runtime. api. exception. muleruntimeexception - exception was found trying to retrieve the contents of file / zoho / live / outbound / status / remote / co _ status _ 20241115163317536699. csv org. mule. runtime. api. exception. muleruntimeexception : exception was found trying to retrieve the contents of file / zoho / live / outbound / status / remote / co _ status _ 20241115163317536699. csv caused by : sftp error ( ssh _ fx _ failure ) : failure. at org. apache. sshd. sftp. client. impl. abstractsftpclient. throwstatusexception ( abstractsftpclient. java : 277 ) at org. apache. sshd. sftp. client. impl. abstractsftpclient. checkhandleresponse ( abstractsftpclient. java : 299 ) at org. apache. sshd. sftp. client. impl. abstractsftpclient. checkhandle ( abstractsftpclient. java : 290 ) at org. apache. sshd. sftp. client. impl. abstractsftpclient. open ( abstractsftpclient. java : 589 ) at org. apache. sshd. sftp. client. impl. sftpinputstreamasync. ( sftpinputstreamasync. java : 75 ) at org. apache. sshd. sftp. client. impl. abstractsftpclient. read ( abstractsftpclient. java : 1196 ) at org. apache. sshd. sftp. client. sftpclient. read ( sftpclient. java : 909 )'],
+    ['cause : dear team multiple errors occurred while processing the edi transaction. please see attached file for more details. error count 14 note : this is an automated mail, please do not reply. thanks and regards, apac support, panasonic | cat : application / software', 'effect : abap logic inquiry for the rr interface | cat : application / software | delta _ hours : 719. 37'],
+    ['cause : please check wo psv - wo - 2410002855 wrong tax amount | cat : application / software', 'effect : dear team error occurred while processing the edi transaction interface change - over subsidiary pau api name pana - sdesk - ext - eapi flow direction outbound source system pau end system zoho file name no file name storage path no attachment error source pana - sdesk - ext - eapi transaction id 56fcce20 - 39ce - 11f0 - 8032 - eee27e3a0f38 error summary 500 expression error details " expression : \\ " org. mule. runtime. api. exception. muleruntimeexception - could not obtain connection to fetch file / zoho / live / outbound / status / remote / co _ status _ 20250526110806711817. csv \\ norg. mule. runtime. api. exception. muleruntimeexception : could not obtain connection to fetch file / zoho / live / outbound / status / remote / co _ status _ 20250526110806711817. csv \\ ncaused by : org. mule. runtime. api. connection. connectionexception : could not establish sftp connection with host :\'10. 86. 48. 62\'at port :\'22\'- session. connect : java. net. sockettimeoutexception : read timed out \\ ncaused by : com. jcraft. jsch. jschexception : session. connect : java. net. sockettimeoutexception : read timed out \\ n \\ tat com. jcraft. jsch. session. connect ( session. java : 565 ) \\ n \\ tat com. jcraft. jsch. session. connect ( session. java : 183 ) \\ n \\ tat org. mule. extension. sftp. internal. connection. sftpclient. connect ( sftpclient. java : 182 ) \\ n \\ tat org. mule. extension. sftp. internal. connection. sftpclient. login ( sftpclient. java : 164 ) \\ n \\ tat org. mule. extension. sftp. internal. connection. sftpconnectionprovider. connect ( sftpconnectionprovider. java : 141 ) \\ n \\ tat'],
 ]
 scores = model.predict(pairs)
 print(scores.shape)
@@ -63,13 +63,13 @@ print(scores.shape)
 
 # Or rank different texts based on similarity to a single text
 ranks = model.rank(
-    "cause : dear team error occurred while processing the edi transaction. please find the details below and attached is the file associated to the transaction. interface gitp subsidiary pidsmy api name inds - global - if - mgmt - papi flow direction outbound source system sap end system ibmmq file name 0000000001763941 _ 007a05c0 - b21c - 11ef - 98df - 9601f4f6b381. xml storage path / inds / prod / outbound / nocompany / ordrsp / 0000000001763941 _ 007a05c0 - b21c - 11ef - 98df - 9601f4f6b381. xml error source mulesoft transaction id 007a05c0 - b21c - 11ef - 98df - 9601f4f6b381 error summary 500 connectivity error details * * * * * * * * * * * 443 / api / v1 / sd / order / confirmation'failed : remotely closed. comments unable to find 0000000001763941 _ 007a05c0 - b21c",
+    'cause : pgi - so - 2505003793 is appear in sfdc & partner portal but not appear ( cannot be read in sap ), please fix. | cat : application / software',
     [
-        "effect : dear team error occurred while processing the edi transaction. please find the details below and attached is the file associated to the transaction. interface gitp subsidiary pidsmy api name inds - global - if - mgmt - papi flow direction outbound source system sap end system ibmmq file name 0000000001769646 _ 040157c0 - b21c - 11ef - 98df - 9601f4f6b381. xml storage path / inds / prod / outbound / nocompany / ordrsp / 0000000001769646 _ 040157c0 - b21c - 11ef - 98df - 9601f4f6b381. xml error source mulesoft transaction id 040157c0 - b21c - 11ef - 98df - 9601f4f6b381 error summary 500 connectivity error details * * * * * * * * * * * 443 / api / v1 / aleaud'failed : remotely closed. comments unable to find 0000000001769646 _ 040157c0 - b21c - 11ef - 98df - 9601",
-        'effect : 3 ar pass data : 1 ). pgi so 2410000709 2 ). pgi so 2410000882 3 ). pgi so 2409012425 status is already paid, but not not included in the " gdn inv reg pass report buy part paid " report, please include all this data in the report, for detail please see the attchment, thanks | cat : application / software | delta _ hours : - 1921. 30',
-        'effect : for wo : psv - wo - 2412009287 can not find charge : " phi v? n chuy? n... " to add into work order, pls check and fix it. | cat : application / software | delta _ hours : 766. 18',
-        'effect : user : fenny issue : user did cnlexp under invoice 130023838 due to revise in qty. however the sales advise in the new billing ( 130024123 ) is failed as attached screenshot. | cat : application / software | delta _ hours : 23. 62',
-        'effect : as i shared in msteams po, would like to inquire if we can check this bp code under papvn cause for pmpc we will be uploading this bp code 00039173 - 1 panasonic global excellence we wanted to check if there would be any issue if we proceed | cat : application / software | delta _ hours : - 6597. 73',
+        "effect : job : pm - wo - 2501004489 part no : m4d154810zm ( pcb ) part still udr part requested - didn't link to sap pls assist to link as customer request urgent repair / to close job sheet | cat : application / software | delta _ hours : 3266. 45",
+        'effect : dear team error occurred while processing the edi transaction interface subsidiary no subsidiary api name pana - pagitp - mgmt - eapi flow direction inbound source system pagitp end system sap s4hana file name no file name storage path no attachment error source mulesoft transaction id 946bd1f9 - c3a8 - 4309 - 9216 - df00e3efc6c4 error summary 500 source _ response _ send error details client connection was closed comments note : this is an automated mail, please do not reply. thanks and regards, apac support, panasonic | cat : application / software | delta _ hours : 2826. 65',
+        'effect : dear team error occurred while processing the edi transaction interface change - over subsidiary pau api name pana - sdesk - ext - eapi flow direction outbound source system pau end system zoho file name no file name storage path no attachment error source pana - sdesk - ext - eapi transaction id 819e3530 - a313 - 11ef - 8b0c - 02b4130d4440 error summary 500 expression error details expression : " org. mule. runtime. api. exception. muleruntimeexception - exception was found trying to retrieve the contents of file / zoho / live / outbound / status / remote / co _ status _ 20241115163317536699. csv org. mule. runtime. api. exception. muleruntimeexception : exception was found trying to retrieve the contents of file / zoho / live / outbound / status / remote / co _ status _ 20241115163317536699. csv caused by : sftp error ( ssh _ fx _ failure ) : failure. at org. apache. sshd. sftp. client. impl. abstractsftpclient. throwstatusexception ( abstractsftpclient. java : 277 ) at org. apache. sshd. sftp. client. impl. abstractsftpclient. checkhandleresponse ( abstractsftpclient. java : 299 ) at org. apache. sshd. sftp. client. impl. abstractsftpclient. checkhandle ( abstractsftpclient. java : 290 ) at org. apache. sshd. sftp. client. impl. abstractsftpclient. open ( abstractsftpclient. java : 589 ) at org. apache. sshd. sftp. client. impl. sftpinputstreamasync. ( sftpinputstreamasync. java : 75 ) at org. apache. sshd. sftp. client. impl. abstractsftpclient. read ( abstractsftpclient. java : 1196 ) at org. apache. sshd. sftp. client. sftpclient. read ( sftpclient. java : 909 )',
+        'effect : abap logic inquiry for the rr interface | cat : application / software | delta _ hours : 719. 37',
+        'effect : dear team error occurred while processing the edi transaction interface change - over subsidiary pau api name pana - sdesk - ext - eapi flow direction outbound source system pau end system zoho file name no file name storage path no attachment error source pana - sdesk - ext - eapi transaction id 56fcce20 - 39ce - 11f0 - 8032 - eee27e3a0f38 error summary 500 expression error details " expression : \\ " org. mule. runtime. api. exception. muleruntimeexception - could not obtain connection to fetch file / zoho / live / outbound / status / remote / co _ status _ 20250526110806711817. csv \\ norg. mule. runtime. api. exception. muleruntimeexception : could not obtain connection to fetch file / zoho / live / outbound / status / remote / co _ status _ 20250526110806711817. csv \\ ncaused by : org. mule. runtime. api. connection. connectionexception : could not establish sftp connection with host :\'10. 86. 48. 62\'at port :\'22\'- session. connect : java. net. sockettimeoutexception : read timed out \\ ncaused by : com. jcraft. jsch. jschexception : session. connect : java. net. sockettimeoutexception : read timed out \\ n \\ tat com. jcraft. jsch. session. connect ( session. java : 565 ) \\ n \\ tat com. jcraft. jsch. session. connect ( session. java : 183 ) \\ n \\ tat org. mule. extension. sftp. internal. connection. sftpclient. connect ( sftpclient. java : 182 ) \\ n \\ tat org. mule. extension. sftp. internal. connection. sftpclient. login ( sftpclient. java : 164 ) \\ n \\ tat org. mule. extension. sftp. internal. connection. sftpconnectionprovider. connect ( sftpconnectionprovider. java : 141 ) \\ n \\ tat',
     ]
 )
 # [{'corpus_id': ..., 'score': ...}, {'corpus_id': ..., 'score': ...}, ...]
@@ -117,19 +117,19 @@ You can finetune this model on your own dataset.
 
 #### Unnamed Dataset
 
-* Size: 2,792 training samples
+* Size: 2,737 training samples
 * Columns: <code>sentence_0</code>, <code>sentence_1</code>, and <code>label</code>
 * Approximate statistics based on the first 1000 samples:
   |         | sentence_0                                                                                        | sentence_1                                                                                        | label                                                          |
   |:--------|:--------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------|:---------------------------------------------------------------|
   | type    | string                                                                                            | string                                                                                            | float                                                          |
-  | details | <ul><li>min: 43 characters</li><li>mean: 418.03 characters</li><li>max: 1529 characters</li></ul> | <ul><li>min: 71 characters</li><li>mean: 431.94 characters</li><li>max: 1570 characters</li></ul> | <ul><li>min: 0.0</li><li>mean: 0.23</li><li>max: 1.0</li></ul> |
+  | details | <ul><li>min: 31 characters</li><li>mean: 362.65 characters</li><li>max: 1613 characters</li></ul> | <ul><li>min: 68 characters</li><li>mean: 530.45 characters</li><li>max: 1661 characters</li></ul> | <ul><li>min: 0.0</li><li>mean: 0.26</li><li>max: 1.0</li></ul> |
 * Samples:
-  | sentence_0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | sentence_1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | label            |
-  |:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|
-  | <code>cause : dear team error occurred while processing the edi transaction. please find the details below and attached is the file associated to the transaction. interface gitp subsidiary pidsmy api name inds - global - if - mgmt - papi flow direction outbound source system sap end system ibmmq file name 0000000001763941 _ 007a05c0 - b21c - 11ef - 98df - 9601f4f6b381. xml storage path / inds / prod / outbound / nocompany / ordrsp / 0000000001763941 _ 007a05c0 - b21c - 11ef - 98df - 9601f4f6b381. xml error source mulesoft transaction id 007a05c0 - b21c - 11ef - 98df - 9601f4f6b381 error summary 500 connectivity error details * * * * * * * * * * * 443 / api / v1 / sd / order / confirmation'failed : remotely closed. comments unable to find 0000000001763941 _ 007a05c0 - b21c</code> | <code>effect : dear team error occurred while processing the edi transaction. please find the details below and attached is the file associated to the transaction. interface gitp subsidiary pidsmy api name inds - global - if - mgmt - papi flow direction outbound source system sap end system ibmmq file name 0000000001769646 _ 040157c0 - b21c - 11ef - 98df - 9601f4f6b381. xml storage path / inds / prod / outbound / nocompany / ordrsp / 0000000001769646 _ 040157c0 - b21c - 11ef - 98df - 9601f4f6b381. xml error source mulesoft transaction id 040157c0 - b21c - 11ef - 98df - 9601f4f6b381 error summary 500 connectivity error details * * * * * * * * * * * 443 / api / v1 / aleaud'failed : remotely closed. comments unable to find 0000000001769646 _ 040157c0 - b21c - 11ef - 98df - 9601</code> | <code>1.0</code> |
-  | <code>cause : authorized member can't access sap. \| cat : application / software</code>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | <code>effect : 3 ar pass data : 1 ). pgi so 2410000709 2 ). pgi so 2410000882 3 ). pgi so 2409012425 status is already paid, but not not included in the " gdn inv reg pass report buy part paid " report, please include all this data in the report, for detail please see the attchment, thanks \| cat : application / software \| delta _ hours : - 1921. 30</code>                                                                                                                                                                                                                                                                                                                                                                                                                                                  | <code>0.0</code> |
-  | <code>cause : i can't edit my esanction even though finance azah san re - opened for topup. # iaf2015297 \| cat : nan</code>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | <code>effect : for wo : psv - wo - 2412009287 can not find charge : " phi v? n chuy? n... " to add into work order, pls check and fix it. \| cat : application / software \| delta _ hours : 766. 18</code>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | <code>0.0</code> |
+  | sentence_0                                                                                                                                                          | sentence_1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | label            |
+  |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|
+  | <code>cause : pgi - so - 2505003793 is appear in sfdc & partner portal but not appear ( cannot be read in sap ), please fix. \| cat : application / software</code> | <code>effect : job : pm - wo - 2501004489 part no : m4d154810zm ( pcb ) part still udr part requested - didn't link to sap pls assist to link as customer request urgent repair / to close job sheet \| cat : application / software \| delta _ hours : 3266. 45</code>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | <code>0.0</code> |
+  | <code>cause : pls cancel ews psv - ews - 2503000221 in sfdc and don't trigger to sap \| cat : application / software</code>                                         | <code>effect : dear team error occurred while processing the edi transaction interface subsidiary no subsidiary api name pana - pagitp - mgmt - eapi flow direction inbound source system pagitp end system sap s4hana file name no file name storage path no attachment error source mulesoft transaction id 946bd1f9 - c3a8 - 4309 - 9216 - df00e3efc6c4 error summary 500 source _ response _ send error details client connection was closed comments note : this is an automated mail, please do not reply. thanks and regards, apac support, panasonic \| cat : application / software \| delta _ hours : 2826. 65</code>                                                                                                                                                                                                                                                                                                                                                                                                                          | <code>0.0</code> |
+  | <code>cause : material : srf3704 - kd10 \| cat : application / software</code>                                                                                      | <code>effect : dear team error occurred while processing the edi transaction interface change - over subsidiary pau api name pana - sdesk - ext - eapi flow direction outbound source system pau end system zoho file name no file name storage path no attachment error source pana - sdesk - ext - eapi transaction id 819e3530 - a313 - 11ef - 8b0c - 02b4130d4440 error summary 500 expression error details expression : " org. mule. runtime. api. exception. muleruntimeexception - exception was found trying to retrieve the contents of file / zoho / live / outbound / status / remote / co _ status _ 20241115163317536699. csv org. mule. runtime. api. exception. muleruntimeexception : exception was found trying to retrieve the contents of file / zoho / live / outbound / status / remote / co _ status _ 20241115163317536699. csv caused by : sftp error ( ssh _ fx _ failure ) : failure. at org. apache. sshd. sftp. client. impl. abstractsftpclient. throwstatusexception ( abstractsftpclient. java : 277 ) at org....</code> | <code>0.0</code> |
 * Loss: [<code>BinaryCrossEntropyLoss</code>](https://sbert.net/docs/package_reference/cross_encoder/losses.html#binarycrossentropyloss) with these parameters:
   ```json
   {
@@ -147,120 +147,98 @@ You can finetune this model on your own dataset.
 #### All Hyperparameters
 <details><summary>Click to expand</summary>
 
-- `overwrite_output_dir`: False
-- `do_predict`: False
-- `eval_strategy`: no
-- `prediction_loss_only`: True
 - `per_device_train_batch_size`: 16
-- `per_device_eval_batch_size`: 16
-- `per_gpu_train_batch_size`: None
-- `per_gpu_eval_batch_size`: None
-- `gradient_accumulation_steps`: 1
-- `eval_accumulation_steps`: None
-- `torch_empty_cache_steps`: None
+- `num_train_epochs`: 3
+- `max_steps`: -1
 - `learning_rate`: 5e-05
+- `lr_scheduler_type`: linear
+- `lr_scheduler_kwargs`: None
+- `warmup_steps`: 0
+- `optim`: adamw_torch_fused
+- `optim_args`: None
 - `weight_decay`: 0.0
 - `adam_beta1`: 0.9
 - `adam_beta2`: 0.999
 - `adam_epsilon`: 1e-08
+- `optim_target_modules`: None
+- `gradient_accumulation_steps`: 1
+- `average_tokens_across_devices`: True
 - `max_grad_norm`: 1
-- `num_train_epochs`: 3
-- `max_steps`: -1
-- `lr_scheduler_type`: linear
-- `lr_scheduler_kwargs`: {}
-- `warmup_ratio`: 0.0
-- `warmup_steps`: 0
-- `log_level`: passive
-- `log_level_replica`: warning
-- `log_on_each_node`: True
-- `logging_nan_inf_filter`: True
-- `save_safetensors`: True
-- `save_on_each_node`: False
-- `save_only_model`: False
-- `restore_callback_states_from_checkpoint`: False
-- `no_cuda`: False
-- `use_cpu`: False
-- `use_mps_device`: False
-- `seed`: 42
-- `data_seed`: None
-- `jit_mode_eval`: False
+- `label_smoothing_factor`: 0.0
 - `bf16`: False
 - `fp16`: False
-- `fp16_opt_level`: O1
-- `half_precision_backend`: auto
 - `bf16_full_eval`: False
 - `fp16_full_eval`: False
 - `tf32`: None
-- `local_rank`: 0
-- `ddp_backend`: None
-- `tpu_num_cores`: None
-- `tpu_metrics_debug`: False
-- `debug`: []
-- `dataloader_drop_last`: False
-- `dataloader_num_workers`: 0
-- `dataloader_prefetch_factor`: None
-- `past_index`: -1
-- `disable_tqdm`: False
-- `remove_unused_columns`: True
-- `label_names`: None
-- `load_best_model_at_end`: False
-- `ignore_data_skip`: False
-- `fsdp`: []
-- `fsdp_min_num_params`: 0
-- `fsdp_config`: {'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False}
-- `fsdp_transformer_layer_cls_to_wrap`: None
-- `accelerator_config`: {'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None}
-- `parallelism_config`: None
-- `deepspeed`: None
-- `label_smoothing_factor`: 0.0
-- `optim`: adamw_torch_fused
-- `optim_args`: None
-- `adafactor`: False
-- `group_by_length`: False
-- `length_column_name`: length
-- `project`: huggingface
-- `trackio_space_id`: trackio
-- `ddp_find_unused_parameters`: None
-- `ddp_bucket_cap_mb`: None
-- `ddp_broadcast_buffers`: False
-- `dataloader_pin_memory`: True
-- `dataloader_persistent_workers`: False
-- `skip_memory_metrics`: True
-- `use_legacy_prediction_loop`: False
-- `push_to_hub`: False
-- `resume_from_checkpoint`: None
-- `hub_model_id`: None
-- `hub_strategy`: every_save
-- `hub_private_repo`: None
-- `hub_always_push`: False
-- `hub_revision`: None
 - `gradient_checkpointing`: False
 - `gradient_checkpointing_kwargs`: None
-- `include_inputs_for_metrics`: False
-- `include_for_metrics`: []
-- `eval_do_concat_batches`: True
-- `fp16_backend`: auto
-- `push_to_hub_model_id`: None
-- `push_to_hub_organization`: None
-- `mp_parameters`: 
-- `auto_find_batch_size`: False
-- `full_determinism`: False
-- `torchdynamo`: None
-- `ray_scope`: last
-- `ddp_timeout`: 1800
 - `torch_compile`: False
 - `torch_compile_backend`: None
 - `torch_compile_mode`: None
-- `include_tokens_per_second`: False
-- `include_num_input_tokens_seen`: no
-- `neftune_noise_alpha`: None
-- `optim_target_modules`: None
-- `batch_eval_metrics`: False
-- `eval_on_start`: False
 - `use_liger_kernel`: False
 - `liger_kernel_config`: None
+- `use_cache`: False
+- `neftune_noise_alpha`: None
+- `torch_empty_cache_steps`: None
+- `auto_find_batch_size`: False
+- `log_on_each_node`: True
+- `logging_nan_inf_filter`: True
+- `include_num_input_tokens_seen`: no
+- `log_level`: passive
+- `log_level_replica`: warning
+- `disable_tqdm`: False
+- `project`: huggingface
+- `trackio_space_id`: trackio
+- `eval_strategy`: no
+- `per_device_eval_batch_size`: 16
+- `prediction_loss_only`: True
+- `eval_on_start`: False
+- `eval_do_concat_batches`: True
 - `eval_use_gather_object`: False
-- `average_tokens_across_devices`: True
+- `eval_accumulation_steps`: None
+- `include_for_metrics`: []
+- `batch_eval_metrics`: False
+- `save_only_model`: False
+- `save_on_each_node`: False
+- `enable_jit_checkpoint`: False
+- `push_to_hub`: False
+- `hub_private_repo`: None
+- `hub_model_id`: None
+- `hub_strategy`: every_save
+- `hub_always_push`: False
+- `hub_revision`: None
+- `load_best_model_at_end`: False
+- `ignore_data_skip`: False
+- `restore_callback_states_from_checkpoint`: False
+- `full_determinism`: False
+- `seed`: 42
+- `data_seed`: None
+- `use_cpu`: False
+- `accelerator_config`: {'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None}
+- `parallelism_config`: None
+- `dataloader_drop_last`: False
+- `dataloader_num_workers`: 0
+- `dataloader_pin_memory`: True
+- `dataloader_persistent_workers`: False
+- `dataloader_prefetch_factor`: None
+- `remove_unused_columns`: True
+- `label_names`: None
+- `train_sampling_strategy`: random
+- `length_column_name`: length
+- `ddp_find_unused_parameters`: None
+- `ddp_bucket_cap_mb`: None
+- `ddp_broadcast_buffers`: False
+- `ddp_backend`: None
+- `ddp_timeout`: 1800
+- `fsdp`: []
+- `fsdp_config`: {'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False}
+- `deepspeed`: None
+- `debug`: []
+- `skip_memory_metrics`: True
+- `do_predict`: False
+- `resume_from_checkpoint`: None
+- `warmup_ratio`: None
+- `local_rank`: -1
 - `prompts`: None
 - `batch_sampler`: batch_sampler
 - `multi_dataset_batch_sampler`: proportional
@@ -269,16 +247,10 @@ You can finetune this model on your own dataset.
 
 </details>
 
-### Training Logs
-| Epoch  | Step | Training Loss |
-|:------:|:----:|:-------------:|
-| 2.8571 | 500  | 0.4701        |
-
-
 ### Framework Versions
 - Python: 3.11.14
-- Sentence Transformers: 5.2.0
-- Transformers: 4.57.3
+- Sentence Transformers: 5.2.2
+- Transformers: 5.2.0
 - PyTorch: 2.9.1+cu130
 - Accelerate: 1.12.0
 - Datasets: 4.4.2
