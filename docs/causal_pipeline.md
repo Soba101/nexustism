@@ -2,9 +2,11 @@
 
 > Documentation for training and using the CrossEncoder-based causal relationship classifier for ITSM tickets.
 
-**Last Updated:** December 2025  
-**Notebook:** `NLI.ipynb`  
-**Related:** `docs/model_pipeline.md` (similarity model)
+**Last Updated:** March 2026 (Updated: Nomic Embed Text v1.5 bi-encoder integration)  
+**Notebook:** `causal_detection_pipeline.ipynb`  
+**Related:** `deployment/deploy_nomic.py` (Stage 1 bi-encoder model)
+
+**IMPORTANT UPDATE (Mar 2026):** Stage 1 bi-encoder now uses **Nomic Embed Text v1.5** (zero-shot, 137M params, 768-dim) instead of V4 Cosine. Nomic outperforms all alternatives on grounded semantic benchmarks (Spearman=0.4476) and avoids catastrophic forgetting from routing-label fine-tuning. Expected outcome: improved causal candidate generation → improved downstream CrossEncoder classification.
 
 ---
 
@@ -52,9 +54,73 @@ Causal Score: 0.87 → ✅ CAUSAL (A likely caused B)
 
 **Causal detection requires understanding the relationship between two texts, not just their similarity.** CrossEncoders excel at this.
 
+**Note on Stage 1 (Bi-Encoder):** The causal pipeline uses Nomic Embed Text v1.5 for generating semantic candidates in `causal_detection_pipeline.ipynb` (Cell 7). This is a **two-stage architecture**:
+- **Stage 1 (Fast)**: Nomic bi-encoder finds semantically similar tickets (~1ms per pair, pre-computed embeddings)
+- **Stage 2 (Accurate)**: CrossEncoder classifier determines if similarities are actually causal relationships
+
+---
+
+## 1.5 Stage 1: Bi-Encoder (Nomic v1.5) for Candidate Generation
+
+### Why Nomic for Stage 1?
+
+The causal pipeline uses **Nomic Embed Text v1.5** (zero-shot, 137M params, 768-dim) as the bi-encoder to generate causal candidates. This replaces the previous V4 Cosine fine-tuned model.
+
+**Benchmark comparison (on grounded resolution-notes benchmark):**
+
+| Model | Type | Spearman | ROC-AUC | Notes |
+|-------|------|----------|---------|-------|
+| **Nomic v1.5** | Zero-shot | **0.4476** | **0.7584** | ✅ Production (Mar 2026) |
+| V4 Cosine | Fine-tuned (LoRA) | 0.2949 | 0.7345 | Catastrophic forgetting on routing labels |
+| V5.3 Nomic LoRA | Fine-tuned (LoRA) | 0.2040 | 0.6891 | Severe regression on semantic benchmark |
+| MPNet base | Unsupervised | 0.3541 | 0.6823 | |
+
+**Why zero-shot Nomic wins:**
+1. **Avoids catastrophic forgetting**: Fine-tuning on routing labels (Assignment group, Category) destroys the semantic space learned during pre-training because these are organizational metadata, not semantic signals
+2. **Universal semantic understanding**: Pre-trained on diverse web corpus; generalizes to unseen incident types
+3. **Proven on grounded truth**: `v4_semantic_resnotes` benchmark uses TF-IDF cosine of resolution notes (the true semantic signal), not routing labels
+
+**Impact on causal detection:**
+- Nomic's superior semantic embeddings → better candidate selection in Stage 1
+- Better candidates → higher quality input to CrossEncoder in Stage 2
+- Expected outcome: improved causal classification accuracy and directionality detection
+
+**Deployment:**
+- Class: `NomicModelDeployment` in `nexustism/notebook-fixes/deploy_nomic.py`
+- Usage: `encode()` for documents, `encode_query()` for queries (asymmetric prefix encoding)
+- In causal pipeline (Cell 7): Both tickets encoded as documents using `encode()` for consistency
+
 ---
 
 ## 2. Architecture
+
+### Overall Two-Stage Pipeline
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                 TWO-STAGE CAUSAL DETECTION                          │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│  STAGE 1: Bi-Encoder (Nomic v1.5) - Fast Similarity Search         │
+│  ────────────────────────────────────────────────────────────────  │
+│  Input: Incident descriptions (10k tickets)                       │
+│  Method: Pre-compute embeddings (768-dim), cosine similarity       │
+│  Output: Top-K similar incidents per query (~1ms per pair)        │
+│    • Parent/Child references (confidence 0.95)                    │
+│    • Resolution note mining (confidence 0.7-0.9)                  │
+│    • Temporal + Similarity clustering (confidence 0.6-0.8)        │
+│                                                                    │
+│  STAGE 2: CrossEncoder (MiniLM) - Accurate Causal Classification   │
+│  ────────────────────────────────────────────────────────────────  │
+│  Input: Pairs from Stage 1 (e.g., 10 similar tickets per incident)│
+│  Method: Joint transformer classification (~50ms per pair)         │
+│  Output: Binary causal probability P(A caused B)                  │
+│  Training: 4,000 human-labeled or silver-labeled pairs            │
+│                                                                    │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+### CrossEncoder Architecture
 
 ### Model Structure
 
@@ -752,14 +818,29 @@ if __name__ == "__main__":
 
 ### 9.2 Performance Characteristics
 
-| Stage | Operation | Latency | Throughput |
-|-------|-----------|---------|------------|
-| 1 | Encode new ticket | ~10ms | - |
-| 1 | Similarity search (10K tickets) | ~5ms | - |
-| 2 | Causal check (1 pair) | ~50ms | ~20/sec |
-| 2 | Causal check (10 pairs, batch) | ~200ms | ~50/sec |
+**Nomic v1.5 bi-encoder impact on Stage 1 candidate generation:**
 
-**Total for 10 candidates:** ~250ms (acceptable for real-time use)
+- **Semantic quality**: Spearman correlation 0.4476 (grounded benchmark) vs V4 0.2949 → ~52% improvement
+- **Candidate relevance**: Superior semantic embeddings reduce false positives in Stage 1 → fewer low-quality pairs to CrossEncoder
+- **Causal recall**: Better candidates capture more true causal links (temporal proximity + semantic similarity)
+
+**End-to-end pipeline latency with Nomic Stage 1:**
+
+| Stage | Operation | Latency | Throughput | Notes |
+|-------|-----------|---------|------------|-------|
+| 1 | Encode new ticket (Nomic) | ~5ms | - | 768-dim, normalized embeddings |
+| 1 | Similarity search (10K tickets) | ~3ms | - | HNSW index or dot product |
+| 1 | Causal candidate generation | ~50ms | - | Parent/child + temporal + similarity |
+| 2 | Causal check (1 pair, CrossEncoder) | ~50ms | ~20/sec | MiniLM-L6 inference |
+| 2 | Causal check (10 pairs, batch) | ~150ms | ~67/sec | Batched CrossEncoder predictions |
+
+**Total for 10 causal candidates:** ~250ms (acceptable for real-time use)
+
+**Memory footprint:**
+- Nomic model: ~270MB (7x smaller than pre-tuned models)
+- 10,633 incident embeddings: ~32MB (768-dim × 10,633 × 4 bytes)
+- CrossEncoder: ~100MB
+- Total deployment: ~400MB
 
 ---
 
