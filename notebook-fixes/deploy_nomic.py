@@ -1,19 +1,26 @@
 """
-Nomic Embed Text v1.5 Deployment Script
-========================================
+V6 Nomic — Fine-tuned Deployment Wrapper
+=========================================
 
-Zero-shot production deployment of nomic-ai/nomic-embed-text-v1.5.
+Production deployment of V6 Nomic: nomic-embed-text-v1.5 fine-tuned with LoRA
+on a V6 resolution-notes curriculum (23,959 pairs, 3 phases, distant supervision).
 
-Benchmark performance (zero-shot, grounded resolution-notes):
+Checkpoint: real_servicenow_v2_20260310_1045_merged
+Path:       nexustism/models/real_servicenow_finetuned_nomic_lora/
+                real_servicenow_v2_20260310_1045_merged
+
+Benchmark performance (v4_semantic_resnotes — grounded resolution-notes):
+  Spearman = 0.5472   ROC-AUC = 0.8159   (+22.3% Sp vs. zero-shot Nomic)
+
+Previous baseline (zero-shot nomic-embed-text-v1.5):
   Spearman = 0.4476   ROC-AUC = 0.7584
 
-Replaces V4 Cosine (fine-tuned MPNet LoRA, Spearman=0.2949 on same benchmark).
-
 Usage:
-    Queries  → encode_query(texts)   — prepends 'search_query: '
-    Documents → encode(texts)        — prepends 'search_document: '
+    Queries   → encode_query(texts)   — prepends 'search_query: '
+    Documents → encode(texts)         — prepends 'search_document: '
 
 Nomic requires trust_remote_code=True (custom pooling layer).
+The *_merged checkpoint has LoRA weights baked in — PEFT is not required at inference.
 """
 
 from pathlib import Path
@@ -22,7 +29,7 @@ import torch
 import numpy as np
 from typing import List, Tuple
 
-MODEL_ID = "nomic-ai/nomic-embed-text-v1.5"
+MODEL_ID = "nexustism/models/real_servicenow_finetuned_nomic_lora/real_servicenow_v2_20260310_1045_merged"
 QUERY_PREFIX    = "search_query: "
 DOCUMENT_PREFIX = "search_document: "
 EMBEDDING_DIM   = 768
@@ -30,10 +37,10 @@ EMBEDDING_DIM   = 768
 
 class NomicModelDeployment:
     """
-    Production-ready deployment wrapper for nomic-embed-text-v1.5.
+    Production-ready deployment wrapper for V6 Nomic fine-tuned model.
 
     Drop-in replacement for V4CosineModelDeployment.  Main differences:
-      - No LoRA adapters — loaded directly from HuggingFace
+      - LoRA weights merged into base — loaded from local path, no PEFT needed
       - Requires prefix injection: 'search_query: ' / 'search_document: '
       - encode()       → document prefix  (used when re-embedding incidents)
       - encode_query() → query prefix     (used at search time in the API)

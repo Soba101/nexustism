@@ -3,10 +3,11 @@
     "v4_group_cat": {
       "spearman": -0.0922,
       "roc_auc": 0.4468,
-      "pr_auc": 0.4557,
+      "pr_auc": 0.4559,
       "pos_mean": 0.4997,
       "neg_mean": 0.5349,
-      "delta": -0.0351
+      "delta": -0.0351,
+      "batch_used": 16
     },
     "v4_rescode": {
       "spearman": 0.0744,
@@ -14,7 +15,8 @@
       "pr_auc": 0.5447,
       "pos_mean": 0.5039,
       "neg_mean": 0.4717,
-      "delta": 0.0321
+      "delta": 0.0321,
+      "batch_used": 16
     },
     "v4_semantic_resnotes": {
       "spearman": 0.292,
@@ -22,17 +24,19 @@
       "pr_auc": 0.7009,
       "pos_mean": 0.5801,
       "neg_mean": 0.4568,
-      "delta": 0.1233
+      "delta": 0.1233,
+      "batch_used": 16
     }
   },
   "V4 Cosine (production)": {
     "v4_group_cat": {
       "spearman": -0.0913,
       "roc_auc": 0.4473,
-      "pr_auc": 0.4555,
+      "pr_auc": 0.4557,
       "pos_mean": 0.5,
       "neg_mean": 0.5354,
-      "delta": -0.0354
+      "delta": -0.0354,
+      "batch_used": 16
     },
     "v4_rescode": {
       "spearman": 0.0755,
@@ -40,7 +44,8 @@
       "pr_auc": 0.5457,
       "pos_mean": 0.5046,
       "neg_mean": 0.4718,
-      "delta": 0.0328
+      "delta": 0.0328,
+      "batch_used": 16
     },
     "v4_semantic_resnotes": {
       "spearman": 0.2949,
@@ -48,17 +53,19 @@
       "pr_auc": 0.6999,
       "pos_mean": 0.5798,
       "neg_mean": 0.4559,
-      "delta": 0.1239
+      "delta": 0.1239,
+      "batch_used": 16
     }
   },
   "V5.2 Merged (latest)": {
     "v4_group_cat": {
       "spearman": -0.0223,
       "roc_auc": 0.4871,
-      "pr_auc": 0.4971,
+      "pr_auc": 0.4969,
       "pos_mean": 0.6999,
       "neg_mean": 0.7136,
-      "delta": -0.0137
+      "delta": -0.0137,
+      "batch_used": 16
     },
     "v4_rescode": {
       "spearman": 0.1128,
@@ -66,7 +73,8 @@
       "pr_auc": 0.554,
       "pos_mean": 0.4759,
       "neg_mean": 0.4251,
-      "delta": 0.0508
+      "delta": 0.0508,
+      "batch_used": 16
     },
     "v4_semantic_resnotes": {
       "spearman": 0.3269,
@@ -74,17 +82,48 @@
       "pr_auc": 0.6601,
       "pos_mean": 0.5718,
       "neg_mean": 0.4246,
-      "delta": 0.1471
+      "delta": 0.1471,
+      "batch_used": 16
+    }
+  },
+  "V5.3 Nomic (fine-tuned)": {
+    "v4_group_cat": {
+      "spearman": 0.0277,
+      "roc_auc": 0.516,
+      "pr_auc": 0.511,
+      "pos_mean": 0.6486,
+      "neg_mean": 0.6436,
+      "delta": 0.005,
+      "batch_used": 8
+    },
+    "v4_rescode": {
+      "spearman": 0.1162,
+      "roc_auc": 0.5671,
+      "pr_auc": 0.5497,
+      "pos_mean": 0.5492,
+      "neg_mean": 0.507,
+      "delta": 0.0422,
+      "batch_used": 8
+    },
+    "v4_semantic_resnotes": {
+      "spearman": 0.3909,
+      "roc_auc": 0.7257,
+      "pr_auc": 0.6978,
+      "pos_mean": 0.6192,
+      "neg_mean": 0.475,
+      "delta": 0.1442,
+      "batch_used": 8
     }
   },
   "BGE-base-en-v1.5": {
     "v4_group_cat": {
       "spearman": -0.0327,
       "roc_auc": 0.4811,
-      "pr_auc": 0.4715,
+      "pr_auc": 0.4714,
       "pos_mean": 0.679,
       "neg_mean": 0.6906,
-      "delta": -0.0115
+      "delta": -0.0115,
+      "batch_used": 16
     },
     "v4_rescode": {
       "spearman": 0.1129,
@@ -92,7 +131,8 @@
       "pr_auc": 0.5566,
       "pos_mean": 0.6832,
       "neg_mean": 0.6599,
-      "delta": 0.0233
+      "delta": 0.0233,
+      "batch_used": 16
     },
     "v4_semantic_resnotes": {
       "spearman": 0.3654,
@@ -100,7 +140,8 @@
       "pr_auc": 0.7331,
       "pos_mean": 0.7276,
       "neg_mean": 0.6473,
-      "delta": 0.0802
+      "delta": 0.0802,
+      "batch_used": 16
     }
   },
   "E5-base-v2": {
@@ -110,7 +151,8 @@
       "pr_auc": 0.4772,
       "pos_mean": 0.8383,
       "neg_mean": 0.8412,
-      "delta": -0.0028
+      "delta": -0.0028,
+      "batch_used": 16
     },
     "v4_rescode": {
       "spearman": 0.0684,
@@ -118,7 +160,8 @@
       "pr_auc": 0.5381,
       "pos_mean": 0.8303,
       "neg_mean": 0.8226,
-      "delta": 0.0077
+      "delta": 0.0077,
+      "batch_used": 16
     },
     "v4_semantic_resnotes": {
       "spearman": 0.3579,
@@ -126,17 +169,19 @@
       "pr_auc": 0.7296,
       "pos_mean": 0.8539,
       "neg_mean": 0.8171,
-      "delta": 0.0368
+      "delta": 0.0368,
+      "batch_used": 16
     }
   },
   "Nomic-embed-text-v1.5": {
     "v4_group_cat": {
       "spearman": 0.0248,
       "roc_auc": 0.5143,
-      "pr_auc": 0.49,
+      "pr_auc": 0.4898,
       "pos_mean": 0.7724,
       "neg_mean": 0.7706,
-      "delta": 0.0018
+      "delta": 0.0018,
+      "batch_used": 8
     },
     "v4_rescode": {
       "spearman": 0.1258,
@@ -144,7 +189,8 @@
       "pr_auc": 0.5596,
       "pos_mean": 0.7395,
       "neg_mean": 0.7177,
-      "delta": 0.0218
+      "delta": 0.0218,
+      "batch_used": 8
     },
     "v4_semantic_resnotes": {
       "spearman": 0.4476,
@@ -152,17 +198,37 @@
       "pr_auc": 0.7559,
       "pos_mean": 0.7911,
       "neg_mean": 0.7094,
-      "delta": 0.0817
+      "delta": 0.0817,
+      "batch_used": 8
     }
   },
-  "V5.3 Nomic (fine-tuned)": {
+  "V6 Nomic (fine-tuned)": {
     "v4_semantic_resnotes": {
-      "spearman": 0.204,
-      "roc_auc": 0.6178,
-      "pr_auc": 0.6334,
-      "pos_mean": 0.7707,
-      "neg_mean": 0.7163,
-      "delta": 0.0544
+      "spearman": 0.5472,
+      "roc_auc": 0.8159,
+      "pr_auc": 0.8127,
+      "pos_mean": 0.2213,
+      "neg_mean": 0.0818,
+      "delta": 0.1395,
+      "batch_used": 8
+    },
+    "v4_group_cat": {
+      "spearman": 0.0341,
+      "roc_auc": 0.5197,
+      "pr_auc": 0.5136,
+      "pos_mean": 0.1758,
+      "neg_mean": 0.1724,
+      "delta": 0.0035,
+      "batch_used": 8
+    },
+    "v4_rescode": {
+      "spearman": 0.1985,
+      "roc_auc": 0.6146,
+      "pr_auc": 0.5913,
+      "pos_mean": 0.1235,
+      "neg_mean": 0.0868,
+      "delta": 0.0367,
+      "batch_used": 8
     }
   }
 }
