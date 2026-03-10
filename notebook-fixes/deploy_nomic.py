@@ -25,14 +25,39 @@ The *_merged checkpoint has LoRA weights baked in — PEFT is not required at in
 
 from pathlib import Path
 from sentence_transformers import SentenceTransformer
+import os
 import torch
 import numpy as np
-from typing import List, Tuple
+from typing import List, Dict, Any, Tuple
 
-MODEL_ID = "nexustism/models/real_servicenow_finetuned_nomic_lora/real_servicenow_v2_20260310_1045_merged"
+# Allow runtime override via environment variable so the API can switch between
+# zero-shot HuggingFace model and local fine-tuned checkpoint without code changes.
+# Example: export NOMIC_MODEL_PATH=nomic-ai/nomic-embed-text-v1.5
+MODEL_ID = os.getenv(
+    "NOMIC_MODEL_PATH",
+    "nexustism/models/real_servicenow_finetuned_nomic_lora/real_servicenow_v2_20260310_1045_merged",
+)
 QUERY_PREFIX    = "search_query: "
 DOCUMENT_PREFIX = "search_document: "
 EMBEDDING_DIM   = 768
+
+# Registry metadata — keep in sync with nexustism/docs/MODEL_REGISTRY.md
+_MODEL_REGISTRY: Dict[str, Dict[str, Any]] = {
+    "nexustism/models/real_servicenow_finetuned_nomic_lora/real_servicenow_v2_20260310_1045_merged": {
+        "mode": "fine-tuned",
+        "spearman": 0.5472,
+        "roc_auc": 0.8159,
+        "training_date": "2026-03-10",
+        "description": "V6 Nomic LoRA — resolution-notes curriculum, 23,959 pairs",
+    },
+    "nomic-ai/nomic-embed-text-v1.5": {
+        "mode": "zero-shot",
+        "spearman": 0.4476,
+        "roc_auc": 0.7584,
+        "training_date": None,
+        "description": "Zero-shot Nomic Embed v1.5 (no fine-tuning)",
+    },
+}
 
 
 class NomicModelDeployment:
@@ -71,13 +96,20 @@ class NomicModelDeployment:
             trust_remote_code=True,
         )
 
+        self._info = _MODEL_REGISTRY.get(self.model_id, {
+            "mode": "unknown",
+            "spearman": None,
+            "roc_auc": None,
+            "training_date": None,
+            "description": f"Unregistered model: {self.model_id}",
+        })
+
         print("[OK] Nomic model loaded")
         print(f"   Embedding dimension : {self.model.get_sentence_embedding_dimension()}")
         print(f"   Max sequence length : {self.model.max_seq_length}")
-
-    # ------------------------------------------------------------------
-    # Core encode methods
-    # ------------------------------------------------------------------
+        print(f"   Mode                : {self._info['mode']}")
+        if self._info.get('spearman'):
+            print(f"   Spearman (resnotes) : {self._info['spearman']}  ROC-AUC: {self._info['roc_auc']}")
 
     def encode(self, texts: List[str], batch_size: int = 32,
                show_progress_bar: bool = False, **kwargs) -> np.ndarray:
@@ -117,6 +149,18 @@ class NomicModelDeployment:
 
     def get_sentence_embedding_dimension(self) -> int:
         return self.model.get_sentence_embedding_dimension()
+
+    def get_model_info(self) -> Dict[str, Any]:
+        """Return registry metadata for this model — useful for logging and auditing."""
+        return {
+            "model_id": self.model_id,
+            "mode": self._info["mode"],
+            "spearman": self._info["spearman"],
+            "roc_auc": self._info["roc_auc"],
+            "training_date": self._info["training_date"],
+            "description": self._info["description"],
+            "embedding_dim": self.get_sentence_embedding_dimension(),
+        }
 
     def compute_similarity(self, text1: str, text2: str) -> float:
         """Cosine similarity between two documents."""
